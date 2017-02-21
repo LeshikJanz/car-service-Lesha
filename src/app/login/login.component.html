@@ -1,0 +1,55 @@
+<div class="container-fluid full-height container-sm-height">
+	<div class="row .row-sm-height padding-top">
+		<div class="col-sm-2 hidden-xs col-md-3 col-sm-height"></div>
+		<form *ngIf="active" (ngSubmit)="submitLogin()" #loginForm="ngForm" class="form-horizontal 
+    col-sm-8 col-xs-12 col-md-6 col-sm-height">
+			<h2 class="h1loging">{{ 'WELCOMETO' | translate}}</h2>
+			<div class="form-group">
+				<div class="col-sm-2"></div>
+				<label class="col-sm-2 col-xs-12 control-label" for="usarname">
+                {{ 'USERNAME' | translate}}</label>
+				<div class="col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0">
+					<input class="form-control" id="usarname" type="text" required [(ngModel)]='userInfo.userName' name="usarname" #usarname="ngModel"
+					 placeholder='Enter User Name'/>
+					<div [hidden]="usarname.valid || usarname.pristine" class="alert alert-danger">
+						{{ 'USERNAMEREREQUIERD' | translate}}</div>
+				</div>
+				<div class="col-sm-2 col-xs-hidden"></div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2"></div>
+				<label class="col-sm-2 col-xs-12 control-label" for="pwd">
+                {{ 'PASSWORD' | translate}}</label>
+				<div class="col-sm-6 col-xs-8 col-xs-offset-2 col-sm-offset-0">
+					<input class="form-control" id="pwd" type="password" required [(ngModel)]='userInfo.password' name="inputPassword" #password="ngModel"
+					 placeholder='Enter Password'/>
+					<div [hidden]="password.valid || password.pristine" class="alert alert-danger">
+						{{ 'PASSWORDREQUIERD' | translate}}</div>
+				</div>
+				<div class="col-sm-2 col-xs-hidden"></div>
+			</div>
+			<!--<div class="form-group">
+				<div class="col-sm-offset-3 col-sm-2">
+					<div class="checkbox">
+						<label><input type="checkbox" value="remember_me" name="rememberMe"
+                    [(ngModel)]='rememberMe'>{{ 'REMEMBERME' | translate}}</label>
+					</div>
+				</div>
+			</div>-->
+			<div class="form-group">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-offset-2 col-sm-6 col-xs-8 col-xs-offset-2">
+					<button type="submit" class="btn btn-primary btn-block" [disabled]="!loginForm.form.valid">
+                    {{ 'LOGIN' |  translate }}
+                </button>
+				<div class="col-sm-2"></div>
+				<button type="submit" class="btn btn-primary fixed-left-top" (click)="skip()">skip</button>
+				</div>
+			</div>
+			<!--<div class="panel panel-heading"
+         style="font-size:large">{{ errorMessege }}
+         </div>-->
+		</form>
+		<div class="col-sm-2 hidden-xs col-md-3 col-sm-height"></div>
+	</div>
+</div>

@@ -1,0 +1,33 @@
+<div>
+	<ul class="list-group no-margin container-fluid">
+		<template ngFor let-item [ngForOf]="checkListItems">
+			<li class="list-group-item li-checkList" *ngIf="item.U_TaskName" role="presentation" [class.active]="selected == item" (click)="pick(item);scroll($event)">
+				<label class="col-xs-5">
+                    &nbsp;{{ item.U_TaskName }}            
+                </label>
+				<div class="btn-check-list col-xs-7">
+					<button type="button" class="btn btn-circle" (click)="Stts1(item)">
+                    <i class="glyphicon glyphicon-ok-sign" [class.green]="item.U_TaskStts=='1'"></i>
+                </button>
+					<button type="button" class="btn btn-circle" (click)="Stts0(item)">
+                    <i class="glyphicon glyphicon-remove-sign" [class.red]="item.U_TaskStts=='0'"></i>
+                </button>
+					<button type="button" class="btn btn-circle" (click)="Stts2(item)">
+                    <i class="glyphicon glyphicon-question-sign" [class.yellow]="item.U_TaskStts=='2'"></i>
+                </button>
+					<button type="button" class="btn btn-circle" (click)="comment($event)">
+                    <i class="glyphicon glyphicon-plus-sign" [class.DarkMagenta]="item.U_Notes"></i>
+                </button>
+
+					<label type="button" class="btn btn-circle camera-label">
+    				<input type="file" accept="image/*;capture=camera" (change)="Change($event)">
+					<i class="glyphicon glyphicon-camera"></i>
+  				</label>
+					<textarea  class="input-note" type="text" (click)="input($event)" [class.display-table-row-group]="commentActive && selected == item"
+						[(ngModel)]='item.U_Notes'></textarea>
+					<!--<button type="button" class="btn btn-circle" (click)="Up()" ></button>-->
+				</div>
+			</li>
+		</template>
+	</ul>
+</div>

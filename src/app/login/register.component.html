@@ -1,0 +1,187 @@
+<div class="container-fluid container-fluid-padding full-height container-sm-height">
+    <div class="row .row-sm-height padding-top">       
+        <div class="col-sm-2 hidden-xs col-md-3 col-sm-height" ></div>
+        <form *ngIf="active" (ng-submit)="submitRegister()"
+            #registerForm="ngForm" class="form-horizontal
+            col-sm-8 col-xs-12 col-md-6 col-sm-height" >
+            <h2 class="h1loging">{{ 'CREATENEWUSER' | translate }}</h2>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="usarname">
+                    {{ 'USERNAME' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="usarname" type="text"
+                        required vUserName
+                        [(ngModel)]='userRegister.userName'
+                        name="usarname" #usarname="ngModel"/>
+                    <div [hidden]="usarname.valid || usarname.pristine" >
+                        <div class="alert alert-danger"
+                            *ngIf="usarname.errors && usarname.errors.required">
+                            {{ 'USERNAMEREREQUIERD' | translate }}
+                        </div>
+                        <div class="alert alert-danger"
+                            *ngIf="usarname.errors && usarname.errors.vUserName
+                            && !usarname.errors.required">
+                            {{ 'USERNAMEUSED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden col-xs-hidden"></div>
+            </div> 
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="email">
+                    {{ 'EMAIL' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="email" type="email"
+                        ngControl="email"
+                        required vEmail
+                        [(ngModel)]='userRegister.email'
+                        name="email" #email="ngModel"
+                        pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$"
+                        />
+                    <div [hidden]="email.valid || email.pristine" >
+                        <div class="alert alert-danger" 
+                            *ngIf="email.errors && email.errors.required">
+                            {{ 'EMAILREQUIERD' | translate }}
+                        </div>
+                        <div class="alert alert-danger" 
+                            *ngIf="email.errors && email.errors.pattern &&
+                            !email.errors.required">
+                            {{ 'EMAILINVALID' | translate }}
+                        </div>
+                        <div class="alert alert-danger" 
+                            *ngIf="email.errors && email.errors.vEmail &&
+                            !email.errors.required">
+                            {{ 'EMAILUSED' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="password">
+                    {{ 'PASSWORD' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                     <input class="form-control" id="password" type="password"
+                        required vEqual="confirmPassword" reflect="true"
+                        [(ngModel)]='userRegister.password'
+                        name="password" #password="ngModel"
+                        pattern="((?=.*\d)(?=.*[a-z]).{6,20})"/>
+                    <div [hidden]="password.valid || password.pristine">               
+                        <div class="alert alert-danger"
+                            *ngIf="password.errors && password.errors.required">
+                            {{ 'PASSWORDREQUIERD' | translate}}
+                        </div>
+                        <div class="alert alert-danger" 
+                            *ngIf="password.errors && password.errors.pattern 
+                            && !password.errors.required">
+                            {{ 'PASSWORDIVALID' | translate}}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class=" col-sm-3 col-xs-12 control-label" for="confirmPassword">
+                    {{ 'CONFIRMPASSWORD' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="confirmPassword" type="password"
+                        required vEqual="password"
+                        [(ngModel)]='userRegister.confirmPassword'
+                        name="confirmPassword" #confirmPassword="ngModel"/>
+                    <div [hidden]="confirmPassword.valid || confirmPassword.pristine">
+                        <div class="alert alert-danger"
+                            *ngIf="confirmPassword.errors && confirmPassword.errors.required">
+                            {{ 'CONFIRMPASSWORDQUIERD' | translate}}
+                        </div>
+                        <div class="alert alert-danger"
+                            *ngIf="confirmPassword.errors && confirmPassword.errors.vEqual 
+                            && !confirmPassword.errors.required">
+                            {{ 'CONFIRMPASSNOTEQUAL' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="DepCode">
+                    {{ 'DEPCODE' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="DepCode" type="number"
+                        required 
+                        [(ngModel)]='userRegister.DepCode'
+                        name="DepCode" #DepCode="ngModel"/>
+                    <div [hidden]="DepCode.valid || DepCode.pristine" >
+                        <div class="alert alert-danger"
+                            *ngIf="DepCode.errors && DepCode.errors.required">
+                            {{ 'DEPCODEREREQUIERD' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="EmpId">
+                    {{ 'EMPID' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="EmpId" type="number"
+                        required 
+                        [(ngModel)]='userRegister.EmpId'
+                        name="EmpId" #EmpId="ngModel"/>
+                    <div [hidden]="EmpId.valid || EmpId.pristine" >
+                        <div class="alert alert-danger"
+                            *ngIf="EmpId.errors && EmpId.errors.required">
+                            {{ 'EMPIDREQUIERD' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <label class="col-sm-3 col-xs-12 control-label" for="SapDataBase">
+                    {{ 'SAPDB' | translate}}</label>
+                <div class="col-sm-6 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+                    <input class="form-control" id="SapDataBase" type="text"
+                        required 
+                        [(ngModel)]='userRegister.SapDataBase'
+                        name="SapDataBase" #SapDataBase="ngModel"/>
+                    <div [hidden]="SapDataBase.valid || SapDataBase.pristine" >
+                        <div class="alert alert-danger"
+                            *ngIf="SapDataBase.errors && SapDataBase.errors.required">
+                            {{ 'SAPDBREQUIERD' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1 col-xs-hidden"></div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-10">
+                    <button type="submit" class="btn btn-primary" (click)="submitRegister()"
+                        [disabled]="!registerForm.form.valid">
+                        {{ 'SUBMIT' |  translate }}
+                    </button>
+                    <button type="reset" class="btn btn-primary" (click)="clearForm()">
+                        {{ 'CLEAR' |  translate }} 
+                    </button>
+                    <button class="btn btn-primary" routerLink="/dashboard" routerLinkActive="active">
+                        {{ 'BACK' |  translate }} 
+                    </button>
+                </div>
+            </div>
+        </form>
+        <div class="col-sm-2 hidden-xs col-md-3 col-sm-height" ></div>
+    </div>
+</div>

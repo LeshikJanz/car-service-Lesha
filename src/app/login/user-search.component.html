@@ -1,0 +1,10 @@
+    <div id="userSearch-component">
+      <h4>User Search</h4>
+      <input #sBox id="sbox" (keyup)="search(sBox.value)" />
+      <div>
+        <div *ngFor="let usr of users | async" class="search-out" >
+          {{ usr['UserName'] }}          
+        </div>
+        <button (click)="get()"></button>
+      </div>
+    </div>

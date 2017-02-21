@@ -1,0 +1,12 @@
+{
+    "JobCardStatusClose": ["21", "99", "C"],
+    "CheckListStatusOpen":"2",
+    "JobCardSort1": "U_Status",
+    "JobCardSort2": "DocEntry",
+    "TimeReportingStatusOpen": "null",
+    "Viicon": "1",
+    "Xicon": "0",
+    "Qicon": "2",
+    "MaxRecordForJobCardPage": "15",
+    "UserServiceIp": "http://52.212.106.164:300/"
+}

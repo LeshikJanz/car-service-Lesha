@@ -1,0 +1,41 @@
+<div class="container-fluid container-fluid-padding">
+	<div class="row .row-sm-height">
+		<div class="grid-space">
+			<div class="grid grid-pad">
+				<div class="div-inline">
+					<div class="module" (click)="gotoJobCard('CL')">
+						<h3>{{ 'CHECKLIST' | translate }}</h3>
+						<div class="inside-div-module">
+							<i class="glyphicon glyphicon-list"></i>
+							<div  >
+								<h3>{{ CLItems }}</h3>
+								<h6>{{ 'PENDING' | translate }}</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="div-inline">
+					<div class="module" (click)="gotoJobCard('TR')">
+						<h3>{{ 'TIMEREPORTING' | translate }}</h3>
+						<div class="inside-div-module">
+							<i class="glyphicon glyphicon-time"></i>
+							<div >
+								<h3>{{ TRItems }}</h3>
+								<h6>{{ 'PENDING' | translate }}</h6>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="grid grid-pad">
+				<div class="div-inline">
+					<div class="module" *ngIf="storage.getItem('Role') || showAdm" (click)="gotoAdmin()">
+						<h3>{{ 'ADMIN' | translate }}</h3>
+					</div>
+				</div>
+			</div>
+			<!--<button (click)="showAdmin()">
+        Show Registration</button>-->
+		</div>
+	</div>
+</div>

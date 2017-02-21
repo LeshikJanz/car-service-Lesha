@@ -1,0 +1,69 @@
+<header>
+	<nav class="navbar navbar-inverse navbar-fixed-top navbar" id="layoutHeader">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-header-a"><img id="navHeaderLogo" 
+				src="Content/Images/xioma_logo.png" /></a>
+			</div>
+
+			<div class="header-company" *ngIf="storage.getItem('CompanyName')">
+				<h3>{{ "XAS Mobile DMS – " + storage.getItem('CompanyName') }}</h3>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="navbar-collapse" id="bs-example-navbar-collapse-1">
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                             {{"Hello " + storage.getItem('User') + "!"}} 
+                            <span class="caret">
+                            </span>
+                        </a>
+						<ul class="dropdown-menu">
+							<li [class.disabled]="storage.getItem('User')=='guest'">
+								<a tabindex="-1" (click)="logout()" >
+								Log Out</a></li>
+							<!--<li><a tabindex="-1" >Another action</a></li>-->
+							<li (click)="openSub($event)">
+								<a class="test" tabindex="-1">
+                                    {{ 'CHANGELNG' | translate}}
+                                    <span class="caret"></span>
+                                </a>
+								<ul  id="subMen" class="dropdown-menu">
+									<li *ngFor="let lang of supportedLanguages">
+										<a tabindex="-1" (click)="selectLang(lang.value)" 
+											[class.btn-primary]="isCurrentLang(lang.value)" class="lang">
+											{{ lang.display }}
+										</a>
+									</li>
+								</ul> 
+                        <!--<li><a href="#">Something else here</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="#">Separated link</a></li>-->
+						</ul>
+					</li>
+					</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+</header>
+
+<div class="mainContent">
+	<div class="container-fluid">
+		<router-outlet></router-outlet>
+		<app-loader [showLoader]="false"></app-loader>
+	</div>
+</div>
+
+
+<footer>
+	<nav class="navbar navbar-inverse navbar-fixed-bottom">
+		<div class="container-fluid" id="layoutFooter">
+			<h6>All right Reserved XIOMA Automotive Solution 2016</h6>
+		</div>
+	</nav>
+</footer>
