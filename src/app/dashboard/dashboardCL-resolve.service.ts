@@ -2,7 +2,7 @@ import { Injectable, } from '@angular/core';
 import {Router, Resolve,
     ActivatedRouteSnapshot } from '@angular/router';
 import { Response } from '@angular/http';
-import { JobCardService } from '../jobCard/jobCard.service';
+import { JobCardService } from '../jobCard/services/JobCard';
 
 @Injectable()
 export class DashboardResolveCL implements Resolve<Response> {

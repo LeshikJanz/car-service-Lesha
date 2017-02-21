@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { appRoutes } from './app.routing';
 import { RouterModule } from '@angular/router';
 import '../rxjs-extensions';
-import { JobCardService } from './jobCard/jobCard.service';
+import { JobCardService } from './jobCard/services/JobCard';
+import { JobCardComponent } from './jobCard/components/JobCard';
 import { LoginService } from './jobCard/login.service';
-import { jobCardListComponent } from './jobCard/jobCard.component';
 import { AccountService } from './login/account.service';
 import { LoginComponent } from './login/login.component';
 import { TranslatePipe } from './translate/translate.pipe';
@@ -61,7 +61,7 @@ import reducer from '../reducer';
   declarations: [
     AppComponent,
     DashboardComponent,
-    jobCardListComponent,
+    JobCardComponent,
     LoginComponent,
     TranslatePipe,
     RegisterComponent,

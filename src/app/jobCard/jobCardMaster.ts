@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnChanges } from '@angular/core'
 import { JobCard } from './jobCard';
-import { JobCardService } from './jobCard.service';
+import { JobCardService } from './services/JobCard';
 import { picService } from './picService';
 
 @Component({

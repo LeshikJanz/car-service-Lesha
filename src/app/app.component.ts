@@ -4,8 +4,8 @@ import { AccountService } from './login/account.service';
 import { Router } from '@angular/router';
 import { LoginService } from './jobCard/login.service';
 import { LoadConfigService } from './login/LoadConfig';
-import { JobCardService } from './jobCard/jobCard.service';
-import '../../public/app.css';
+import { JobCardService } from './jobCard/services/JobCard';
+import 'public/app.css';
 
 
 @Component({
@@ -45,17 +45,7 @@ export class AppComponent implements OnInit {
         return m;
     }
     ngOnInit() {
-
-        // let data = new Map<string, string>();
-        // data = this.parseUrl(window.location.href);
-        // if(data){
-        //     let barcode: string = data['barcode'];
-
-        //     alert(barcode);
-        // }
         sessionStorage.setItem("SapDB", "SWEETWOKXX");
-        //sessionStorage.setItem("SapDB", "PRODUCTIONTEST");
-        //this.jobCardService.UrlSetter();
         this.subscribeToLangChanged();
 
         this._translate.setDefaultLang('en');

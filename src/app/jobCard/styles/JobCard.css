@@ -1,0 +1,39 @@
+.jobCard-Container {
+  background: #f2f2f2;
+}
+
+.jobCard {
+  max-height: 100%;
+  overflow: hidden;
+  padding-bottom: 32px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.JobCardHeight {
+  height: 90%;
+  overflow: auto;
+  padding: 0;
+}
+
+@media(max-height:950px) {
+  .JobCardHeight {
+    height: 89%;
+  }
+}
+@media(max-height:820px) {
+  .JobCardHeight {
+    height: 88%;
+  }
+}
+@media(max-height:700px) {
+  .JobCardHeight {
+    height: 87%;
+  }
+}
+
+@media(max-height:550px) {
+  .JobCardHeight {
+    height: 85%;
+  }
+}

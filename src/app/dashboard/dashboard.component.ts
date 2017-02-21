@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute  } from '@angular/router';
-//import { LoginService } from '../jobCard/login.service';
-import { JobCardService } from '../jobCard/jobCard.service';
+import { JobCardService } from '../jobCard/services/JobCard';
 import { LoaderService } from '../services/loader.service';
 import { Response } from '@angular/http';
 

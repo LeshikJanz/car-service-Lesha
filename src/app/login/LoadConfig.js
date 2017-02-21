@@ -13,7 +13,7 @@ var http_1 = require('@angular/http');
 var LoadConfigService = (function () {
     function LoadConfigService(http) {
         this.http = http;
-        this.configUrl = '../../public/config.json';
+        this.configUrl = 'public/config.json';
     }
     LoadConfigService.prototype.loadData = function () {
         var _this = this;

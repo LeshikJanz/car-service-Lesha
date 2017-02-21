@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class LoadConfigService {
-    private configUrl = '../../public/config.json';
+    private configUrl = 'public/config.json';
     //private configUrl = 'config.json';
     valueOut: any;
     constructor(private http: Http) {

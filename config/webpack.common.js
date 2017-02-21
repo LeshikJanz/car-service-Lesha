@@ -56,11 +56,12 @@ module.exports = {
   ],
 
   resolve: {
-    modules: ['src', 'node_modules'],
+    modules: ['src', 'node_modules', 'public'],
     alias: {
       utils: helpers.root('src/utils'),
       app: helpers.root('src/app'),
-      components: helpers.root('src/app/components')
+      components: helpers.root('src/app/components'),
+      public: helpers.root('public')
     },
     extensions: ['', '.ts', '.js']
   }

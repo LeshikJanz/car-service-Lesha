@@ -2,7 +2,7 @@ import { Injectable, } from '@angular/core';
 import {Router, Resolve,
     ActivatedRouteSnapshot } from '@angular/router';
 import { Response } from '@angular/http';
-import { JobCardService } from './jobCard.service';
+import { JobCardService } from './services/JobCard';
 
 @Injectable()
 export class JobCardResolve implements Resolve<Response> {
