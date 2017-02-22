@@ -60,7 +60,8 @@ module.exports = {
     alias: {
       utils: helpers.root('src/utils'),
       app: helpers.root('src/app'),
-      components: helpers.root('src/app/components')
+      components: helpers.root('src/app/components'),
+      modules: helpers.root('src/app/modules')
     },
     extensions: ['', '.ts', '.js']
   }

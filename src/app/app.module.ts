@@ -46,6 +46,7 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ExampleComponent } from './components/example';
+import JobCardModule from './modules/JobCard';
 
 import reducer from '../reducer';
 
@@ -56,7 +57,8 @@ import reducer from '../reducer';
     RouterModule.forRoot(appRoutes, { useHash: true }),
     HttpModule,
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    JobCardModule
   ],
   declarations: [
     AppComponent,

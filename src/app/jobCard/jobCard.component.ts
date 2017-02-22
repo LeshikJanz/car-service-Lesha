@@ -3,8 +3,6 @@ import { JobCardService } from './jobCard.service';
 import { LoginService } from './login.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '../translate/translate.service';
-import { JobCardMasterComponent  } from './jobCardMaster';
-import { JobCardDetailComponent } from './jobCardDetail';
 import { JobCard } from './jobCard';
 
 @Component({
