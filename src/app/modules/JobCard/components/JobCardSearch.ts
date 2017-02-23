@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+
+import { searchItem } from '../actions';
 
 @Component({
   selector: 'job-card-search',
@@ -15,13 +19,15 @@ import { Component } from '@angular/core';
 						    <i class="glyphicon glyphicon-qrcode" Id="qr"></i>
 						  </a>
 						</span>
-						<input 
-						  type="search" 
-						  class="search-input" 
-						  placeholder="Search" 
-              name="searchInput" 
-              (keyup.enter)="search()"
-            />						
+						<input
+						  autocomplete="off"
+						  type="search"
+						  class="search-input"
+						  placeholder="Search"
+              name="searchInput"
+              (keyup)="search()"
+              [(ngModel)]="value"
+            />
 					</form>
 				</div>
 			</div>
@@ -30,9 +36,11 @@ import { Component } from '@angular/core';
 })
 
 export class JobCardSearch {
+  value: string;
+
+  constructor(private store: Store<any>) {}
 
   search() {
-
+    //this.store.dispatch(searchItem(this.value));
   }
-
 }

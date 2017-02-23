@@ -11,7 +11,6 @@ import { LoginService } from './jobCard/login.service';
 import { jobCardListComponent } from './jobCard/jobCard.component';
 import { AccountService } from './login/account.service';
 import { LoginComponent } from './login/login.component';
-import { TranslatePipe } from './translate/translate.pipe';
 import { TranslateService } from './translate/translate.service';
 import { TRANSLATION_PROVIDERS } from './translate/translation';
 import { UserInfoService } from './login/userInfo.service';
@@ -41,11 +40,11 @@ import { picService } from './jobCard/picService';
 import { LoaderService } from './services/loader.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { JobCardStatusLoaderService } from './services/jobCardStatusLoader.service';
-import { TimeNoSecondsPipe } from './pipes/timeNoSecondsPipe';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { ExampleComponent } from './components/example';
+import SharedModule from 'app/modules/Share';
 import JobCardModule from './modules/JobCard';
 
 import reducer from '../reducer';
@@ -58,6 +57,7 @@ import reducer from '../reducer';
     HttpModule,
     StoreModule.provideStore(reducer),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    SharedModule,
     JobCardModule
   ],
   declarations: [
@@ -65,7 +65,6 @@ import reducer from '../reducer';
     DashboardComponent,
     jobCardListComponent,
     LoginComponent,
-    TranslatePipe,
     RegisterComponent,
     vEqual,
     vUserName,
@@ -81,7 +80,6 @@ import reducer from '../reducer';
     JobCardTimeReportComponent,
     FileSelectDirective,
     LoaderComponent,
-    TimeNoSecondsPipe,
     ExampleComponent
   ],
   providers: [

@@ -18,6 +18,6 @@ export default createReducer({
   }),
   [searchItem]: (state: any, payload: string) => ({
     ...state,
-    value: state.value.filter((item: any) => item.DocNum.indexOf(Number(payload)) > 0)
+    value: state.value.filter((item: any) => item.DocNum.indexOf(payload) > 0)
   })
 }, initialState);
