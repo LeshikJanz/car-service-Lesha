@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var AdminComponent = (function () {
     function AdminComponent(_router) {
         this._router = _router;
@@ -20,14 +20,14 @@ var AdminComponent = (function () {
     AdminComponent.prototype.gotoRoles = function () {
         this._router.navigate(['roles']);
     };
-    AdminComponent = __decorate([
-        core_1.Component({
-            selector: 'admin',
-            templateUrl: 'app/login/admin.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AdminComponent);
     return AdminComponent;
 }());
+AdminComponent = __decorate([
+    core_1.Component({
+        selector: 'admin',
+        templateUrl: 'admin.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router])
+], AdminComponent);
 exports.AdminComponent = AdminComponent;
 //# sourceMappingURL=admin.component.js.map

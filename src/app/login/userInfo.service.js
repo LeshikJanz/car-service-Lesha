@@ -8,16 +8,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 var UserInfoService = (function () {
     function UserInfoService(_http) {
         this._http = _http;
-        this._userInfoUrl = 'http://localhost:57939/api/Account/UserInfo';
+        // private _userInfoUrl = 'http://52.31.155.217:300/api/Account/UserInfo';
         this.myHeaders = new http_1.Headers();
+        this.baseUrl = sessionStorage.getItem("UserServiceIp");
+        //this.baseUrl = 'http://localhost:57939/';
+        this._userInfoUrl = this.baseUrl + 'api/Account/UserInfo';
     }
     UserInfoService.prototype.getUserInfo = function () {
+        this.baseUrl = sessionStorage.getItem("UserServiceIp");
+        this._userInfoUrl = this.baseUrl + 'api/Account/UserInfo';
         var token = sessionStorage.getItem('bearer');
         this.myHeaders = new http_1.Headers();
         if (token) {
@@ -31,11 +36,11 @@ var UserInfoService = (function () {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
-    UserInfoService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], UserInfoService);
     return UserInfoService;
 }());
+UserInfoService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UserInfoService);
 exports.UserInfoService = UserInfoService;
 //# sourceMappingURL=userInfo.service.js.map

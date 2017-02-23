@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var userRegister_1 = require('./userRegister');
-var account_service_1 = require('./account.service.ts');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var userRegister_1 = require("./userRegister");
+var account_service_1 = require("./account.service");
 var RegisterComponent = (function () {
     function RegisterComponent(_router, accountService) {
         this._router = _router;
@@ -36,14 +36,15 @@ var RegisterComponent = (function () {
         this.active = false;
         setTimeout(function () { return _this.active = true; }, 0);
     };
-    RegisterComponent = __decorate([
-        core_1.Component({
-            selector: 'register',
-            templateUrl: 'app/login/register.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, account_service_1.AccountService])
-    ], RegisterComponent);
     return RegisterComponent;
 }());
+RegisterComponent = __decorate([
+    core_1.Component({
+        selector: 'register',
+        templateUrl: 'register.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        account_service_1.AccountService])
+], RegisterComponent);
 exports.RegisterComponent = RegisterComponent;
 //# sourceMappingURL=register.component.js.map

@@ -2,22 +2,29 @@
 exports.LANG_EN_NAME = 'en';
 exports.LANG_EN_TRANS = {
     //Login
+    WELCOMETO: 'Welcome to XAS Mobile DMS',
     LOGINFORM: 'Login form',
-    USERNAME: 'User Name:',
+    USERNAME: 'User Name',
     USERNAMEREREQUIERD: 'User name is requierd',
-    PASSWORD: 'Password:',
+    PASSWORD: 'Password',
     PASSWORDREQUIERD: 'Password is required',
     REMEMBERME: 'Remember me',
-    SUBMIT: 'Submit',
-    //HEADER
+    LOGIN: 'Login',
+    ENTERUSERNAME: 'Enter User Name',
+    ENTERPASSWORD: 'Enter Password',
+    //HEADER: 
     HELLO: 'Hello',
     CHANGELNG: 'Change language',
     ENGLISH: 'English',
     GERMAN: 'German',
-    //dashbourd
+    LOGOFF: 'Logoff',
+    CREATENEWUSER: 'Create New User',
+    //dashbourd: 
     REGISTER: 'Register',
     JOBCARD: 'Job Card',
-    //register
+    ADMIN: 'Admin',
+    PENDING: 'Pending items',
+    //register: 
     REGISTERFORM: 'Register form',
     EMAIL: 'Email',
     EMAILREQUIERD: 'Email is required',
@@ -35,8 +42,40 @@ exports.LANG_EN_TRANS = {
     EMPIDREQUIERD: 'Employee ID is required',
     SAPDB: 'Sap Database',
     SAPDBREQUIERD: 'Sap Database is required',
-    //Job Card
+    //Job Card: 
     TIMEREPORTING: 'Time Reporting',
-    CHECKLIST: 'Check List'
+    CHECKLIST: 'Check List',
+    REALTIMEUPDATE: 'Real time update',
+    OFFTIMEUPDATE: 'Off Time Update',
+    STARTTASK: 'start task',
+    REPORTDONETASK: 'report done task',
+    PICKDATE: 'Pick a date',
+    STARTTIME: 'Start time',
+    ENDTIME: 'End time',
+    REFRESH: 'Refresh',
+    //CHECKLIST: 
+    U_CarID: 'Vehicle Id',
+    U_OwnBP: 'Customer Code',
+    U_OwnBPN: 'Customer Name',
+    U_OwnCnt: 'Contact',
+    U_OwnCntPh: 'Phone',
+    U_SpnsrBP: 'Spnsor Customer',
+    U_SpnsrBPN: 'Sponser Customer Name',
+    U_SpnsrCnt: 'Sponser Contact',
+    U_SpnCntPh: 'Sponser Phone',
+    U_Km: 'Mileage',
+    U_Alarm: 'Sec. Code',
+    U_Notes: 'Notes',
+    U_Subject: 'Customer Concerns',
+    U_VCode: 'VIN',
+    U_FuelTank: 'Fuel Tank',
+    U_EntryDt: 'Entriy Date',
+    U_EntryHr: 'Entry Hour',
+    U_DueDate: 'Due Date',
+    U_DueTime: 'Due Time',
+    U_LicNum: 'Licence Number',
+    //Time Reporting
+    NOTSTARTED: '(not started)',
+    SUBMIT: 'Submit'
 };
 //# sourceMappingURL=lang-en.js.map

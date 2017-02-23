@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 var JobCardStatusLoaderService = (function () {
     function JobCardStatusLoaderService(http) {
         this.http = http;
@@ -74,11 +74,11 @@ var JobCardStatusLoaderService = (function () {
         console.error(error);
         return Observable_1.Observable.throw(error.json().error || 'Server error');
     };
-    JobCardStatusLoaderService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], JobCardStatusLoaderService);
     return JobCardStatusLoaderService;
 }());
+JobCardStatusLoaderService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], JobCardStatusLoaderService);
 exports.JobCardStatusLoaderService = JobCardStatusLoaderService;
 //# sourceMappingURL=jobCardStatusLoader.service.js.map

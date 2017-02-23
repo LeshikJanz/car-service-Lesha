@@ -7,7 +7,8 @@ import { user } from './user';
     @Component({
       selector: 'user-search',
       templateUrl: 'user-search.component.html',
-      providers: [UserNameEmailService]
+      providers: [UserNameEmailService],
+      styleUrls: ['./styles/login.css']
     })
 
     export class UserSearchComponent implements OnInit {

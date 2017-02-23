@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var jobCard_service_1 = require('./jobCard.service');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var jobCard_service_1 = require("../jobCard/jobCard.service");
 var DashboardResolveCL = (function () {
     function DashboardResolveCL(jcs, router) {
         this.jcs = jcs;
@@ -22,11 +22,11 @@ var DashboardResolveCL = (function () {
             return res;
         });
     };
-    DashboardResolveCL = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [jobCard_service_1.JobCardService, router_1.Router])
-    ], DashboardResolveCL);
     return DashboardResolveCL;
 }());
+DashboardResolveCL = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [jobCard_service_1.JobCardService, router_1.Router])
+], DashboardResolveCL);
 exports.DashboardResolveCL = DashboardResolveCL;
 //# sourceMappingURL=dashboardCL-resolve.service.js.map

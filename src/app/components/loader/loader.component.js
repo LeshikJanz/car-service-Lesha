@@ -8,8 +8,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var loader_service_1 = require('.././loader.service');
+var core_1 = require("@angular/core");
+var loader_service_1 = require("../../services/loader.service");
 var LoaderComponent = (function () {
     function LoaderComponent(_loaderService) {
         this._loaderService = _loaderService;
@@ -33,19 +33,19 @@ var LoaderComponent = (function () {
             }
         });
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], LoaderComponent.prototype, "showLoader", void 0);
-    LoaderComponent = __decorate([
-        core_1.Component({
-            selector: 'app-loader',
-            templateUrl: 'loader.component.html',
-            styleUrls: ['loader.component.css']
-        }), 
-        __metadata('design:paramtypes', [loader_service_1.LoaderService])
-    ], LoaderComponent);
     return LoaderComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], LoaderComponent.prototype, "showLoader", void 0);
+LoaderComponent = __decorate([
+    core_1.Component({
+        selector: 'app-loader',
+        templateUrl: 'loader.component.html',
+        styleUrls: ['loader.component.css']
+    }),
+    __metadata("design:paramtypes", [loader_service_1.LoaderService])
+], LoaderComponent);
 exports.LoaderComponent = LoaderComponent;
 //# sourceMappingURL=loader.component.js.map
