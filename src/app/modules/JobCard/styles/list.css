@@ -1,0 +1,23 @@
+.nav {
+  padding: 0;
+}
+
+.ul-master li {
+  border: thin solid gainsboro;
+  margin: 0;
+  text-align: left;
+  background: white;
+}
+
+.ul-master li a {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.ul-master li a h4 {
+  margin: 3px 0;
+}
+
+.ul-master p {
+  font-size: 16px;
+}

@@ -1,0 +1,55 @@
+.JobCardHeader {
+  position: relative;
+  height: 18px;
+}
+
+.JobCardHeader .glyphicon {
+  font-size: 25px;
+}
+
+.JobCardHeader button,
+.JobCardHeader button:focus {
+  position: absolute;
+  left: 5px;
+  background: inherit;
+  border: 0;
+  outline-style: none;
+  display: none;
+}
+
+.JobCardHeader.master {
+  text-align: left;
+  padding-bottom: 33px;
+  border-bottom: 1px solid #c1c1c1;
+}
+
+.JobCardHeader.master button {
+  display: inherit;
+  padding: 7px 0 0 0;
+  z-index: 5;
+}
+
+.JobCardHeader.master .glyphicon {
+  display: inline;
+  top: -8px;
+  position: relative;
+  padding: 0 3px;
+}
+
+.JobCardHeader.master .glyphicon:hover {
+  background: lightgray;
+}
+
+.filter-header {
+  display: block;
+  text-align: center;
+  align-self: stretch;
+  position: relative;
+  padding-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .JobCardHeader button {
+    display: initial !important;
+  }
+}

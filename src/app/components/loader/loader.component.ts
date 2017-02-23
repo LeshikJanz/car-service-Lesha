@@ -1,5 +1,7 @@
 import { Component, Input , OnInit } from '@angular/core';
 import { LoaderService, LoaderEvent, LoaderEventType } from '../../services/loader.service';
+import { Observable } from "rxjs";
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-loader',
@@ -9,8 +11,18 @@ import { LoaderService, LoaderEvent, LoaderEventType } from '../../services/load
 export class LoaderComponent implements OnInit {
 
   @Input() showLoader: boolean = true;
+  showLoader$: Observable<boolean>;
 
-  constructor(private _loaderService: LoaderService){}
+  constructor(
+    private _loaderService: LoaderService,
+    private store: Store<any>
+  ) {
+    store
+      .select('JobCard')
+      .subscribe(
+        (state: any) => this.showLoader$ = state.page.loading
+      );
+  }
 
 
   /**

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 import { searchItem } from '../actions';
@@ -32,7 +31,8 @@ import { searchItem } from '../actions';
 				</div>
 			</div>
 		</div>
-  `
+  `,
+  styleUrls: ['../styles/search.css']
 })
 
 export class JobCardSearch {

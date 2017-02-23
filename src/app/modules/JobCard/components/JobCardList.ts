@@ -26,7 +26,8 @@ import { viewItem } from '../actions';
       </li>
       <job-card-list-pager></job-card-list-pager>
     </ul>
-  `
+  `,
+  styleUrls: ['../styles/list.css']
 })
 
 export class JobCardList {
@@ -47,5 +48,4 @@ export class JobCardList {
   pick(item: any) {
     this.store.dispatch(viewItem(item));
   }
-
 }

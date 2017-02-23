@@ -15,6 +15,7 @@ export class JobCardResolve implements Resolve<Response> {
   private headers = new Headers({ 'Content-Type': 'application/json' });
   private _jobCardUrl = '';
 
+  page$: number;
   pageSize$: number;
   filter$: string;
 
@@ -32,12 +33,13 @@ export class JobCardResolve implements Resolve<Response> {
       .subscribe(
         (state: any) => {
           this.pageSize$ = state.page.size;
+          this.page$ = state.page.number;
           this.filter$ = state.page.filter;
         }
       )
   }
 
-  getJobCard(term: string, page: number = 0): Observable<any[]> {
+  getJobCard(term: string): Promise<any> {
     const EmpId = sessionStorage.getItem("EmpID");
     const firstOrder = sessionStorage.getItem('JobCardSort1');
     const secondOrder = sessionStorage.getItem('JobCardSort2');
@@ -46,7 +48,7 @@ export class JobCardResolve implements Resolve<Response> {
 
     const innerUrl = this._jobCardUrl.concat(`?$filter=${search}(U_JCManager eq '${EmpId}' 
             or U_SerCons eq '${EmpId}')${currentFilterOption}&$inlinecount=allpages
-            &$orderby=${firstOrder},${secondOrder}&$top=${this.pageSize$}&$skip=${page * this.pageSize$}`);
+            &$orderby=${firstOrder},${secondOrder}&$top=${this.pageSize$}&$skip=${this.page$ * this.pageSize$}`);
 
     return this.http
       .get(innerUrl, {
@@ -54,8 +56,11 @@ export class JobCardResolve implements Resolve<Response> {
         withCredentials: true
       })
       .map((response: Response) => <any[]>response.json())
+      .toPromise()
+      .then(
+        result => this.store.dispatch(setItems(result))
+      )
       .catch(this.handleError);
-
   }
 
   buildSearchString(term: string): string {
@@ -121,10 +126,7 @@ export class JobCardResolve implements Resolve<Response> {
 
   resolve(route: ActivatedRouteSnapshot): Promise<any> {
     if (this.router.url.indexOf("cl") < 0 ) {
-      return this
-        .getJobCard("", 0)
-        .toPromise()
-        .then((res: any) => this.store.dispatch(setItems(res)))
+      return this.getJobCard('');
     }
   }
 

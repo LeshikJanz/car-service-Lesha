@@ -12,11 +12,12 @@ import { Component } from '@angular/core';
         </div>
         <job-card-list></job-card-list>      
       </div>
-      <div class="col-md-9 col-sm-8 col-xs-12 col-sm-height JobCardHeight" Id="detail">
+      <div class="col-md-9 col-sm-8 col-xs-12 col-sm-height JobCardHeight JobCardItem" Id="detail">
         <job-card-item></job-card-item>
       </div>
     </div>
-  `
+  `,
+  styleUrls: ['../styles/layout.css']
 })
 
 export class JobCardLayout {}

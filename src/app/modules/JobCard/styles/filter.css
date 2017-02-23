@@ -1,0 +1,83 @@
+.dropdown ul li {
+  border: none;
+}
+
+.dropdown-filter-div {
+  position: absolute;
+  right: 0;
+}
+
+.dropdown-menu.filter {
+  position: absolute;
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu li > a:focus,
+.dropdown-menu li > a:hover {
+  background-color: #434c53;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.dropdown-menu li > a {
+  color: #ffffff;
+  background-color: rgba(54,62,67,0.96);
+}
+
+.dropdown-menu {
+  background-color:rgba(54,62,67,0.98);
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.dropdown-menu a {
+  width: 100%;
+  margin: 0;
+  padding: 3px 20px;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu ul {
+  padding-left: 0;
+}
+
+.dropdown-filter-div .glyphicon {
+  font-size: 25px;
+}
+
+.dropdown-filter-div button,
+.dropdown-filter-div button:focus {
+  position: absolute;
+  left: 5px;
+  background: inherit;
+  border: 0;
+  outline-style: none;
+  display: none;
+}
+
+.dropdown-filter-div button {
+  display: inherit;
+  padding: 7px 0 0 0;
+  z-index: 5;
+}
+
+.dropdown-filter-div .glyphicon {
+  display: inline;
+  top: -8px;
+  position: relative;
+  padding: 0 3px;
+}
+
+.dropdown-filter-div .glyphicon:hover {
+  background: lightgray;
+}
+
+i .caret {
+  position: absolute;
+  left: 20px;
+  top: 24px;
+}

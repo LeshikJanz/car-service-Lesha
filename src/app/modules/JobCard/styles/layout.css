@@ -1,0 +1,98 @@
+.jobCard {
+  max-height: 100%;
+  overflow: hidden;
+  padding-bottom: 32px;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.panel-heading.JobCard {
+  background: lightblue;
+  padding-bottom: 10px;
+}
+
+.jobCard-Container {
+  background: #f2f2f2;
+}
+
+.JobCardHeight {
+  height: 90%;
+  overflow: auto;
+  padding: 0;
+}
+
+.JobCardItem {
+  overflow-y: hidden;
+}
+
+.JobCardItem > .panel{
+  height: 100%;
+  background-color: #DEF1F2;
+}
+
+.master {
+  direction: rtl;
+  margin-bottom: 15px;
+}
+
+.master > .panel{
+  direction: ltr;
+}
+
+.master ul li {
+  border: thin solid gainsboro;
+  margin: 0;
+  text-align: left;
+}
+
+.master ul li h3 {
+  text-align: left;
+}
+
+.panel.jobCard-Detail {
+  overflow: auto;
+  padding-bottom: 20px;
+}
+
+.panel-heading.JobCard {
+  background: lightblue;
+  padding-bottom: 10px;
+}
+
+.panel.panel-default {
+  margin-bottom: 0;
+}
+
+.panel-default > .panel-heading {
+  background-color: white;
+  padding: 10px 0;
+}
+
+.panel-heading.JobCard {
+  background: lightblue;
+  padding-bottom: 10px;
+}
+
+@media(max-height:950px) {
+  .JobCardHeight {
+    height: 89%;
+  }
+}
+
+@media(max-height:820px) {
+  .JobCardHeight {
+    height: 88%;
+  }
+}
+
+@media(max-height:700px) {
+  .JobCardHeight {
+    height: 87%;
+  }
+}
+
+@media(max-height:550px) {
+  .JobCardHeight {
+    height: 85%;
+  }
+}
