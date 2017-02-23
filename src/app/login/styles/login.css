@@ -1,0 +1,183 @@
+.h1loging{
+    padding: 10px;
+}
+
+.full-height{
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .container-sm-height {
+        display: table;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100%;
+    }
+    .row-sm-height {
+        display: table-row;
+    }
+    .col-sm-height {
+        display: table-cell;
+        /*float: left;*/
+    }
+}
+
+.grid {
+    margin: 0;
+}
+
+.module {
+    padding: 2px;
+    text-align: left;
+    background-color: white;
+    border-radius: 4px;
+    display: inline-flex;
+    margin: 2;
+    position: relative;
+    width: 175px;
+    height: 160px;
+    overflow: hidden;
+}
+
+.module div{
+    display: inline;
+}
+
+.inside-div-module {
+    position: absolute;
+    right: 10;
+    color: gray;
+    bottom: 10;
+    width: 100%;
+}
+
+.module .inside-div-module  h3 {
+    bottom: 25px;
+    position: relative;
+    padding-right: 5px;
+    right: 7;
+    float: right;
+}
+
+.module .inside-div-module h6 {
+    position: absolute;
+    margin: 0;
+    top: 30;
+    right: 5;
+}
+
+.inside-div-module i.glyphicon {
+    position: absolute;
+    left: 25;
+}
+
+.div-inline{
+    display: inline;
+}
+.module:hover{
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
+}
+
+.module .glyphicon{
+    font-size: 30px;
+}
+
+.grid-pad {
+    padding: 20px 10;
+    height: 160px;
+    text-align: left;
+    display: table;
+}
+.grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+}
+
+@media (max-width:650px){
+    .module{
+        width: 110px;
+        height: 98px;
+    }
+    .module h3{
+        font-size: 18px;
+        margin-top: 2;
+    }
+    .module .inside-div-module  h3{
+        bottom: 0;
+    }
+    .inside-div-module{
+        height: 40;
+        left: 0;
+    }
+    .module .inside-div-module h6{
+        bottom: 0;
+        right: 2;
+    }
+    .module .glyphicon{
+        font-size: 23px;
+    }
+    .grid-pad{
+        height: 100px;
+    }
+    .inside-div-module i.glyphicon{
+        left: 7;
+        bottom:50;
+    }
+}
+
+.search-out{
+    border-bottom: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    width:195px;
+    height: 20px;
+    padding: 5px;
+    background-color: white;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .container-sm-height {
+        display: table;
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 100%;
+    }
+    .row-sm-height {
+        display: table-row;
+    }
+    .col-sm-height {
+        display: table-cell;
+        /*float: left;*/
+    }
+}
+
+.form-horizontal {
+    background: white;
+    border: grey;
+    border-style: solid;
+    border-width: thin;
+    min-height: 400px;
+}
+
+.form-horizontal label{
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px){
+    .form-horizontal .control-label {
+        text-align: left;
+    }
+
+    .padding-top{
+        padding-top: 50px;
+    }
+}
+
+.fixed-left-top{
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+}

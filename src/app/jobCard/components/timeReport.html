@@ -1,0 +1,85 @@
+<div>
+	<ul class="list-group no-margin">
+		<template ngFor let-item [ngForOf]="timeReportItems">
+			<li class="list-group-item li-checkList" *ngIf="item.U_PartCode" role="presentation" [class.active]="selected == item"
+				(click)="pick(item);scroll($event)">
+				<label>
+                    {{ item.U_PartCode }}            
+            </label>
+				<label>
+                    {{ item.U_PartName }}            
+            </label>
+				<label>
+                    {{ item.U_Qntty }}            
+            </label>
+				<div class="time-report-div" [hidden]="selected != item">
+					<ul class="nav nav-tabs nav-justified">
+						<li><a data-toggle="tab" href="{{'#real' + item.LineId}}" (click)="scrollAnc($event)">{{ 'REALTIMEUPDATE' | translate }}</a></li>
+						<li><a data-toggle="tab" href="{{'#off' + item.LineId}}" (click)="scrollSubmit($event)">{{ 'OFFTIMEUPDATE' | translate }}</a></li>
+					</ul>
+					<div class="tab-content">
+						<div id="{{'real' + item.LineId}}" class="tab-pane to-the-left timer-div">
+							<div>
+								<!--<button class="btn Btn-large nobackground" [class.disabled]="HasActiveLine" (click)="start()">
+                                 <i class="glyphicon glyphicon-play glyph-green"></i></button>
+							<button class="btn Btn-large nobackground" [class.disabled]="!HasActiveLine" (click)="stop()">
+                                 <i class="glyphicon glyphicon-stop glyph-red"></i></button>-->
+								<div class="container-fluid">
+									<div class="col-xs-6">
+										<label class="timer-label">{{ (sec - 7200000 ) | date: 'HH:mm:ss' }}</label>
+										<label *ngIf="!HasActiveLine">{{ 'NOTSTARTED' | translate}} </label>
+									</div>
+									<div class="col-xs-5 to-the-right">
+										<button *ngIf="!HasActiveLine" class="btn btn-circle g-background" (click)="start()">
+                                 <i class="glyphicon glyphicon-play glyph-start"></i></button>
+										<button *ngIf="HasActiveLine" class="btn btn-circle b-background" (click)="stop()">
+                                 <i class="glyphicon glyphicon-stop glyph-stop"></i></button>
+									</div>
+									<div class="col-xs-1">
+									</div>
+								</div>
+								<hr *ngIf="!HasActiveLine" class="hr-timer-start">
+								<hr *ngIf="HasActiveLine" class="hr-timer-stop">
+								<div Id="AncScroll"></div>
+							</div>
+						</div>
+						<div id="{{'off' + item.LineId}}" class="tab-pane">
+							<form name="OffTimeUpdateForm" method="post" #offtimeForm="ngForm" (ngSubmit)="offTimeUpdate()">
+								<div class="form-group to-the-left" Id="offTimeUpdateDiv">
+									<div class="pad-l-15">
+										<label for="date">
+									{{ 'PICKDATE' | translate }}
+									</label>
+										<input type="date" required [(ngModel)]='offTimeDate' name="offtimedate" />
+									</div>
+									<div class="container-fluid">
+										<div class="col-xs-6 time-div">
+											<div>
+												<label for="starttime">
+												{{ 'STARTTIME' | translate}}
+											</label>
+												<input type="time" required [(ngModel)]='offTimeStart' name="offtimestart" />
+											</div>
+											<div>
+												<label for="starttime">
+												{{ 'ENDTIME' | translate}}
+											</label>
+												<input type="time" required [(ngModel)]='offTimeEnd' name="offtimeend" />
+											</div>
+										</div>
+										<div class="col-xs-3"></div>
+									</div>
+									<div class="submit-offtime">
+										<button type="submit" class="btn btn-primary" [disabled]="!offtimeForm.form.valid">
+                    					{{ 'SUBMIT' |  translate }}
+      								</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</li>
+		</template>
+	</ul>
+</div>
