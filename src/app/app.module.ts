@@ -1,4 +1,4 @@
-import { NgModule, Pipe } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -43,7 +43,6 @@ import { JobCardStatusLoaderService } from './services/jobCardStatusLoader.servi
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { ExampleComponent } from './components/example';
 import SharedModule from 'app/modules/Share';
 import JobCardModule from './modules/JobCard';
 
@@ -79,8 +78,7 @@ import reducer from '../reducer';
     JobCardCheckListComponent,
     JobCardTimeReportComponent,
     FileSelectDirective,
-    LoaderComponent,
-    ExampleComponent
+    LoaderComponent
   ],
   providers: [
     JobCardService,
