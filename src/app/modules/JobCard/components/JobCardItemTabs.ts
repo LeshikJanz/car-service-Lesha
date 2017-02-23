@@ -3,19 +3,20 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'job-card-item-header',
-  templateUrl: '../templates/JobCardHeader.html',
-  styleUrls: ['../styles/table.css']
+  selector: 'job-card-item-tabs',
+  template: `
+    <div></div>
+  `
 })
 
-export class JobCardItemHeader {
+export class JobCardItemTabs {
   item$: Observable<any>;
 
   constructor(private store: Store<any>) {
     store
       .select('JobCard')
       .subscribe(
-        (state: any) => this.item$ = state.item.object
+        (store: any) => this.item$ = store.item
       );
   }
 }

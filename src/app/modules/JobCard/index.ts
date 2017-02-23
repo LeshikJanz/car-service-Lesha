@@ -15,6 +15,7 @@ import { JobCardListPager } from './components/JobCardListPager';
 import { JobCardItem } from './components/JobCardItem';
 import { JobCardItemBody } from './components/JobCardItemBody';
 import { JobCardItemHeader } from './components/JobCardItemHeader';
+import { JobCardItemTabs } from './components/JobCardItemTabs';
 
 import { JobCardResolve } from './services/JobCardResolve';
 
@@ -34,7 +35,8 @@ import { JobCardResolve } from './services/JobCardResolve';
     JobCardListPager,
     JobCardItem,
     JobCardItemBody,
-    JobCardItemHeader
+    JobCardItemHeader,
+    JobCardItemTabs
   ],
   providers: [
     JobCardResolve

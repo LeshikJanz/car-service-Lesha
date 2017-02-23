@@ -46,7 +46,7 @@ export class JobCardItem {
     store
       .select('JobCard')
       .subscribe(
-        (state: any) => this.item$ = state.item
+        (state: any) => this.item$ = state.item.object
       );
   }
 }

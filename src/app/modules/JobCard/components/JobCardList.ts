@@ -40,7 +40,7 @@ export class JobCardList {
       .subscribe(
         (state: any) => {
           this.items$ = state.list.value;
-          this.activeItemNum$ = state.item.DocNum;
+          this.activeItemNum$ = state.item.object.DocNum;
         }
       );
   }
