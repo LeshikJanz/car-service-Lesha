@@ -32,7 +32,11 @@ import { Store } from '@ngrx/store';
         </div>
       </section>
     </div>
-  `
+  `,
+  styleUrls: [
+    '../styles/item.css',
+    '../styles/navigation.css'
+  ]
 })
 
 export class JobCardItem {

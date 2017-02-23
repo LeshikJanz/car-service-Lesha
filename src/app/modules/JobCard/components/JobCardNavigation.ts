@@ -44,6 +44,6 @@ export class JobCardNavigation {
 
   refresh() {
     this.store.dispatch(refreshList());
-    this.fetch.getJobCard('');
+    this.fetch.getJobCard();
   }
 }

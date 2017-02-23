@@ -1,0 +1,14 @@
+.table td {
+  white-space: nowrap;
+}
+
+.table > tbody > tr > td{
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+@media screen and (max-width: 767px) {
+  .table {
+    margin-bottom: 2px;
+  }
+}

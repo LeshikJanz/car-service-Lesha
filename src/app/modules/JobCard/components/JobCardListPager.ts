@@ -5,8 +5,7 @@ import { JobCardResolve } from '../services/JobCardResolve';
 
 import {
   prevPage,
-  nextPage,
-  setItems
+  nextPage
 } from '../actions';
 
 @Component({
@@ -62,11 +61,11 @@ export class JobCardListPager {
 
   prev() {
     this.store.dispatch(prevPage());
-    this.fetch.getJobCard('');
+    this.fetch.getJobCard();
   }
 
   next() {
     this.store.dispatch(nextPage());
-    this.fetch.getJobCard('');
+    this.fetch.getJobCard();
   }
 }

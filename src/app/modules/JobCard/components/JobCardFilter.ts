@@ -42,6 +42,6 @@ export class JobCardFilter {
 
   pick(option: string) {
     this.store.dispatch(selectFilter(option));
-    this.fetch.getJobCard('');
+    this.fetch.getJobCard();
   }
 }
