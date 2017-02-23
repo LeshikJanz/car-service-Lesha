@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var usersNameEmail_service_1 = require('./usersNameEmail.service.ts');
-var vEmail = (function () {
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var usersNameEmail_service_1 = require("./usersNameEmail.service");
+var vEmail = vEmail_1 = (function () {
     function vEmail(userNameEmailService) {
         this.userNameEmailService = userNameEmailService;
     }
@@ -32,16 +32,17 @@ var vEmail = (function () {
         });
         return null;
     };
-    vEmail = __decorate([
-        core_1.Directive({
-            selector: "[vEmail][formControlName],\n  [vEmail][formControl],[vEmail][ngModel]",
-            providers: [{
-                    provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return vEmail; }), multi: true
-                }]
-        }), 
-        __metadata('design:paramtypes', [usersNameEmail_service_1.UserNameEmailService])
-    ], vEmail);
     return vEmail;
 }());
+vEmail = vEmail_1 = __decorate([
+    core_1.Directive({
+        selector: "[vEmail][formControlName],\n  [vEmail][formControl],[vEmail][ngModel]",
+        providers: [{
+                provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return vEmail_1; }), multi: true
+            }]
+    }),
+    __metadata("design:paramtypes", [usersNameEmail_service_1.UserNameEmailService])
+], vEmail);
 exports.vEmail = vEmail;
+var vEmail_1;
 //# sourceMappingURL=validate-email.directive.js.map

@@ -1,32 +1,5 @@
 @import url("../node_modules/bootstrap/dist/css/bootstrap.css");
 
-.ng-valid[required], .ng-valid.required  {
-  border-left: 5px solid #42A948; /* green */
-}
-.ng-invalid:not(form)  {
-  border-left: 5px solid #a94442; /* red */
-}
-.h1loging{
-  padding: 10px;
-}
-.float-left {
-    float: left;
-}
-
-.float-right {
-    float: right;
-}
-
-.content-wrapper {
-    margin: 0 auto;
-}
-
-.full-height{
-  height: 100%;
-}
-/*[class*='col-'] {
-  float: left;
-}*/
 *, *:after, *:before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -35,314 +8,28 @@
 h3 {
   text-align: center; margin-bottom: 0;
 }
-
-.pad-l-15{
-  padding-left: 15;
-}
-/*[class*='col-'] {
-  padding-right: 20px;
-  padding-bottom: 20px;
-}*/
-/*[class*='col-']:last-of-type {
-  padding-right: 0;
-}*/
-.grid {
-  margin: 0;
-}
-.col-1-4 {
-  width: 25%;
-}
-.module {
-    padding: 2px;
-    text-align: left;
-    background-color: white;
-    border-radius: 4px;
-    display: inline-flex;
-    margin: 2;
-    position: relative;
-    width: 175px;
-    height: 160px;
-    overflow: hidden;
-}
-
-.module div{
-  display: inline;
-}
-
-.inside-div-module {
-    position: absolute;
-    right: 10;
-    color: gray;
-    bottom: 10;
-    width: 100%;
-}
-
-.module .inside-div-module  h3 {
-    bottom: 25px;
-    position: relative;
-    padding-right: 5px;
-    right: 7;
-    float: right;
-}
-
-.module .inside-div-module h6 {
-    position: absolute;
-    margin: 0;
-    top: 30;
-     right: 5;
-}
-
-.inside-div-module i.glyphicon {
-    position: absolute;
-    left: 25;
-	}
-
-.div-inline{
-  display: inline;
-}
-.module:hover{
-  box-shadow: 0 0 0 2px #ffffff;
-  cursor: pointer;
-}
-
-.module .glyphicon{
-  font-size: 30px;
-}
-
 h4 {
   position: relative;
-}
-
-.grid-pad {
-  padding: 20px 10;
-  height: 160px;
-  text-align: left;
-  display: table;
-}
-.grid-pad > [class*='col-']:last-of-type {
-  padding-right: 20px;
-}
-
-
-@media (max-width:650px){
-  .module{
-    width: 110px;
-    height: 98px;
-  }
-  .module h3{
-    font-size: 18px;
-    margin-top: 2;
-  }
-  .module .inside-div-module  h3{
-    bottom: 0;
-  }
-  .inside-div-module{
-    height: 40;
-    left: 0;    
-  }
-  .module .inside-div-module h6{
-   bottom: 0;
-   right: 2;
-  }
-  .module .glyphicon{
-    font-size: 23px;
-  }
-  .grid-pad{
-    height: 100px;
-  }
-  .inside-div-module i.glyphicon{
-        left: 7;
-        bottom:50;
-    }
-}
-
-/*
-@media (max-width: 350px){
-  .module h3{
-    font-size: 15px;
-  }
-  .module h4{
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 800px){
-  .module h3{
-    font-size: 18px;
-  }
-}*/
-/*@media (max-width: 600px) {
-    .module {
-      font-size: 10px;
-      max-height: 75px; }
-}*/
-/*@media (max-width: 1024px) {
-    .grid {
-      margin: 0;
-    }
-    .module {
-      min-width: 60px;
-    }
-}*/
-
-.search-out{
-  border-bottom: 1px solid gray;
-  border-left: 1px solid gray;
-  border-right: 1px solid gray;
-  width:195px;
-  height: 20px;
-  padding: 5px;
-  background-color: white;
-  cursor: pointer;
-}
-#sBox{
-  width: 200px;
-  height: 20px;
-}
-
-.btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 15px;
-  line-height: 1.428571429;
-  border-radius: 15px;
-}
-
-.btn-circle.btn-xl {
-  width: 53px;
-  height: 53px;
-  padding: 10px 16px;
-  font-size: 24px;
-  line-height: 1.33;
-  border-radius: 35px !important;
-  margin: 0px 5px;
-  background-color: white;
-}
-
-.li-checkList .btn.btn-circle{
-   background-color: white;
-}
-
-@media(max-width: 600px){
-  .li-checkList label{
-    font-size: 13;
-  }
-}
-
-.btn-circle.active{
-  background-color: #009de0;
 }
 
 .btn-info.btn-xl.active:hover, .btn-info.btn-xl.active:focus{
   background-color:#009de0 !important;
   outline: none;
 }
-
 .glyphicon{
   color: #009de0;
   position: static;
 }
-
 .active>.glyphicon {
     color: white;
 }
-
 .btn.btn-circle {
     border-radius: 15px;
     padding: 6px 0;
 }
-
-@media (min-width: 480px) {
-  .container-xs-height{
-    display: table;
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100%;
-  }
-  .row-xs-height {
-    display: table-row;
-  }
-  .col-xs-height {
-    display: table-cell;
-    /*float: left;*/
-  }
-}
-
-@media (min-width: 768px) {
-  .container-sm-height {
-    display: table;
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100%;
-  }
-  .row-sm-height {
-    display: table-row;
-  }
-  .col-sm-height {
-    display: table-cell;
-    /*float: left;*/
-  }
-}
-
-@media (min-width: 992px) {
-  .container-md-height {
-    display: table;
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100%;
-  }
-  .row-md-height {
-    display: table-row;
-  }
-  .col-md-height {
-    display: table-cell;
-    /*float: left;*/
-  }
-}
-
-@media (min-width: 1200px) {
-  .container-lg-height {
-    display: table;
-    padding-left: 0px;
-    padding-right: 0px;
-    width: 100%;
-  }
-  .row-lg-height {
-    display: table-row;
-  }
-  .col-lg-height {
-    display: table-cell;
-    /*float: left;*/
-  }
-}
-
-.page-button{
-  /*height: 60px;*/
-  width: 49%;
-}
-
-button.page-button.disabled.btn-default {
-    cursor: not-allowed;
-    background-color: #fff;
-}
-
-.dropdown-submenu {
-    position: relative;
-}
-
-.dropdown-submenu .dropdown-menu {
-    /*top: 0;*/
-    left: 100%;
-    margin-top: -1px;
-}
-
-
 .display-block-item{
   display: block;
 }
-
 body {
 
     margin-left:auto;
@@ -351,215 +38,29 @@ body {
     font-family:Arial,Helvetica,sans-serif;
     font-size:16px;
     overflow: hidden;
-       
 }
-
-/*.form-horizontal .form-group {
-    margin-right: 15%;
-    margin-left: 15%;
-}*/
-
-.form-horizontal {
-    background: white;
-    border: grey;
-    border-style: solid;
-    border-width: thin;
-    min-height: 400px;
-}
-
-.form-horizontal label{
-  font-weight: normal;
-  text-align: center;
-  white-space: nowrap;
-}
-
-@media (min-width: 768px){
-  .form-horizontal .control-label {
-    text-align: left;
-  }
-
-  .padding-top{
-    padding-top: 50px;
-  }
-}
-
-
-.mainContent {
-    /*height:100%;
-    padding-top:40px;*/
-    position: relative;
-    top: 50px;
-    overflow: hidden;
-    /*check also minimit.com*/
-    background-image: linear-gradient(to bottom,#2da9b1 0,#178299 50%,#1a4c7d 100%);
-    
-}
-
 footer {   
     color: #ffffff;  
 }
-
 @media (max-width: 570px){
   footer h3{
-    font-size: 18;
+    font-size: 18px;
   }
 }
-
-#layoutHeader {
-        /*background-color: #f2f2f2;
-        background: -webkit-gradient(linear,left top,left bottom,color-stop(0,#f7f7f7),color-stop(0.33,#f2f2f2),color-stop(0.75,#f2f2f2),color-stop(1,#ededed));
-        */background-image: -webkit-linear-gradient(top,#f7f7f7 0,#f2f2f2 33%,#f2f2f2 75%,#ededed 100%);
-        box-shadow: inset 0 -0.0625em #dddddd;
-       /* border-radius: 2px;*/
-        border: 1px solid transparent;
-        /*box-sizing: border-box;*/
-        padding: 2px 5px;    
-        height: 50px;  
-        border-top-width: 4px;
-        border-top-color: #16a4f3;   
-        overflow: visible;
-}
-
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
     background-color: transparent;
 }
-
-.dropdown-menu  li > a:focus, .dropdown-menu  li > a:hover {
-    background-color: #434c53;
-    color: #ffffff; 
-    text-decoration: none;
-}
-
-.dropdown-menu  li > a {
-    color: #ffffff;  
-    background-color: rgba(54,62,67,0.96);
-}
-
- .dropdown-menu {
-     background-color:rgba(54,62,67,0.98);
-     padding-left: 5px;
-     padding-right: 5px;
-}
-
-.dropdown-menu a {
-  width: 100%;
-  margin: 0;
-  padding: 3px 20px;
-}
-
-.dropdown-menu  li{
-  list-style: none;
-}
-
-.dropdown-menu ul{
-  padding-left: 0px;
-}
-
-#layoutFooter {
-    background-color: rgba(54,62,67,0.96);
-}
-
-#layoutFooter > h3 {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.navbar-fixed-bottom{
-  height: 30px;
-  min-height: 30px;
-}
-
-#navHeaderLogo {
-    /*width: 45%;*/
-    position: relative;
-    height: 110%;
-    top: -3;
-}
-
-.navbar-header-a{
-  display: inline !important;
-}
-
 .container > .navbar-header, .container-fluid > .navbar-header, 
 .container > .navbar-collapse{
   margin: 0;
   float: left;
 }
-
-.navbar-header{
-  padding: 0px;
-}
-
-#bs-example-navbar-collapse-1 {
-    float: right;
-    border: none;
-}
-
 ul.nav.navbar-nav.navbar-right {
     margin: 0;
 }
-
-.minW450{
-  min-width: 486;
-}
-
-.JobCardHeight{
-  height: 90%;
-  overflow: auto;
-  padding: 0px;
-}
-
-@media(max-height:950px){
-  .JobCardHeight {
-    height: 89%;
-  }
-}
-@media(max-height:820px){
-  .JobCardHeight {
-    height: 88%;
-  }
-  #master{
-    height: 87%;
-  }
-}
-@media(max-height:700px){
-  .JobCardHeight {
-    height: 87%;
-  }
-  #master{
-    height: 84%;
-  }
-}
-
-@media(max-height:550px){
-  .JobCardHeight {
-    height: 85%;
-  }
-#master{
-    height: 82%;
-  }
-}
-
 .panel.panel-default {
     margin-bottom: 0;
 }
-
-.jobCard-Container {
-    background: #f2f2f2;
-}
-
-.jobCard{
-  max-height: 100%;
-  overflow: hidden;
-  padding-bottom: 32px;
-  padding-left: 0px;
-  padding-right: 0px;
-}
-
-.JobCardHeader label{
-  font-size: 16px;
-}
-
 .container-fluid{
   padding-left: 0px;
   padding-right: 0px;
@@ -571,221 +72,19 @@ ul.nav.navbar-nav.navbar-right {
   overflow: auto;
 }
 
-.master{
-  direction: rtl;
-  margin-bottom: 15;
-}
-
-.master > .panel{
-  direction: ltr;
-}
-
-.master ul li{
-  border: thin solid gainsboro;
-  margin: 0px;
-  text-align: left;
-}
-
-.master ul li h3{
-  text-align: left;
-}
-
-.ul-master li a {
-    padding: 5 10;
-}
-
-.ul-master li a h4{
-    margin: 3 0;
-}
-
-.ul-master p{
-  font-size: 16;
-}
-
-.login{
-  padding: inherit;
-}
-
-jobCard-detail.JobCardHeight {
-  overflow-y: hidden;
-}
-
-jobCard-detail > .panel{
-  height: 100%;
-  background-color: #DEF1F2;
-}
-
-.nav-pills > li.active > a {
-    background-color: #e6f2f9;
-    color: black;
-}
-
-.nav-pills > li > a {
-    color: black;
-}
-
-#IconsBar{
-  text-align: left;
-  padding-left: 25px;
-  padding-bottom: 10px;
-}
-
-#JCHeader{
-  margin-top: -5;
-}
-
-#JCHeader * {
-    text-align: left;
-    padding-left: 5px;
-}
-
-#JCHeader padd-bottom {
-    padding-bottom: 10;
-}
-
-#JCHeader .table td, #TabViewGlobal .table td{
-  white-space: nowrap;
-}
-
-#JCHeader .table-responsive, #JCHeader .table{
-  margin-bottom: 5;
-}
-
-@media screen and (max-width: 767px){
-  .table-responsive {
-    border: none;
-  }
-  #JCHeader .table-responsive, #JCHeader .table{
-    margin-bottom: 2;
-  }
-}
-#TabViewGlobal .table td{
-  padding: 2 8;
-}
-
 td h2, td h3, td h4, td h5{
   height: 3;
   margin-top: 8;
   margin-bottom: 8;
 }
 
-#JCHeader .table > tbody > tr > td{
-  padding-top: 1;
-  padding-bottom: 1;
-}
-
-#TabView{
-  border-top: 0.0625rem solid #dddddd;
-  -webkit-box-shadow: 0 -1px 0 rgba(0,0,0,0.05);
-  box-shadow: 0 -1px 0 rgba(0,0,0,0.05);
-  border-bottom: 0.0625rem solid #dddddd;
-  color: #00679e;
-}
-
-#TabViewGlobal{
-    background-color: white;
-    border-top: solid thin gainsboro;
-    border-bottom: solid thin gainsboro;
-}
-
-#TabViewGlobal h5{
-  padding-left: 5px;
-  text-align: left;
-}
-
-#TabViewGlobal h5 span{
-  position: relative;
-  left: 40%;
-}
-
-#note-row{
-  line-height: 2.85714286;
-    border: 1px solid black !important;
-    width: 200%;
-    background: #d9edf7;
-    left: 10;
-}
-
-.panel.jobCard-Detail{
-  overflow: auto;
-  padding-bottom: 20px;
-}
-
-.JCHeaderBot h3{
-  margin-top: 5px;
-  font-size: 15px;
-}
-
-li.list-group-item.li-checkList {
-    /*text-align: left;
-    white-space: nowrap;
-    overflow: auto;
-    padding: 7 15;*/
-    display: list-item;
-    justify-content: space-between;
-    overflow: auto;
-}
-
-.list-group-item.li-checkList active {
-  display: list-item;
-  justify-content: space-between;
-}
-
-.list-group-item.li-checkList.active{
-    background-color: #8ec8ea;
-    color: black;
-    border: none;
-    padding: 20px;
-}
-
-li.list-group-item.li-checkList:hover {
-    transition: all linear 300ms;
-    /*opacity: 0.7;*/
-    background-color: rgba(3, 120, 189, 0.63);
-}
-
-.li-checkList .input-note{
-    position: absolute;
-    bottom: -5;
-    right: 0;
-    display: none;
-    border-radius: 5px;
-    border: 2px solid #0096ef;
-}
-
-.btn-check-list{
-  display: inline-block;
-  position: absolute;
-  right: 0;
-}
-
-.display-none{
-  display: none;
-}
-
 label.camera-label input{
   display: none;
 }
 
-.red{
-  color: red;
-}
-.green{
-  color: #8fc53c;
-}
-.yellow{
-  color: #ec9320;
-}
-.DarkMagenta{
-  color: DarkMagenta;
-}
 label.camera-label:hover{
   box-shadow: 0 0 0 2px #ffffff;
   cursor: pointer;
-}
-
-.display-table-row-group{
-  display:  table-row-group !important;
 }
 
 button.btn.btn-circle {
@@ -798,81 +97,13 @@ button.btn.btn-circle {
   }
 }
 
-.grid-space{
-    height: 100%;
-  }
-
-  .no-margin{
-    margin: 0px;
-  }
-
-.panel-heading.JobCard{
-  background: lightblue;
-  padding-bottom: 10px;
-}
-
-.JobCardHeader{
-  position: relative;
-  height: 18px;
-}
-
-.JobCardHeader .glyphicon{
-  font-size: 25px;
-}
-
-.JobCardHeader button, .JobCardHeader button:focus{
-   position: absolute;
-   left: 5px;
-   background: inherit;
-   border: 0;
-   outline-style: none;
-   display: none;
-}
-
-@media (max-width: 767px){
-  .JobCardHeader button{
-    display: initial !important;
-  }
-  /*.filter-header{
-    left: 40% !important;
-  }*/
-}
-
  .pop.glyphicon:hover, .pop.glyphicon:focus {
   font-size: 28px;
 }
 
-.JobCardHeader.master{
-  text-align: left;
-}
-
-.JobCardHeader.master button{
-   display: inherit;
-   padding: 7 0 0 0;
-   z-index: 5;
-	}
-
-.JobCardHeader.master .glyphicon{
-  display: inline;
-    top: -8;
-    position: relative;
-    padding: 0 3;
-	}
-
-.JobCardHeader.master .glyphicon:hover{
-  background: lightgray;
-}
-
 .glyphicon > a{
   position: relative;
-  right: -55;
-}
-.filter-header{
-    display: block;
-    text-align: center;
-    align-self: stretch;
-    position: relative;
-    padding-bottom: 0;
+  right: -55px;
 }
 
 .dropdown-filter-div{
@@ -888,58 +119,6 @@ button.btn.btn-circle {
     border: none;
 }
 
-.refr-div {
-    margin-top: 10;
-    margin-bottom: -10;
-    background: #f2f2f2;
-    border-top: #c1c1c1 1px solid;
-    text-align: left;
-}
-
-.refr-div h3{
-  display: inline;
-  color: grey;
-}
-
-.refr-div >span i.glyphicon:hover {
-    background-color: rgba(128, 128, 128, 0.31);
-}
-
-.list-group-item.li-checkList .glyphicon{
-    font-size: 20px;
-    position: relative;
-    top: -2;
-}   
-
-@media (max-width:767px){
-    .list-group-item.li-checkList.active .btn-check-list > .btn.btn-circle {
-      height: 25px;
-      width: 25px;
-    }
-    .list-group-item.li-checkList.active .glyphicon {
-      font-size: 18px;
-    }
-    .btn-circle.btn-xl{
-        width: 40px;
-        height: 40px;
-    }
-    .btn-circle.btn-xl .glyphicon{
-        font-size:15px      
-    }
-    /*.list-group-item.li-checkList{
-        padding: 5px 7px;
-    }*/
-    .list-group-item.li-checkList .btn-circle{
-        width: 18px;
-        height: 18px;
-    }
-    .list-group-item.li-checkList .glyphicon{
-        font-size: 12px;
-        position:relative;
-        top: -4;
-    }   
-}
-
 button.btn.btn-circle:hover {
     box-shadow: 0 0 0 2px #ffffff;
     cursor: pointer;
@@ -950,68 +129,8 @@ button.btn.btn-circle.btn-xl:hover {
     cursor: pointer;
     outline: none;
 }
-.dropdown-menu.filter{
-    position: absolute;
-    right: 0;
-}
 
-i .caret{
-  position: absolute;
-    /* top: 5; */
-    left: 20;
-    top: 24;
-}
 /* Job Card Search-box style */
-
-.search-lvl1 {
-    text-align: center;
-    top: 0;
-    right: 0;
-    margin: 0 0 1 0;
-    border-style: solid;
-    padding: 0 0 5 0;
-    border-width: 1 0 0 0;
-    border-color: #c1c1c1;
-}
-
-.search-lvl2 {
-    width: 100%;
-    vertical-align: top;
-    display: inline-block;
-    height: 3rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    background: #f2f2f2;
-    padding: 0;
-}
-
-.search-lvl3 {
-    border-style: solid;
-    border-color: #f2f2f2;
-    border-width: 5 2;
-}
-
-form.search-form {
-    background: #ffffff;
-    vertical-align: top;
-    position: relative;
-    padding-right: 0.75rem;
-    overflow: hidden;
-    margin-bottom: 0;
-    border-bottom: #c1c1c1 1px solid;
-}
-
-input.search-input {
-    font-size: 25;
-    border: none;
-    outline: none;
-    margin: 0;
-    vertical-align: top;
-    text-overflow: ellipsis;
-    max-width: 85%;
-    position: relative;
-    left: 5;
-}
 
 .panel-default > .panel-heading {
   background-color: white;
@@ -1032,87 +151,10 @@ span i.glyphicon:hover{
   background-color:   #efefef;
 }
 
-form.search-form:hover, form.search-form:focus {
-    border: thin solid #007cc0;
-}
-
-/* Time Report */
-
-.time-report-div {
-    background: white;
-    text-align: center;
-    overflow: auto;
-}
-
-.time-report-div li{
-  display: table-cell;
-  width: 1%;
-}
-
-.time-report-div li.active{
-  background-color: #eee;
-}
-
-.time-report-div .btn {
-    top: -3;
-}
-
-.tab-pane .btn-group {
-    padding: 10;
-}
-
-.to-the-left{
-  text-align: left;
-}
-
-.to-the-right{
-  text-align: right;
-  padding-top: 10;
-}
-
-.tab-pane form {
-    padding: 20 10 10 10;
-    color: rgb(164, 164, 164)
-}
-
-.time-div{
-  display: flex;
-}
-
-.time-div div{
-  padding: 5 5 5 0;
-}
-
-.Btn-large{
-  padding: 5;
-  margin: 3 10 5 10;
-}
-
-.nobackground{
-  background: none;
-}
-
 button.nobackground > i.glyphicon.glyphicon-stop,
   button.nobackground > i.glyphicon.glyphicon-play {
   font-size: 27;
 }
-
-.Btn-large glyphicon{
-  font-size: 25;
-}
-
-.timer-label{
-  font-size: 30;
-  padding-left: 30;
-}
-
-.timer-div{
-  background: rgba(211, 211, 211, 0.64);
-  padding-bottom: 15;
-  padding-left: 15;
-  padding-right: 15;
-}
-
 @media (max-width: 767px){
   .list-group-item.li-checkList .timer-div .btn-circle{
         width: 22px;
@@ -1122,89 +164,18 @@ button.nobackground > i.glyphicon.glyphicon-stop,
         font-size: 18px;
         position: relative;
         top: -6;
-    }   
+    }
 }
-
-.li-checkList .btn.btn-circle.g-background{
-  background: rgb(24, 167, 149)
-}
-
-.li-checkList .btn.btn-circle.b-background{
-  background: rgb(33, 99, 125)
-}
-
-.glyph-start {
-    color: white;
-    left: 1.5;
-}
-
-.glyph-stop {
-    color: white;
-    left: -0.5;
-}
-
-.hr-timer-start{
-  border: 5px solid rgb(29,155,213);
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.hr-timer-stop{
-  border: 5px solid rgb(167,71,90);
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.glyph-green{
-  color: #2dd02d;
-}
-
-.glyph-red{
-  color: red;
-}
-
-#offTimeUpdateDiv label{
-  display: block;
-}
-
- #offTimeUpdateDiv button{
-   display: block;
-   margin-top: 5;
- }
-
-.submit-offtime {
-    position: relative;
-    left: 15;
-}
-
 .borderless td, .borderless th, .borderless tr {
     border: none !important;
 }
-
-.header-company {
-  display: inline;
-}
-
-.header-company h3{
-  display: inline;
-  position: relative;
-  top: 7;
-}
-
 @media (max-width:603px){
     .header-company{
         display: none;
     }
 }
-
 @media (max-width:222px){
     .navbar-header{
         display: none;
     }
-}
-
-.fixed-left-top{
-  position: fixed;
-  left: 0;
-  bottom: 25;
 }

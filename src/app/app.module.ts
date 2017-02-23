@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { appRoutes } from './app.routing';
 import { RouterModule } from '@angular/router';
 import '../rxjs-extensions';
-import { JobCardService } from './jobCard/services/JobCard';
-import { JobCardComponent } from './jobCard/components/JobCard';
-import { LoginService } from './jobCard/login.service';
+import { JobCardService } from './jobCard/services/jobCard.service';
+import { LoginService } from './jobCard/services/login.service';
+import { jobCardListComponent } from './jobCard/components/jobCard.component';
 import { AccountService } from './login/account.service';
 import { LoginComponent } from './login/login.component';
 import { TranslatePipe } from './translate/translate.pipe';
@@ -26,18 +26,18 @@ import { UserNameEmailService } from './login/usersNameEmail.service';
 import { UserSearchComponent } from './login/user-search.component';
 import { Tab } from './shared/tab';
 import { TabsContainer } from './shared/tabContainer';
-import { JobCardMasterComponent } from './jobCard/jobCardMaster';
-import { JobCardDetailComponent } from './jobCard/jobCardDetail';
-import { JobCardCheckListComponent } from './jobCard/checkList';
-import { JobCardTimeReportComponent } from './jobCard/timeReport';
+import { JobCardMasterComponent } from './jobCard/components/jobCardMaster';
+import { JobCardDetailComponent } from './jobCard/components/jobCardDetail';
+import { JobCardCheckListComponent } from './jobCard/components/checkList';
+import { JobCardTimeReportComponent } from './jobCard/components/timeReport';
 import { LoadConfigService } from './login/LoadConfig';
 import { LoginGuard } from './login/login-guard.service';
 import { AdminGuard } from './login/admin-guard.service';
 import { DashboardResolveTR } from './dashboard/dashboardTR-resolve.service';
 import { DashboardResolveCL } from './dashboard/dashboardCL-resolve.service';
-import { JobCardResolve } from './jobCard/jobCard-resolve.service';
+import { JobCardResolve } from './jobCard/services/jobCard-resolve.service';
 import { FileSelectDirective } from 'ng2-file-upload';
-import { picService } from './jobCard/picService';
+import { picService } from './jobCard/services/picService';
 import { LoaderService } from './services/loader.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { JobCardStatusLoaderService } from './services/jobCardStatusLoader.service';
@@ -61,7 +61,7 @@ import reducer from '../reducer';
   declarations: [
     AppComponent,
     DashboardComponent,
-    JobCardComponent,
+    jobCardListComponent,
     LoginComponent,
     TranslatePipe,
     RegisterComponent,

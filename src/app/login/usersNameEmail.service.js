@@ -8,16 +8,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var http_1 = require('@angular/http');
-var Observable_1 = require('rxjs/Observable');
+var core_1 = require("@angular/core");
+var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 var UserNameEmailService = (function () {
     function UserNameEmailService(_http) {
         this._http = _http;
-        this.userNameUrl = 'http://localhost:57939/api/Account/GetUser';
-        this.userEmailUrl = 'http://localhost:57939/api/Account/GetUsersEmail';
-        this.userUrl = 'http://localhost:57939/api/Account/GetSearchUsers';
         this.myHeaders = new http_1.Headers();
+        this.baseUrl = sessionStorage.getItem("UserServiceIp");
+        this.userNameUrl = this.baseUrl + 'api/Account/GetUser';
+        this.userEmailUrl = this.baseUrl + 'api/Account/GetUsersEmail';
+        this.userUrl = this.baseUrl + '/api/Account/GetSearchUsers';
     }
     UserNameEmailService.prototype.getUsersNames = function (userName) {
         this.adjustHeaders();
@@ -46,11 +47,11 @@ var UserNameEmailService = (function () {
             this.myHeaders.append('authorization', 'Bearer ' + token);
         }
     };
-    UserNameEmailService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [http_1.Http])
-    ], UserNameEmailService);
     return UserNameEmailService;
 }());
+UserNameEmailService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], UserNameEmailService);
 exports.UserNameEmailService = UserNameEmailService;
 //# sourceMappingURL=usersNameEmail.service.js.map

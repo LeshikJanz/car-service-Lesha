@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
+var LoaderEventType;
 (function (LoaderEventType) {
     LoaderEventType[LoaderEventType["VISIBLE"] = 0] = "VISIBLE";
-})(exports.LoaderEventType || (exports.LoaderEventType = {}));
-var LoaderEventType = exports.LoaderEventType;
+})(LoaderEventType = exports.LoaderEventType || (exports.LoaderEventType = {}));
 var LoaderEvent = (function () {
     function LoaderEvent(type, value) {
         this.type = type;
@@ -91,11 +91,11 @@ var LoaderService = (function () {
         }
         this._eventEmitter.next(event);
     };
-    LoaderService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], LoaderService);
     return LoaderService;
 }());
+LoaderService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], LoaderService);
 exports.LoaderService = LoaderService;
 //# sourceMappingURL=loader.service.js.map

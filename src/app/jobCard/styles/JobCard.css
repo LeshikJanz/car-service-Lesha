@@ -1,39 +1,488 @@
+li.list-group-item.li-checkList {
+    display: list-item;
+    justify-content: space-between;
+    overflow: auto;
+}
+
+.list-group-item.li-checkList active {
+    display: list-item;
+    justify-content: space-between;
+}
+
+.list-group-item.li-checkList.active{
+    background-color: #8ec8ea;
+    color: black;
+    border: none;
+    padding: 20px;
+}
+
+li.list-group-item.li-checkList:hover {
+    transition: all linear 300ms;
+    background-color: rgba(3, 120, 189, 0.63);
+}
+
+.list-group-item.li-checkList .glyphicon{
+    font-size: 20px;
+    position: relative;
+    top: -2px;
+}
+
+@media (max-width:767px){
+    .list-group-item.li-checkList.active .btn-check-list > .btn.btn-circle {
+        height: 25px;
+        width: 25px;
+    }
+    .list-group-item.li-checkList.active .glyphicon {
+        font-size: 18px;
+    }
+    .btn-circle.btn-xl{
+        width: 40px;
+        height: 40px;
+    }
+    .btn-circle.btn-xl .glyphicon{
+        font-size:15px
+    }
+    .list-group-item.li-checkList .btn-circle{
+        width: 18px;
+        height: 18px;
+    }
+    .list-group-item.li-checkList .glyphicon{
+        font-size: 12px;
+        position:relative;
+        top: -4px;
+    }
+}
+
+.li-checkList .input-note{
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    display: none;
+    border-radius: 5px;
+    border: 2px solid #0096ef;
+}
+
+.panel.jobCard-Detail{
+    overflow: auto;
+    padding-bottom: 20px;
+}
+
+.panel-heading.JobCard{
+    background: lightblue;
+    padding-bottom: 10px;
+}
+
+.JobCardHeader{
+    position: relative;
+    height: 18px;
+}
+
+.JobCardHeader .glyphicon{
+    font-size: 25px;
+}
+
+.JobCardHeader button, .JobCardHeader button:focus{
+    position: absolute;
+    left: 5px;
+    background: inherit;
+    border: 0;
+    outline-style: none;
+    display: none;
+}
+
+@media (max-width: 767px){
+    .JobCardHeader button{
+        display: initial !important;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .table-responsive {
+        border: none;
+    }
+    #JCHeader .table-responsive, #JCHeader .table{
+        margin-bottom: 2px;
+    }
+}
+
+#IconsBar{
+    text-align: left;
+    padding-left: 25px;
+    padding-bottom: 10px;
+}
+
+#TabView{
+    border-top: 0.0625rem solid #dddddd;
+    -webkit-box-shadow: 0 -1px 0 rgba(0,0,0,0.05);
+    box-shadow: 0 -1px 0 rgba(0,0,0,0.05);
+    border-bottom: 0.0625rem solid #dddddd;
+    color: #00679e;
+}
+
+#TabViewGlobal{
+    background-color: white;
+    border-top: solid thin gainsboro;
+    border-bottom: solid thin gainsboro;
+}
+
+#TabViewGlobal h5{
+    padding-left: 5px;
+    text-align: left;
+}
+
+#TabViewGlobal h5 span{
+    position: relative;
+    left: 40%;
+}
+
+.pad-l-15{
+    padding-left: 15px;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 15px;
+    line-height: 1.428571429;
+    border-radius: 15px;
+}
+
+.btn-circle.btn-xl {
+    width: 53px;
+    height: 53px;
+    padding: 10px 16px;
+    font-size: 24px;
+    line-height: 1.33;
+    border-radius: 35px !important;
+    margin: 0px 5px;
+    background-color: white;
+}
+
+.li-checkList .btn.btn-circle{
+    background-color: white;
+}
+
+@media(max-width: 600px){
+    .li-checkList label{
+        font-size: 13;
+    }
+}
+
+.btn-circle.active{
+    background-color: #009de0;
+}
+
+.page-button{
+    /*height: 60px;*/
+    width: 49%;
+}
+
+button.page-button.disabled.btn-default {
+    cursor: not-allowed;
+    background-color: #fff;
+}
+
+
+.JobCardHeight{
+    height: 90%;
+    overflow: auto;
+    padding: 0px;
+}
+
+@media(max-height:950px){
+    .JobCardHeight {
+        height: 89%;
+    }
+}
+@media(max-height:820px){
+    .JobCardHeight {
+        height: 88%;
+    }
+    #master{
+        height: 87%;
+    }
+}
+@media(max-height:700px){
+    .JobCardHeight {
+        height: 87%;
+    }
+    #master{
+        height: 84%;
+    }
+}
+
+@media(max-height:550px){
+    .JobCardHeight {
+        height: 85%;
+    }
+    #master{
+        height: 82%;
+    }
+}
+
 .jobCard-Container {
-  background: #f2f2f2;
+    background: #f2f2f2;
 }
 
-.jobCard {
-  max-height: 100%;
-  overflow: hidden;
-  padding-bottom: 32px;
-  padding-left: 0;
-  padding-right: 0;
+.jobCard{
+    max-height: 100%;
+    overflow: hidden;
+    padding-bottom: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.JobCardHeight {
-  height: 90%;
-  overflow: auto;
-  padding: 0;
+.JobCardHeader label{
+    font-size: 16px;
 }
 
-@media(max-height:950px) {
-  .JobCardHeight {
-    height: 89%;
-  }
-}
-@media(max-height:820px) {
-  .JobCardHeight {
-    height: 88%;
-  }
-}
-@media(max-height:700px) {
-  .JobCardHeight {
-    height: 87%;
-  }
+.master{
+    direction: rtl;
+    margin-bottom: 15px;
 }
 
-@media(max-height:550px) {
-  .JobCardHeight {
-    height: 85%;
-  }
+.master > .panel{
+    direction: ltr;
+}
+
+.master ul li{
+    border: thin solid gainsboro;
+    margin: 0px;
+    text-align: left;
+}
+
+.master ul li h3{
+    text-align: left;
+}
+
+.ul-master li a {
+    padding: 5 10;
+}
+
+.ul-master li a h4{
+    margin: 3 0;
+}
+
+.ul-master p{
+    font-size: 16;
+}
+
+jobCard-detail.JobCardHeight {
+    overflow-y: hidden;
+}
+
+jobCard-detail > .panel{
+    height: 100%;
+    background-color: #DEF1F2;
+}
+
+#TabViewGlobal .table td{
+    padding: 2 8;
+}
+#JCHeader{
+    margin-top: -5px;
+}
+
+#JCHeader * {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.JobCardHeader{
+    position: relative;
+    height: 18px;
+}
+
+.JobCardHeader .glyphicon{
+    font-size: 25px;
+}
+
+.JobCardHeader button, .JobCardHeader button:focus{
+    position: absolute;
+    left: 5px;
+    background: inherit;
+    border: 0;
+    outline-style: none;
+    display: none;
+}
+
+#JCHeader padd-bottom {
+    padding-bottom: 10px;
+}
+
+#JCHeader .table td, #TabViewGlobal .table td{
+    white-space: nowrap;
+}
+
+#JCHeader .table > tbody > tr > td{
+    padding-top: 1;
+    padding-bottom: 1;
+}
+
+#note-row{
+    line-height: 2.85714286;
+    border: 1px solid black !important;
+    width: 200%;
+    background: #d9edf7;
+    left: 10;
+}
+
+
+.btn-check-list{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+.red{
+    color: red;
+}
+.green{
+    color: #8fc53c;
+}
+.yellow{
+    color: #ec9320;
+}
+.DarkMagenta{
+    color: DarkMagenta;
+}
+
+.display-table-row-group{
+    display:  table-row-group !important;
+}
+
+.dropdown-menu.filter{
+    position: absolute;
+    right: 0;
+}
+
+.search-lvl1 {
+    text-align: center;
+    top: 0;
+    right: 0;
+    margin: 0 0 1 0;
+    border-style: solid;
+    padding: 0 0 5 0;
+    border-width: 1 0 0 0;
+    border-color: #c1c1c1;
+}
+
+.search-lvl2 {
+    width: 100%;
+    vertical-align: top;
+    display: inline-block;
+    height: 3rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: #f2f2f2;
+    padding: 0;
+}
+
+.search-lvl3 {
+    border-style: solid;
+    border-color: #f2f2f2;
+    border-width: 5 2;
+}
+
+.grid-space{
+    height: 100%;
+}
+
+.no-margin{
+    margin: 0px;
+}
+
+.JobCardHeader.master{
+    text-align: left;
+}
+
+.JobCardHeader.master button{
+    display: inherit;
+    padding: 7 0 0 0;
+    z-index: 5;
+}
+
+.JobCardHeader.master .glyphicon{
+    display: inline;
+    top: -8;
+    position: relative;
+    padding: 0 3;
+}
+
+.JobCardHeader.master .glyphicon:hover{
+    background: lightgray;
+}
+
+.filter-header{
+    display: block;
+    text-align: center;
+    align-self: stretch;
+    position: relative;
+    padding-bottom: 0;
+}
+
+form.search-form {
+    background: #ffffff;
+    vertical-align: top;
+    position: relative;
+    padding-right: 0.75rem;
+    overflow: hidden;
+    margin-bottom: 0;
+    border-bottom: #c1c1c1 1px solid;
+}
+
+input.search-input {
+    font-size: 25;
+    border: none;
+    outline: none;
+    margin: 0;
+    vertical-align: top;
+    text-overflow: ellipsis;
+    max-width: 85%;
+    position: relative;
+    left: 5;
+}
+
+i .caret{
+    position: absolute;
+    /* top: 5; */
+    left: 20px;
+    top: 24px;
+}
+
+form.search-form:hover, form.search-form:focus {
+    border: thin solid #007cc0;
+}
+
+.dropdown-menu  li > a:focus, .dropdown-menu  li > a:hover {
+    background-color: #434c53;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.dropdown-menu  li > a {
+    color: #ffffff;
+    background-color: rgba(54,62,67,0.96);
+}
+
+.dropdown-menu {
+    background-color:rgba(54,62,67,0.98);
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.dropdown-menu a {
+    width: 100%;
+    margin: 0;
+    padding: 3px 20px;
+}
+
+.dropdown-menu  li{
+    list-style: none;
+}
+
+.dropdown-menu ul{
+    padding-left: 0px;
 }

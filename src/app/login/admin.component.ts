@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 
 @Component({
     selector: 'admin',
-    templateUrl: 'admin.component.html'
+    templateUrl: 'admin.component.html',
+    styleUrls: ['./styles/login.css']
 })
 
 export class AdminComponent {
