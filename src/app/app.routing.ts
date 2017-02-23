@@ -1,6 +1,6 @@
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { jobCardListComponent } from './jobCard/jobCard.component';
+import { jobCardListComponent } from './jobCard/components/jobCard.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RegisterComponent } from './login/register.component';
@@ -10,7 +10,7 @@ import { LoginGuard } from './login/login-guard.service';
 import { AdminGuard } from './login/admin-guard.service';
 import { DashboardResolveTR } from './dashboard/dashboardTR-resolve.service';
 import { DashboardResolveCL } from './dashboard/dashboardCL-resolve.service';
-import { JobCardResolve } from './jobCard/jobCard-resolve.service';
+import { JobCardResolve } from './jobCard/services/jobCard-resolve.service';
 import { ExampleComponent } from './components/example';
 
 export const appRoutes: Routes = [

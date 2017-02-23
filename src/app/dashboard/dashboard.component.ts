@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute  } from '@angular/router';
 //import { LoginService } from '../jobCard/login.service';
-import { JobCardService } from '../jobCard/jobCard.service';
+import { JobCardService } from '../jobCard/services/jobCard.service';
 import { LoaderService } from '../services/loader.service';
 import { Response } from '@angular/http';
 
 @Component({
     selector: 'dashboard',
-    templateUrl: 'dashboard.component.html'
+    templateUrl: 'dashboard.component.html',
+    styleUrls: ['./styles/dashboard.css']
 })
 
 export class DashboardComponent implements OnInit{

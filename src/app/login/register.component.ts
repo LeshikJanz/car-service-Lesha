@@ -6,7 +6,8 @@ import { Response } from '@angular/http';
 
 @Component({
     selector: 'register',
-    templateUrl: 'register.component.html'
+    templateUrl: 'register.component.html',
+    styleUrls: ['./styles/login.css']
 })
 
 export class RegisterComponent{

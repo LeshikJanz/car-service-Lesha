@@ -11,9 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var core_1 = require('@angular/core');
-var forms_1 = require('@angular/forms');
-var vEqual = (function () {
+var core_1 = require("@angular/core");
+var forms_1 = require("@angular/forms");
+var vEqual = vEqual_1 = (function () {
     function vEqual(vEqual, reflect) {
         this.vEqual = vEqual;
         this.reflect = reflect;
@@ -48,18 +48,19 @@ var vEqual = (function () {
         }
         return null;
     };
-    vEqual = __decorate([
-        core_1.Directive({
-            selector: "[vEqual][formControlName],\n  [vEqual][formControl],[vEqual][ngModel]",
-            providers: [{
-                    provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return vEqual; }), multi: true
-                }]
-        }),
-        __param(0, core_1.Attribute('vEqual')),
-        __param(1, core_1.Attribute('reflect')), 
-        __metadata('design:paramtypes', [String, String])
-    ], vEqual);
     return vEqual;
 }());
+vEqual = vEqual_1 = __decorate([
+    core_1.Directive({
+        selector: "[vEqual][formControlName],\n  [vEqual][formControl],[vEqual][ngModel]",
+        providers: [{
+                provide: forms_1.NG_VALIDATORS, useExisting: core_1.forwardRef(function () { return vEqual_1; }), multi: true
+            }]
+    }),
+    __param(0, core_1.Attribute('vEqual')),
+    __param(1, core_1.Attribute('reflect')),
+    __metadata("design:paramtypes", [String, String])
+], vEqual);
 exports.vEqual = vEqual;
+var vEqual_1;
 //# sourceMappingURL=validate-equal.directive.js.map

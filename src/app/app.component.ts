@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { TranslateService } from './translate/translate.service';
 import { AccountService } from './login/account.service';
 import { Router } from '@angular/router';
-import { LoginService } from './jobCard/login.service';
+import { LoginService } from './jobCard/services/login.service';
 import { LoadConfigService } from './login/LoadConfig';
-import { JobCardService } from './jobCard/jobCard.service';
+import { JobCardService } from './jobCard/services/jobCard.service';
 import '../../public/app.css';
 
 
 @Component({
     selector: 'my-app',
-    templateUrl: 'app.component.html'
+    templateUrl: 'app.component.html',
+    styleUrls: ['./app.component.css']
 })
 
 export class AppComponent implements OnInit {

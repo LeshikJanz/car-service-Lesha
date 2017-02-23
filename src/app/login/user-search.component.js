@@ -8,10 +8,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var Observable_1 = require('rxjs/Observable');
-var Subject_1 = require('rxjs/Subject');
-var usersNameEmail_service_1 = require('./usersNameEmail.service.ts');
+var core_1 = require("@angular/core");
+var Observable_1 = require("rxjs/Observable");
+var Subject_1 = require("rxjs/Subject");
+var usersNameEmail_service_1 = require("./usersNameEmail.service");
 var UserSearchComponent = (function () {
     function UserSearchComponent(userNameEmailService) {
         this.userNameEmailService = userNameEmailService;
@@ -41,15 +41,15 @@ var UserSearchComponent = (function () {
         });
         var a = 2;
     };
-    UserSearchComponent = __decorate([
-        core_1.Component({
-            selector: 'user-search',
-            templateUrl: 'app/login/user-search.component.html',
-            providers: [usersNameEmail_service_1.UserNameEmailService]
-        }), 
-        __metadata('design:paramtypes', [usersNameEmail_service_1.UserNameEmailService])
-    ], UserSearchComponent);
     return UserSearchComponent;
 }());
+UserSearchComponent = __decorate([
+    core_1.Component({
+        selector: 'user-search',
+        templateUrl: 'user-search.component.html',
+        providers: [usersNameEmail_service_1.UserNameEmailService]
+    }),
+    __metadata("design:paramtypes", [usersNameEmail_service_1.UserNameEmailService])
+], UserSearchComponent);
 exports.UserSearchComponent = UserSearchComponent;
 //# sourceMappingURL=user-search.component.js.map

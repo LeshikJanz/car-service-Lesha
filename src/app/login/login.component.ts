@@ -3,14 +3,15 @@ import { userInfo } from './userInfo';
 import { Router } from '@angular/router';
 import { AccountService } from './account.service';
 import { Iresponse } from './response';
-import { LoginService } from '../jobCard/login.service';
+import { LoginService } from '../jobCard/services/login.service';
 import { UserInfoService } from './userInfo.service';
 import { LoadConfigService } from './LoadConfig';
 import { LoaderService } from '../services/loader.service';
 
 @Component({
     selector: 'xioma-login',
-    templateUrl: 'login.component.html'
+    templateUrl: 'login.component.html',
+    styleUrls: ['./styles/login.css']
 })
 export class LoginComponent implements OnInit {
     active = true;

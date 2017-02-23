@@ -1,0 +1,160 @@
+<div class="panel panel-default jobCard-Detail">
+    <!--<div *ngIf="!jobCardItem" class="panel-heading">
+      <h3 class="panel-title">Select an Item</h3>
+    </div>-->
+    <div *ngIf="jobCardItem">
+        <div class="panel-heading JobCard">
+            <div class="JobCardHeader">
+                <button (click)="slideIn()">
+                    <i class="pop glyphicon glyphicon-menu-left"></i>
+                </button>
+                <div>
+                    <label>
+                        {{  "Job Card " + jobCardItem.DocNum }}
+                    </label>
+                </div>
+                <!--<label>{{ jobCardItem.DocEntry }}</label>-->
+            </div>
+        </div>
+        <section>
+            <div id="JCHeader">
+                <div class="table-responsive table-condensed borderless container-fluid">
+                    <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="col-xs-6 padd-bottom" colspan="2">
+                                        <h4>&nbsp; {{ jobCardItem.DocNum + " - " + jobCardItem.sttsDesc}}</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-3" colspan="2">
+                                        <h4>&nbsp;{{ jobCardItem.U_Mnfctr + ", " + jobCardItem.U_MdlCode + ", " + jobCardItem.U_MdlYear}}</h4>
+                                    </td>
+                                    <td class="col-xs-3"></td>
+                                </tr>
+                                <div style="clear: both;"></div>
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <h5>&nbsp;{{ jobCardItem.U_OwnBPN }}</h5>
+                                    </td>
+                                    <td class="col-xs-3">                                 
+                                        <h5>&nbsp;{{ jobCardItem.U_OwnCntPh }}</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <h5>&nbsp;{{ ('U_LicNum' | translate) + ": " + jobCardItem.U_LicNum }}</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-sm-7">
+                                        <h5>&nbsp;{{ ('U_EntryDt' | translate) + ": " + (jobCardItem.U_EntryDt || "") + 
+                                            " " + ((jobCardItem.U_EntryHr | timeNoSeconds) || "") }}</h5>
+                                    </td>
+                                    <!--<td class="col-xs-2">
+                                        <h4>&nbsp;{{ jobCardItem.U_EntryHr}}</h4>
+                                    </td>-->
+                                </tr>
+                                <tr>
+                                    <td class="col-md-6 col-sm-7">
+                                        <h5>&nbsp;{{ ('U_DueDate' | translate) + ": " + (jobCardItem.U_DueDate || "") +
+                                            " " + ((jobCardItem.U_DueTime | timeNoSeconds) || "")}}</h5>
+                                    </td>
+                                    <!--<td class="col-xs-2">
+                                        <h4>&nbsp;{{ jobCardItem.U_DueTime }}</h4>
+                                    </td>-->
+                                </tr>
+                                <tr>
+                                    <td class="col-xs-3">
+                                        <h5>&nbsp;{{ ('U_VCode' | translate) + ": " + jobCardItem.U_VCode }}</h5>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-lg-7 col-md-4 col-sm-2 hidden-xs"></div>
+                </div>
+                <!--<div class="JCHeaderTop">
+                    <h1>{{ jobCardItem.DocNum }}</h1>
+                </div>
+                <div class="JCHeaderBot">
+                    <h3> {{ jobCardItem.U_OwnBPN }}</h3>
+                    <h3> {{ jobCardItem.U_SerCons }}</h3>
+                    <h3> {{ jobCardItem.U_DueDate }}</h3>
+                    <h3> {{ jobCardItem.U_DueTime }}</h3>
+                    <h3> {{ jobCardItem.U_MdlCode }}</h3>
+                    <h3> {{ jobCardItem.U_LicNum }}</h3>
+                    <h3> {{ jobCardItem.U_EntryDt }}</h3>
+                    <h3> {{ jobCardItem.U_EntryHr }}</h3>
+                </div>-->
+                <div style="clear: both;"></div>
+            </div>
+            <div id="JCBody">
+                <div id="IconsBar">
+                    <button id="GL" type="button" class="btn btn-info btn-circle btn-xl" (click)="selectTab($event)" [class.active]="selected == 'GL'">
+                        <i class="glyphicon glyphicon-certificate"></i></button>
+                    <button id="CL" type="button" class="btn btn-info btn-circle btn-xl" (click)="selectTab($event)" [class.active]="selected == 'CL'">
+                        <i class="glyphicon glyphicon-list" ></i></button>
+                    <button id="TR" type="button" class="btn btn-info btn-circle btn-xl" (click)="selectTab($event)" [class.active]="selected == 'TR'">
+                        <i class="glyphicon glyphicon-time"></i></button>
+                </div>
+                <div id="TabView">
+                    <jobCard-checkList *ngIf="isSelected('CL')" [checkListItems]="jobCardItem.XIS_JOBS9Collection">
+                    </jobCard-checkList>
+                    <div id="TabViewGlobal" *ngIf="isSelected('GL')">
+                        <div class="table-responsive table-condensed borderless container-fluid">
+                            <div class="col-lg-5 col-md-8 col-sm-9">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_CarID' | translate) + ": " + (jobCardItem.U_CarID || "")}} </td>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_Subject' | translate) + ": " + (jobCardItem.U_Subject || "") }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_OwnBP' | translate) + ": " + (jobCardItem.U_OwnBP  || "")}}</td>
+                                            <td class="col-xs-3">&nbsp;{{ (jobCardItem.U_OwnBPN || "") }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_OwnCnt' | translate) + ": " + (jobCardItem.U_OwnCnt || "") }} </td>
+                                            <td class="col-xs-3">&nbsp;{{ (jobCardItem.U_OwnCntPh || "") }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_SpnsrBP' | translate) + ": " + (jobCardItem.U_SpnsrBP || "") }} </td>
+                                            <td class="col-xs-3">&nbsp;{{ (jobCardItem.U_SpnsrBPN || "") }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_SpnsrCnt' | translate) + ": " + (jobCardItem.U_SpnsrCnt || "") }} </td>
+                                            <td class="col-xs-3">&nbsp;{{ (jobCardItem.U_SpnCntPh || "") }}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_Km' | translate) + ": " + (jobCardItem.U_Km || "")}} </td>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_Alarm' | translate) + ": " + (jobCardItem.U_Alarm || "")}}</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_VCode' | translate) + ": " + (jobCardItem.U_VCode || "") }} </td>
+                                            <td class="col-xs-3">&nbsp;{{ ('U_FuelTank' | translate) + ": " + (jobCardItem.U_FuelTank || "") }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>{{ ('U_Notes' | translate) + ":" }}</td>
+                                        </tr>
+                                        <tr>
+                                            <textarea Id="note-row" class="col-xs-3 info" colspan="2">&nbsp;{{jobCardItem.U_Notes }} </textarea>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-lg-7 col-md-4 col-sm-3"></div>
+                        </div>
+                    </div>
+                    <jobCard-timeReport *ngIf="isSelected('TR')" [timeReportItems]="jobCardItem.XIS_JOBS2Collection" 
+                        [timeReport11]="jobCardItem.XIS_JOBS11Collection" [docEntry]="jobCardItem.DocEntry">
+                    </jobCard-timeReport>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

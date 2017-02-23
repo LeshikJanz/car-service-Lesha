@@ -1,0 +1,155 @@
+.time-report-div {
+    background: white;
+    text-align: center;
+    overflow: auto;
+}
+
+.time-report-div li{
+    display: table-cell;
+    width: 1%;
+}
+
+.time-report-div li.active{
+    background-color: #eee;
+}
+
+.time-report-div .btn {
+    top: -3;
+}
+
+.tab-pane .btn-group {
+    padding: 10;
+}
+
+.to-the-left{
+    text-align: left;
+}
+
+.to-the-right{
+    text-align: right;
+    padding-top: 10;
+}
+
+.tab-pane form {
+    padding: 20 10 10 10;
+    color: rgb(164, 164, 164)
+}
+
+.time-div{
+    display: flex;
+}
+
+.time-div div{
+    padding: 5 5 5 0;
+}
+
+.Btn-large{
+    padding: 5;
+    margin: 3 10 5 10;
+}
+
+.nobackground{
+    background: none;
+}
+
+button.nobackground > i.glyphicon.glyphicon-stop,
+button.nobackground > i.glyphicon.glyphicon-play {
+    font-size: 27;
+}
+
+.Btn-large glyphicon{
+    font-size: 25;
+}
+
+.timer-label{
+    font-size: 30;
+    padding-left: 30;
+}
+
+.timer-div{
+    background: rgba(211, 211, 211, 0.64);
+    padding-bottom: 15;
+    padding-left: 15;
+    padding-right: 15;
+}
+
+@media (max-width: 767px){
+    .list-group-item.li-checkList .timer-div .btn-circle{
+        width: 22px;
+        height: 22px;
+    }
+    .list-group-item.li-checkList .timer-div .glyphicon{
+        font-size: 18px;
+        position: relative;
+        top: -6;
+    }
+}
+
+.li-checkList .btn.btn-circle.g-background{
+    background: rgb(24, 167, 149)
+}
+
+.li-checkList .btn.btn-circle.b-background{
+    background: rgb(33, 99, 125)
+}
+
+.glyph-start {
+    color: white;
+    left: 1.5;
+}
+
+.glyph-stop {
+    color: white;
+    left: -0.5;
+}
+
+.hr-timer-start{
+    border: 5px solid rgb(29,155,213);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.hr-timer-stop{
+    border: 5px solid rgb(167,71,90);
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.glyph-green{
+    color: #2dd02d;
+}
+
+.glyph-red{
+    color: red;
+}
+
+#offTimeUpdateDiv label{
+    display: block;
+}
+
+#offTimeUpdateDiv button{
+    display: block;
+    margin-top: 5;
+}
+
+.submit-offtime {
+    position: relative;
+    left: 15;
+}
+
+.borderless td, .borderless th, .borderless tr {
+    border: none !important;
+}
+
+@media (max-width:603px){
+    .header-company{
+        display: none;
+    }
+}
+
+@media (max-width:222px){
+    .navbar-header{
+        display: none;
+    }
+}
+

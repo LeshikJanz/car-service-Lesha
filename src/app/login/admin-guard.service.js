@@ -8,16 +8,16 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var AdminGuard = (function () {
     function AdminGuard(router) {
         this.router = router;
     }
     AdminGuard.prototype.canActivate = function () {
-        // if (sessionStorage.getItem('User')) {
-        //     return true;
-        // }
+        if (sessionStorage.getItem('User')) {
+            return true;
+        }
         if (sessionStorage.getItem('Role') == 'Admin') {
             return true;
         }
@@ -33,11 +33,11 @@ var AdminGuard = (function () {
             }
         }
     };
-    AdminGuard = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [router_1.Router])
-    ], AdminGuard);
     return AdminGuard;
 }());
+AdminGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router])
+], AdminGuard);
 exports.AdminGuard = AdminGuard;
 //# sourceMappingURL=admin-guard.service.js.map

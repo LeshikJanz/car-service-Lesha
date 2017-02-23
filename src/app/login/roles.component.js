@@ -8,9 +8,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
-var router_1 = require('@angular/router');
-var account_service_1 = require('./account.service.ts');
+var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
+var account_service_1 = require("./account.service");
 var RolesComponent = (function () {
     function RolesComponent(_router, _accountService) {
         this._router = _router;
@@ -18,14 +18,15 @@ var RolesComponent = (function () {
     }
     RolesComponent.prototype.ngOnInit = function () {
     };
-    RolesComponent = __decorate([
-        core_1.Component({
-            selector: 'roles',
-            templateUrl: 'app/login/roles.component.html'
-        }), 
-        __metadata('design:paramtypes', [router_1.Router, account_service_1.AccountService])
-    ], RolesComponent);
     return RolesComponent;
 }());
+RolesComponent = __decorate([
+    core_1.Component({
+        selector: 'roles',
+        templateUrl: 'roles.component.html'
+    }),
+    __metadata("design:paramtypes", [router_1.Router,
+        account_service_1.AccountService])
+], RolesComponent);
 exports.RolesComponent = RolesComponent;
 //# sourceMappingURL=roles.component.js.map

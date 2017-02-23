@@ -8,27 +8,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var Tab = (function () {
     function Tab() {
         this.active = false;
     }
-    __decorate([
-        core_1.Input('Title'), 
-        __metadata('design:type', String)
-    ], Tab.prototype, "title", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], Tab.prototype, "active", void 0);
-    Tab = __decorate([
-        core_1.Component({
-            selector: 'tab',
-            template: "\n  <div class=\"tab-content\">\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n  "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], Tab);
     return Tab;
 }());
+__decorate([
+    core_1.Input('Title'),
+    __metadata("design:type", String)
+], Tab.prototype, "title", void 0);
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Object)
+], Tab.prototype, "active", void 0);
+Tab = __decorate([
+    core_1.Component({
+        selector: 'tab',
+        template: "\n  <div class=\"tab-content\">\n    <div [hidden]=\"!active\" class=\"pane\">\n      <ng-content></ng-content>\n    </div>\n  </div>\n  "
+    })
+], Tab);
 exports.Tab = Tab;
 //# sourceMappingURL=tab.js.map
