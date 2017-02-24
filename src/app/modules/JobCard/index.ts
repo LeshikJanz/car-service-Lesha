@@ -17,6 +17,7 @@ import { JobCardItemBody } from './components/JobCardItemBody';
 import { JobCardItemHeader } from './components/JobCardItemHeader';
 import { JobCardItemChecklist } from './components/JobCardItemChecklist';
 import { JobCardItemGlobal } from './components/JobCardItemGlobal';
+import { JobCardItemTimeReport } from './components/JobCardItemTimeReport';
 
 import { JobCardResolve } from './services/JobCardResolve';
 import { picService } from './services/picService';
@@ -39,7 +40,8 @@ import { picService } from './services/picService';
     JobCardItemBody,
     JobCardItemHeader,
     JobCardItemChecklist,
-    JobCardItemGlobal
+    JobCardItemGlobal,
+    JobCardItemTimeReport
   ],
   providers: [
     JobCardResolve,

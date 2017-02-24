@@ -20,7 +20,7 @@ const initialState: any = {
 
 export default createReducer({
   [viewItem]: (state: any, payload: any) => ({
-    ...initialState,
+    ...state,
     object: payload,
     collections: Object
       .keys(payload)
