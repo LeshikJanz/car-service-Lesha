@@ -14,3 +14,9 @@ export const selectTab = createAction('SELECT_ITEM_TAB');
 export const nextPage = createAction('NEXT_PAGE');
 export const prevPage = createAction('PREV_PAGE');
 export const setPageNumber = createAction('SET_PAGE_NUMBER');
+
+export const confirmOrder = createAction('CONFIRM_ORDER');
+export const declineOrder = createAction('DECLINE_ORDER');
+export const haveQuestionOrder = createAction('HAVE_QUESTION_ABOUT_ORDER');
+export const addComment = createAction('ADD_COMMENT_TO_ORDER');
+export const addPicture = createAction('ADD_PICTURE_TO_ORDER');

@@ -36,7 +36,9 @@ import { selectTab } from '../actions';
         <i class="glyphicon glyphicon-time"></i>
       </button>
     </div>
-    <job-card-item-tabs></job-card-item-tabs>
+    <div id="TabView">
+      <job-card-item-checklist *ngIf="tabs$['CL']"></job-card-item-checklist>
+    </div>
   `,
   styleUrls: ['../styles/icons.css']
 })

@@ -15,9 +15,10 @@ import { JobCardListPager } from './components/JobCardListPager';
 import { JobCardItem } from './components/JobCardItem';
 import { JobCardItemBody } from './components/JobCardItemBody';
 import { JobCardItemHeader } from './components/JobCardItemHeader';
-import { JobCardItemTabs } from './components/JobCardItemTabs';
+import { JobCardItemChecklist } from './components/JobCardItemChecklist';
 
 import { JobCardResolve } from './services/JobCardResolve';
+import { picService } from './services/picService';
 
 @NgModule({
   imports: [
@@ -36,10 +37,11 @@ import { JobCardResolve } from './services/JobCardResolve';
     JobCardItem,
     JobCardItemBody,
     JobCardItemHeader,
-    JobCardItemTabs
+    JobCardItemChecklist
   ],
   providers: [
-    JobCardResolve
+    JobCardResolve,
+    picService
   ]
 })
 

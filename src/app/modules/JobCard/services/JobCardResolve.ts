@@ -8,7 +8,7 @@ import {
   ActivatedRouteSnapshot
 } from '@angular/router';
 
-import { setItems } from '../actions';
+import { setItems, viewItem } from '../actions';
 
 @Injectable()
 export class JobCardResolve implements Resolve<Response> {
@@ -48,7 +48,10 @@ export class JobCardResolve implements Resolve<Response> {
       .map((response: Response) => <any[]>response.json())
       .toPromise()
       .then(
-        result => this.store.dispatch(setItems(result))
+        (result: any) => {
+          this.store.dispatch(setItems(result));
+          this.store.dispatch(viewItem(result.value[0]));
+        }
       )
       .catch(this.handleError);
   }
