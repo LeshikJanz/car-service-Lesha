@@ -37,10 +37,11 @@ import { selectTab } from '../actions';
       </button>
     </div>
     <div id="TabView">
+      <job-card-item-global *ngIf="tabs$['GL']"></job-card-item-global>
       <job-card-item-checklist *ngIf="tabs$['CL']"></job-card-item-checklist>
     </div>
   `,
-  styleUrls: ['../styles/icons.css']
+  styleUrls: ['../styles/tabs.css']
 })
 
 export class JobCardItemBody {
