@@ -61,6 +61,30 @@ li.list-group-item.li-checkList:hover {
   outline: none;
 }
 
+.red {
+  color: red;
+}
+
+.green {
+  color: #8fc53c;
+}
+
+.yellow {
+  color: #ec9320;
+}
+
+.DarkMagenta {
+  color: DarkMagenta;
+}
+
+.display-table-row-group {
+  display: table-row-group !important;
+  outline: none;
+  height: 40px;
+  max-height: 40px;
+  max-width: 180px;
+}
+
 @media (max-width: 600px) {
   .li-checkList label {
     font-size: 13px;

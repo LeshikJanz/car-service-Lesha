@@ -2,10 +2,7 @@ import { createReducer } from 'utils/createReducer';
 import {
   viewItem,
   selectTab,
-  confirmOrder,
-  declineOrder,
-  haveQuestionOrder,
-  addComment,
+  orderStatus
 } from '../actions';
 
 const initialState: any = {
@@ -34,16 +31,11 @@ export default createReducer({
       [payload]: true
     })
   }),
-  [confirmOrder]: (state: any, payload: any) => ({
+  [orderStatus]: (state: any, payload: any) => ({
     ...state,
-  }),
-  [declineOrder]: (state: any, payload: number) => ({
-    ...state,
-  }),
-  [haveQuestionOrder]: (state: any, payload: number) => ({
-    ...state,
-  }),
-  [addComment]: (state: any, payload: any) => ({
-    ...state,
+    collections: ({
+      ...state.collections,
+      ...payload.collection
+    })
   })
 }, initialState);

@@ -5,7 +5,7 @@ import { JobCardResolve } from '../services/JobCardResolve';
 
 export const JobCardRoutes: Routes = [
   {
-    path: 'job-card-cl',
+    path: 'job-cards',
     component: JobCardLayout,
     canActivate: [LoginGuard],
     resolve: {

@@ -4,10 +4,7 @@ import { Store } from '@ngrx/store';
 import { picService } from '../services/picService';
 
 import {
-  confirmOrder,
-  declineOrder,
-  haveQuestionOrder,
-  addComment,
+  orderStatus,
   addPicture
 } from '../actions';
 
@@ -19,8 +16,9 @@ import {
 
 export class JobCardItemChecklist {
   private collection$ = 'XIS_JOBS9Collection';
+  itemId$: Observable<number>;
   items$: Observable<any[]>;
-  commentActive: boolean = false;
+  activeComment: number = null;
 
   constructor(
     private store: Store<any>,
@@ -31,36 +29,25 @@ export class JobCardItemChecklist {
       .subscribe(
         (state: any) => {
           this.items$ = state.item.collections[this.collection$];
+          this.itemId$ = state.item.object.DocNum;
         }
       );
   }
 
-  confirm(id: number) {
-    this.store.dispatch(confirmOrder({ id, collection: this.collection$ }));
+  handleOrderStatusChange(item: any, status: string) {
+    item.U_TaskStts = status;
+    this.store.dispatch(orderStatus({ [this.collection$]: item }));
   }
 
-  decline(id: number) {
-    this.store.dispatch(declineOrder({ id, collection: this.collection$ }));
+  handleCommentChange(item: any) {
+    this.store.dispatch(orderStatus({ [this.collection$]: item }));
   }
 
-  question(id: number) {
-    this.store.dispatch(haveQuestionOrder({ id, collection: this.collection$ }));
+  handleCommentShow(id: number): void {
+    this.activeComment = id === this.activeComment ? null : id;
   }
 
-  Change(event: any) {
+  handlePictureChange(event: any) {
     //this.selected.pic = event.currentTarget.files[0] as File;
-  }
-
-  comment(event: any): void {
-    this.commentActive = !this.commentActive;
-  }
-
-  onChange(event: any) {
-    const files = event.srcElement.files;
-    console.log(files);
-  }
-
-  saveComment(item: any) {
-    this.store.dispatch(addComment(item));
   }
 }

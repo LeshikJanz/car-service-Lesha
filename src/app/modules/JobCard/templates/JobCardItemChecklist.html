@@ -7,31 +7,30 @@
         role="presentation"
       >
         <label class="col-xs-5">
-          &nbsp;{{ item.U_TaskName }}
+          &nbsp;{{item.U_TaskName}}
         </label>
         <div class="btn-check-list col-xs-7">
-          <button type="button" class="btn btn-circle" (click)="confirm(item.LineId)">
-            <i class="glyphicon glyphicon-ok-sign" [class.green]="item.isOrderConfirmed"></i>
+          <button type="button" class="btn btn-circle" (click)="handleOrderStatusChange(item, '1')">
+            <i class="glyphicon glyphicon-ok-sign" [class.green]="item.U_TaskStts == '1'"></i>
           </button>
-          <button type="button" class="btn btn-circle" (click)="decline(item.LineId)">
-            <i class="glyphicon glyphicon-remove-sign" [class.red]="item.isOrderDeclined"></i>
+          <button type="button" class="btn btn-circle" (click)="handleOrderStatusChange(item, '0')">
+            <i class="glyphicon glyphicon-remove-sign" [class.red]="item.U_TaskStts == '0'"></i>
           </button>
-          <button type="button" class="btn btn-circle" (click)="question(item.LineId)">
-            <i class="glyphicon glyphicon-question-sign" [class.yellow]="item.isOrderHaveQuestion"></i>
+          <button type="button" class="btn btn-circle" (click)="handleOrderStatusChange(item, '2')">
+            <i class="glyphicon glyphicon-question-sign" [class.yellow]="item.U_TaskStts == '2'"></i>
           </button>
-          <button type="button" class="btn btn-circle" (click)="comment($event);">
+          <button type="button" class="btn btn-circle" (click)="handleCommentShow(item.LineId);">
             <i class="glyphicon glyphicon-plus-sign" [class.DarkMagenta]="item.U_Notes"></i>
           </button>
-
           <label type="button" class="btn btn-circle camera-label">
-            <input type="file" accept="image/*;capture=camera" (change)="Change($event)">
+            <input type="file" accept="image/*;capture=camera" (change)="handlePictureChange($event)">
             <i class="glyphicon glyphicon-camera"></i>
           </label>
           <textarea
-            class="input-note" type="text"
-            [class.display-table-row-group]="commentActive && selected == item"
-            [(ngModel)]='item.U_Notes'
-            (mouseleave)="saveComment(item)"
+            class="input-note"
+            [class.display-table-row-group]="activeComment === item.LineId"
+            [(ngModel)]="item.U_Notes"
+            (change)="handleCommentChange(item)"
           ></textarea>
         </div>
       </li>
