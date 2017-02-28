@@ -55,8 +55,8 @@ export class JobCardItemTimeReport {
     this.msec$ = delta;
 
     if (this.lastJob$ && !this.lastJob$.U_ToHr) {
-      let timer = Observable.timer(0, 1000);
       this.HasActiveLine = true;
+      let timer = Observable.timer(0, 1000);
       this.subscription = timer.subscribe(t => (this.msec$ = t * 1000 + delta));
     }
   }

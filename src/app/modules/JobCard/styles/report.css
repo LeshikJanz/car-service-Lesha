@@ -132,3 +132,21 @@ button.nobackground > i.glyphicon.glyphicon-play {
     display: none;
   }
 }
+
+.li-checkList .btn.btn-circle.g-background{
+  background: rgb(24, 167, 149)
+}
+
+.li-checkList .btn.btn-circle.b-background{
+  background: rgb(33, 99, 125)
+}
+
+.glyph-start {
+  color: white;
+  left: 1.5;
+}
+
+.glyph-stop {
+  color: white;
+  left: -0.5;
+}
