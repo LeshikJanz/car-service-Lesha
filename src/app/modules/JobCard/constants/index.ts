@@ -1,0 +1,1 @@
+export const MIDNIGHT_TIME = new Date("12:00:00").getMilliseconds();

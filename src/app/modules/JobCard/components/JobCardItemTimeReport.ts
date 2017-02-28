@@ -24,24 +24,20 @@ export class JobCardItemTimeReport {
   jobs$: any;
   lastJob$: any;
   selected$: any;
-  object$: any;
   msec$: number = 0;
   subscription: any;
   HasActiveLine: boolean = false;
   item: any;
   DocEntry$: any;
-  delta$: number = 0;
 
   constructor(private store: Store<any>) {
     this.timeReport$ = new XIS_JOBS11Collection;
-    this.msec$ = 0;
     store
         .select('JobCard')
         .subscribe(
             (state: any) => {
               this.jobs$ = state.item.collections[this.jobCollection$];
               this.items$ = state.item.collections[this.collection$];
-              this.object$ = state.item.object;
               this.DocEntry$ = state.item.object.DocEntry$;
               this.selected$ = state.report;
             }
@@ -70,16 +66,15 @@ export class JobCardItemTimeReport {
   }
 
   start() {
-    this.timeReport$.DocEntry = this.object$.DocEntry;
+    this.timeReport$.DocEntry = this.DocEntry$;
     this.timeReport$.LineId = this.jobs$.length;
     this.timeReport$.U_JobLine = this.selected$.LineId;
     this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
     this.timeReport$.U_FromHr = moment().format('h:mm:ss');
+
     let timer = Observable.timer(0, 1000);
     this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
     this.HasActiveLine = true;
-    console.log("this.timeReport$");
-    console.log(this.timeReport$);
     this.store.dispatch(startTimer(this.timeReport$));
   }
 
@@ -88,6 +83,7 @@ export class JobCardItemTimeReport {
     this.timeReport$.endTime = Date.now();
     this.timeReport$.U_ToHr = new Date(this.timeReport$.endTime).toLocaleTimeString('en-US', {hour12: false});
     this.jobs$[this.jobs$.length - 1] = this.timeReport$;
+
     this.HasActiveLine = false;
     this.subscription.unsubscribe();
     this.store.dispatch(stopTimer(this.jobs$));
