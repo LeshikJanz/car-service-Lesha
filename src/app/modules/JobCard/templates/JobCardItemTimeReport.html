@@ -27,7 +27,7 @@
               <div>
                 <div class="container-fluid">
                   <div class="col-xs-6">
-                    <label class="timer-label">{{ (sec - 7200000 ) | date: 'HH:mm:ss' }}</label>
+                    <label class="timer-label">{{ (msec$ - 7200000) | date: 'HH:mm:ss' }}</label>
                     <label *ngIf="!HasActiveLine">{{ 'NOTSTARTED' | translate}} </label>
                   </div>
                   <div class="col-xs-5 to-the-right">

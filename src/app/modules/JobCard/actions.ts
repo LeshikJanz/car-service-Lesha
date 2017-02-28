@@ -19,3 +19,5 @@ export const orderStatus = createAction('CHANGE_ORDER_STATUS');
 export const addPicture = createAction('ADD_PICTURE_TO_ORDER');
 
 export const selectTimeReport = createAction('SELECT_ITEM_TIME_REPORT');
+export const startTimer = createAction('START_TIMER');
+export const stopTimer = createAction('STOP_TIMER');
