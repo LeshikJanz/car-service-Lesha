@@ -51,7 +51,7 @@ export class JobCardItemTimeReport {
 
   updateTimer() {
     if(this.subscription) this.unsubscribe();
-    const delta = Date.now() - moment.duration(this.lastJob$.U_FromHr, "h:mm:ss" ).asMilliseconds();
+    const delta = moment().valueOf() - moment.duration(this.lastJob$.U_FromHr, "h:mm:ss" ).asMilliseconds();
     this.msec$ = delta;
 
     if (this.lastJob$ && !this.lastJob$.U_ToHr) {
@@ -82,8 +82,8 @@ export class JobCardItemTimeReport {
 
   stop() {
     this.timeReport$ = this.jobs$[this.jobs$.length - 1];
-    this.timeReport$.endTime = Date.now();
-    this.timeReport$.U_ToHr = new Date(this.timeReport$.endTime).toLocaleTimeString('en-US', {hour12: false});
+    this.timeReport$.endTime = moment().valueOf();
+    this.timeReport$.U_ToHr = moment().format('h:mm:ss');
     this.jobs$[this.jobs$.length - 1] = this.timeReport$;
 
     this.HasActiveLine = false;
