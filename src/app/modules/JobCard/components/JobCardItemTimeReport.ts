@@ -42,7 +42,7 @@ export class JobCardItemTimeReport {
             (state: any) => {
               this.jobs$ = state.item.collections[this.jobCollection$];
               this.items$ = state.item.collections[this.collection$];
-              this.DocEntry$ = state.item.object.DocEntry$;
+              this.DocEntry$ = state.item.object.DocEntry;
               this.selected$ = state.report;
             }
         );
@@ -78,6 +78,7 @@ export class JobCardItemTimeReport {
     this.timeReport$.U_JobLine = this.selected$.LineId;
     this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
     this.timeReport$.U_FromHr = moment().format('HH:mm:ss');
+    this.timeReport$.U_RprtType = "RealTime";
 
     let timer = Observable.timer(0, 1000);
     this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
@@ -103,10 +104,17 @@ export class JobCardItemTimeReport {
     this.timeReport$.U_FromDt = this.offTimeDate;
     this.timeReport$.U_FromHr = this.offTimeStart;
     this.timeReport$.U_ToHr = this.offTimeEnd;
+    this.timeReport$.U_RprtType = "OffTime";
 
     this.jobs$[this.jobs$.length] = this.timeReport$;
     this.store.dispatch(stopTimer(this.jobs$));
     this.timeReport$ = {};
+  }
+
+  getCurrentTotalHours(){
+    let totalHours = 0;
+    this.jobs$.forEach((elem:any) => totalHours += moment.duration(elem.U_ToHr, "HH:mm:ss" ).asHours() - moment.duration(elem.U_FromHr, "HH:mm:ss" ).asHours())
+    return totalHours;
   }
 
 }
