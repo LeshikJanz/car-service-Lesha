@@ -51,7 +51,7 @@ export class JobCardItemTimeReport {
 
   updateTimer() {
     if(this.subscription) this.unsubscribe();
-    const delta = moment().valueOf() - moment.duration(this.lastJob$.U_FromHr, "h:mm:ss" ).asMilliseconds();
+    const delta = moment().valueOf() - moment.duration(this.lastJob$.U_FromHr, "HH:mm:ss" ).asMilliseconds();
     this.msec$ = delta;
 
     if (this.lastJob$ && !this.lastJob$.U_ToHr) {
@@ -72,7 +72,7 @@ export class JobCardItemTimeReport {
     this.timeReport$.LineId = this.jobs$.length;
     this.timeReport$.U_JobLine = this.selected$.LineId;
     this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
-    this.timeReport$.U_FromHr = moment().format('h:mm:ss');
+    this.timeReport$.U_FromHr = moment().format('HH:mm:ss');
 
     let timer = Observable.timer(0, 1000);
     this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
