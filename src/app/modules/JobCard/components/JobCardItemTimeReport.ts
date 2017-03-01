@@ -10,121 +10,121 @@ import {checkBinding} from "@angular/core/src/linker/view_utils";
 import {isNullOrUndefined} from "util";
 
 @Component({
-    selector: 'job-card-item-time-report',
-    templateUrl: '../templates/JobCardItemTimeReport.html',
-    styleUrls: [
-        '../styles/report.css',
-        '../styles/checklist.css'
-    ]
+  selector: 'job-card-item-time-report',
+  templateUrl: '../templates/JobCardItemTimeReport.html',
+  styleUrls: [
+    '../styles/report.css',
+    '../styles/checklist.css'
+  ]
 })
 
 export class JobCardItemTimeReport {
-    private collection$ = 'XIS_JOBS2Collection';
-    private jobCollection$ = 'XIS_JOBS11Collection';
+  private collection$ = 'XIS_JOBS2Collection';
+  private jobCollection$ = 'XIS_JOBS11Collection';
 
-    timeReport$: any;
-    items$: any[];
-    jobs$: any;
-    curJob$: any;
-    selected$: any;
-    msec$: number = 0;
-    subscription: any;
-    HasActiveLine: boolean = false;
-    item: any;
-    DocEntry$: any;
-    offTimeDate: any;
-    offTimeStart: any;
-    offTimeEnd: any;
+  timeReport$: any;
+  items$: any[];
+  jobs$: any;
+  curJob$: any;
+  selected$: any;
+  msec$: number = 0;
+  subscription: any;
+  HasActiveLine: boolean = false;
+  item: any;
+  DocEntry$: any;
+  offTimeDate: any;
+  offTimeStart: any;
+  offTimeEnd: any;
 
-    constructor(private store: Store<any>) {
-        this.timeReport$ = new XIS_JOBS11Collection;
-        store
-            .select('JobCard')
-            .subscribe(
-                (state: any) => {
-                    this.jobs$ = state.item.collections[this.jobCollection$];
-                    this.items$ = state.item.collections[this.collection$];
-                    this.DocEntry$ = state.item.object.DocEntry;
-                }
-            );
-    }
-
-    unsubscribe() {
-        this.subscription.unsubscribe();
-        this.HasActiveLine = false;
-    }
-
-    updateTimer() {
-        if (this.subscription) this.unsubscribe();
-
-        if (this.curJob$) {
-            if (this.curJob$.U_ToHr == null) {
-                this.HasActiveLine = true;
-                const delta = moment().valueOf() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds();
-                let timer = Observable.timer(0, 1000);
-                this.subscription = timer.subscribe(t => (this.msec$ = t * 1000 + delta));
-            } else this.msec$ = moment.duration(this.curJob$.U_ToHr, "HH:mm:ss").asMilliseconds() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds() - STARTED_POSITION;
-        } else {
-            this.msec$ = -STARTED_POSITION
+  constructor(private store: Store<any>) {
+    this.timeReport$ = new XIS_JOBS11Collection;
+    store
+      .select('JobCard')
+      .subscribe(
+        (state: any) => {
+          this.jobs$ = state.item.collections[this.jobCollection$];
+          this.items$ = state.item.collections[this.collection$];
+          this.DocEntry$ = state.item.object.DocEntry;
         }
-    }
+      );
+  }
 
-    getActiveJob(LineId: any) {
-        let lines = this.jobs$.filter((x: any) => {
-            return (x.U_JobLine == LineId && x.U_FromHr != null )
-        });
-        return lines[lines.length - 1];
-    }
+  unsubscribe() {
+    this.subscription.unsubscribe();
+    this.HasActiveLine = false;
+  }
 
-    select(item: any) {
-        this.selected$ = item;
-        this.curJob$ = this.getActiveJob(item.LineId);
-        this.updateTimer();
-        this.store.dispatch(selectTimeReport(item));
-    }
+  updateTimer() {
+    if (this.subscription) this.unsubscribe();
 
-    start() {
-        this.timeReport$ = {};
-        this.timeReport$.DocEntry = this.DocEntry$;
-        this.timeReport$.LineId = this.jobs$.length;
-        this.timeReport$.U_JobLine = this.selected$.LineId;
-        this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
-        this.timeReport$.U_FromHr = moment().format('HH:mm:ss');
-        this.timeReport$.U_ToHr = null;
-        this.timeReport$.U_RprtType = "RealTime";
-
-        let timer = Observable.timer(0, 1000);
-        this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
+    if (this.curJob$) {
+      if (this.curJob$.U_ToHr == null) {
         this.HasActiveLine = true;
-        this.store.dispatch(startTimer(this.timeReport$));
+        const delta = moment().valueOf() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds();
+        let timer = Observable.timer(0, 1000);
+        this.subscription = timer.subscribe(t => (this.msec$ = t * 1000 + delta));
+      } else this.msec$ = moment.duration(this.curJob$.U_ToHr, "HH:mm:ss").asMilliseconds() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds() - STARTED_POSITION;
+    } else {
+      this.msec$ = -STARTED_POSITION
     }
+  }
 
-    stop() {
-        this.timeReport$ = this.getActiveJob(this.selected$.LineId);
-        this.timeReport$.U_ToHr = moment().format('HH:mm:ss');
-        this.jobs$[this.timeReport$.LineId - 1] = this.timeReport$;
+  getActiveJob(LineId: any) {
+    let lines = this.jobs$.filter((x: any) => {
+      return (x.U_JobLine == LineId && x.U_FromHr != null )
+    });
+    return lines[lines.length - 1];
+  }
 
-        this.HasActiveLine = false;
-        this.subscription.unsubscribe();
-        this.store.dispatch(stopTimer(this.jobs$));
-    }
+  select(item: any) {
+    this.selected$ = item;
+    this.curJob$ = this.getActiveJob(item.LineId);
+    this.updateTimer();
+    this.store.dispatch(selectTimeReport(item));
+  }
 
-    offTimeUpdate() {
-        this.timeReport$.DocEntry = this.DocEntry$;
-        this.timeReport$.LineId = this.jobs$.length;
-        this.timeReport$.U_JobLine = this.selected$.LineId;
-        this.timeReport$.U_FromDt = this.offTimeDate;
-        this.timeReport$.U_FromHr = this.offTimeStart;
-        this.timeReport$.U_ToHr = this.offTimeEnd;
-        this.timeReport$.U_RprtType = "OffTime";
+  start() {
+    this.timeReport$ = {};
+    this.timeReport$.DocEntry = this.DocEntry$;
+    this.timeReport$.LineId = this.jobs$.length;
+    this.timeReport$.U_JobLine = this.selected$.LineId;
+    this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
+    this.timeReport$.U_FromHr = moment().format('HH:mm:ss');
+    this.timeReport$.U_ToHr = null;
+    this.timeReport$.U_RprtType = "RealTime";
 
-        this.jobs$[this.jobs$.length] = this.timeReport$;
-        this.store.dispatch(stopTimer(this.jobs$));
-    }
+    let timer = Observable.timer(0, 1000);
+    this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
+    this.HasActiveLine = true;
+    this.store.dispatch(startTimer(this.timeReport$));
+  }
 
-    getCurrentTotalHours() {
-        let totalHours = 0;
-        this.jobs$.forEach((elem: any) => totalHours += moment.duration(elem.U_ToHr, "HH:mm:ss").asHours() - moment.duration(elem.U_FromHr, "HH:mm:ss").asHours())
-        return totalHours;
-    }
+  stop() {
+    this.timeReport$ = this.getActiveJob(this.selected$.LineId);
+    this.timeReport$.U_ToHr = moment().format('HH:mm:ss');
+    this.jobs$[this.timeReport$.LineId - 1] = this.timeReport$;
+
+    this.HasActiveLine = false;
+    this.subscription.unsubscribe();
+    this.store.dispatch(stopTimer(this.jobs$));
+  }
+
+  offTimeUpdate() {
+    this.timeReport$.DocEntry = this.DocEntry$;
+    this.timeReport$.LineId = this.jobs$.length;
+    this.timeReport$.U_JobLine = this.selected$.LineId;
+    this.timeReport$.U_FromDt = this.offTimeDate;
+    this.timeReport$.U_FromHr = this.offTimeStart;
+    this.timeReport$.U_ToHr = this.offTimeEnd;
+    this.timeReport$.U_RprtType = "OffTime";
+
+    this.jobs$[this.jobs$.length] = this.timeReport$;
+    this.store.dispatch(stopTimer(this.jobs$));
+  }
+
+  getCurrentTotalHours() {
+    let totalHours = 0;
+    this.jobs$.forEach((elem: any) => totalHours += moment.duration(elem.U_ToHr, "HH:mm:ss").asHours() - moment.duration(elem.U_FromHr, "HH:mm:ss").asHours())
+    return totalHours;
+  }
 }
