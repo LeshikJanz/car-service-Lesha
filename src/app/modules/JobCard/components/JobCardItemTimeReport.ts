@@ -5,6 +5,7 @@ const moment = require('moment');
 
 import { selectTimeReport, startTimer, stopTimer } from '../actions';
 import { XIS_JOBS11Collection } from "../../../jobCard/variables/XIS_JOBS11Collection";
+import { STARTED_POSITION } from "../constants/index";
 
 @Component({
   selector: 'job-card-item-time-report',
@@ -51,13 +52,14 @@ export class JobCardItemTimeReport {
 
   updateTimer() {
     if(this.subscription) this.unsubscribe();
-    const delta = moment().valueOf() - moment.duration(this.lastJob$.U_FromHr, "HH:mm:ss" ).asMilliseconds();
-    this.msec$ = delta;
 
     if (this.lastJob$ && !this.lastJob$.U_ToHr) {
       this.HasActiveLine = true;
+      const delta = moment().valueOf() - moment.duration(this.lastJob$.U_FromHr, "HH:mm:ss" ).asMilliseconds();
       let timer = Observable.timer(0, 1000);
       this.subscription = timer.subscribe(t => (this.msec$ = t * 1000 + delta));
+    }else {
+      this.msec$ = moment.duration(this.lastJob$.U_ToHr, "HH:mm:ss" ).asMilliseconds() - moment.duration(this.lastJob$.U_FromHr, "HH:mm:ss" ).asMilliseconds() - STARTED_POSITION;
     }
   }
 
