@@ -84,7 +84,6 @@ export class JobCardItemTimeReport {
 
   stop() {
     this.timeReport$ = this.jobs$[this.jobs$.length - 1];
-    this.timeReport$.endTime = moment().valueOf();
     this.timeReport$.U_ToHr = moment().format('h:mm:ss');
     this.jobs$[this.jobs$.length - 1] = this.timeReport$;
 
