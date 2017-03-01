@@ -30,6 +30,9 @@ export class JobCardItemTimeReport {
   HasActiveLine: boolean = false;
   item: any;
   DocEntry$: any;
+  offTimeDate: any;
+  offTimeStart: any;
+  offTimeEnd: any;
 
   constructor(private store: Store<any>) {
     this.timeReport$ = new XIS_JOBS11Collection;
@@ -89,6 +92,19 @@ export class JobCardItemTimeReport {
 
     this.HasActiveLine = false;
     this.subscription.unsubscribe();
+    this.store.dispatch(stopTimer(this.jobs$));
+    this.timeReport$ = {};
+  }
+
+  offTimeUpdate() {
+    this.timeReport$.DocEntry = this.DocEntry$;
+    this.timeReport$.LineId = this.jobs$.length;
+    this.timeReport$.U_JobLine = this.selected$.LineId;
+    this.timeReport$.U_FromDt = this.offTimeDate;
+    this.timeReport$.U_FromHr = this.offTimeStart;
+    this.timeReport$.U_ToHr = this.offTimeEnd;
+
+    this.jobs$[this.jobs$.length] = this.timeReport$;
     this.store.dispatch(stopTimer(this.jobs$));
     this.timeReport$ = {};
   }
