@@ -5,7 +5,6 @@
         class="list-group-item li-checkList"
         *ngIf="item.U_PartCode"
         role="presentation"
-        [class.active]="selected$ == item"
         (click)="select(item)"
       >
         <label>
