@@ -1,4 +1,4 @@
-import { NgModule, Pipe } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
@@ -11,7 +11,6 @@ import { LoginService } from './jobCard/services/login.service';
 import { jobCardListComponent } from './jobCard/components/jobCard.component';
 import { AccountService } from './login/account.service';
 import { LoginComponent } from './login/login.component';
-import { TranslatePipe } from './translate/translate.pipe';
 import { TranslateService } from './translate/translate.service';
 import { TRANSLATION_PROVIDERS } from './translate/translation';
 import { UserInfoService } from './login/userInfo.service';
@@ -41,11 +40,11 @@ import { picService } from './jobCard/services/picService';
 import { LoaderService } from './services/loader.service';
 import { LoaderComponent } from './components/loader/loader.component';
 import { JobCardStatusLoaderService } from './services/jobCardStatusLoader.service';
-import { TimeNoSecondsPipe } from './pipes/timeNoSecondsPipe';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { ExampleComponent } from './components/example';
+import SharedModule from 'app/modules/Share';
+import JobCardModule from './modules/JobCard';
 
 import reducer from '../reducer';
 
@@ -56,14 +55,15 @@ import reducer from '../reducer';
     RouterModule.forRoot(appRoutes, { useHash: true }),
     HttpModule,
     StoreModule.provideStore(reducer),
-    StoreDevtoolsModule.instrumentOnlyWithExtension()
+    StoreDevtoolsModule.instrumentOnlyWithExtension(),
+    SharedModule,
+    JobCardModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
     jobCardListComponent,
     LoginComponent,
-    TranslatePipe,
     RegisterComponent,
     vEqual,
     vUserName,
@@ -78,9 +78,7 @@ import reducer from '../reducer';
     JobCardCheckListComponent,
     JobCardTimeReportComponent,
     FileSelectDirective,
-    LoaderComponent,
-    TimeNoSecondsPipe,
-    ExampleComponent
+    LoaderComponent
   ],
   providers: [
     JobCardService,

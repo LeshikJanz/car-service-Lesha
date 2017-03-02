@@ -1,0 +1,46 @@
+<table class="table">
+  <tbody>
+  <tr>
+    <td class="col-xs-6 padd-bottom" colspan="2">
+      <h4>{{item$.DocNum}} - Neuer Auftrag</h4>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-xs-3" colspan="2">
+      <h4>{{item$.U_Mnfctr + ", " + item$.U_MdlCode + ", " + item$.U_MdlYear}}</h4>
+    </td>
+    <td class="col-xs-3"></td>
+  </tr>
+  <div style="clear: both;"></div>
+  <tr>
+    <td class="col-xs-3">
+      <h5>{{item$.U_OwnBPN}}</h5>
+    </td>
+    <td class="col-xs-3">
+      <h5>{{item$.U_OwnCntPh}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-xs-3">
+      <h5>{{('U_LicNum' | translate) + ": " + item$.U_LicNum}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-md-6 col-sm-7">
+      <h5>{{('U_EntryDt' | translate) + ": " + (item$.U_EntryDt || "") +
+        " " + ((item$.U_EntryHr | timeNoSeconds) || "")}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-md-6 col-sm-7">
+      <h5>{{('U_DueDate' | translate) + ": " + (item$.U_DueDate || "") +
+        " " + ((item$.U_DueTime | timeNoSeconds) || "")}}</h5>
+    </td>
+  </tr>
+  <tr>
+    <td class="col-xs-3">
+      <h5>{{('U_VCode' | translate) + ": " + item$.U_VCode}}</h5>
+    </td>
+  </tr>
+  </tbody>
+</table>

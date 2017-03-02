@@ -1,0 +1,14 @@
+.list-pager {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-button {
+  width: 49%;
+  outline: none;
+}
+
+button.page-button.disabled.btn-default {
+  cursor: not-allowed;
+  background-color: #fff;
+}

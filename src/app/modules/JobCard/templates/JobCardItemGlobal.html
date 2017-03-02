@@ -1,0 +1,48 @@
+<div id="TabViewGlobal">
+  <div class="table-responsive table-condensed borderless container-fluid">
+    <div class="col-lg-5 col-md-8 col-sm-9">
+      <table class="table">
+        <tbody>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{('U_CarID' | translate) + ": " + (item$.U_CarID || "")}}</td>
+          <td class="col-xs-3">&nbsp;{{ ('U_Subject' | translate) + ": " + (item$.U_Subject || "") }}</td>
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_OwnBP' | translate) + ": " + (item$.U_OwnBP  || "")}}</td>
+          <td class="col-xs-3">&nbsp;{{ (item$.U_OwnBPN || "") }}</td>
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_OwnCnt' | translate) + ": " + (item$.U_OwnCnt || "") }} </td>
+          <td class="col-xs-3">&nbsp;{{ (item$.U_OwnCntPh || "") }}</td>
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_SpnsrBP' | translate) + ": " + (item$.U_SpnsrBP || "") }} </td>
+          <td class="col-xs-3">&nbsp;{{ (item$.U_SpnsrBPN || "") }}</td>
+
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_SpnsrCnt' | translate) + ": " + (item$.U_SpnsrCnt || "") }} </td>
+          <td class="col-xs-3">&nbsp;{{ (item$.U_SpnCntPh || "") }}</td>
+
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_Km' | translate) + ": " + (item$.U_Km || "")}} </td>
+          <td class="col-xs-3">&nbsp;{{ ('U_Alarm' | translate) + ": " + (item$.U_Alarm || "")}}</td>
+
+        </tr>
+        <tr>
+          <td class="col-xs-3">&nbsp;{{ ('U_VCode' | translate) + ": " + (item$.U_VCode || "") }} </td>
+          <td class="col-xs-3">&nbsp;{{ ('U_FuelTank' | translate) + ": " + (item$.U_FuelTank || "") }}</td>
+        </tr>
+        <tr>
+          <td>{{ ('U_Notes' | translate) + ":" }}</td>
+        </tr>
+        <tr>
+          <textarea Id="note-row" class="col-xs-3 info" colspan="2">&nbsp;{{item$.U_Notes }} </textarea>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-7 col-md-4 col-sm-3"></div>
+  </div>
+</div>
