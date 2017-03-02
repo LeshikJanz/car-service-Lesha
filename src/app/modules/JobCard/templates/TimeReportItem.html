@@ -1,4 +1,4 @@
-<div class="panel panel-default jobCard-Detail" *ngIf="item$" >
+<div>
   <div class="panel-heading tab-header">
     <div class="JobCardHeader">
       <button (click)="slideIn()">
@@ -14,10 +14,10 @@
       </button>
     </div>
   </div>
-  <div>
+  <div class="drop-down-tab-button" (click)="handleOpenTab()">
     {{"Job Card " + item$.DocNum}}
   </div>
-  <hr>
+  <hr class="header-docnum-line">
   <section *ngIf="isTimeReportOpen$">
     <div id="JCHeader">
       <div class="table-responsive table-condensed borderless container-fluid">

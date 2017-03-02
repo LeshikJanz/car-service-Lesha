@@ -59,3 +59,13 @@
     margin-bottom: 2px;
   }
 }
+
+.header-docnum-line {
+  height: 1px;
+  margin-top: 3px;
+  background: #D5D5D5;
+}
+
+.drop-down-tab-button {
+  cursor: pointer;
+}

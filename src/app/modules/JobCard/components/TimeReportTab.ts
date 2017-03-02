@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
+import { openTimeReportTab } from "../actions";
 
 @Component({
   selector: 'time-report-item',
@@ -23,7 +24,12 @@ export class TimeReportTab {
       .subscribe(
         (state: any) => {
           this.item$ = state.item.object
+          this.isTimeReportOpen$ = state.tabs.isTimeReportOpen;
         }
       );
+  }
+
+  handleOpenTab(){
+    this.store.dispatch(openTimeReportTab());
   }
 }
