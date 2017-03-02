@@ -29,6 +29,7 @@ import { Store } from '@ngrx/store';
         </div>
         <div id="JCBody">
           <job-card-item-body></job-card-item-body>
+          <parts-issue-layout></parts-issue-layout>
         </div>
       </section>
     </div>
@@ -48,5 +49,9 @@ export class JobCardItem {
       .subscribe(
         (state: any) => this.item$ = state.item.object
       );
+  }
+
+  slideIn() {
+
   }
 }
