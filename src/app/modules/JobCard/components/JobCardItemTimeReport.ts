@@ -1,13 +1,12 @@
-import {Component} from '@angular/core';
-import {Store} from '@ngrx/store';
-import {Observable} from 'rxjs/Observable';
+import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 const moment = require('moment');
 
-import {selectTimeReport, startTimer, stopTimer} from '../actions';
-import {XIS_JOBS11Collection} from "../../../jobCard/variables/XIS_JOBS11Collection";
-import {STARTED_POSITION} from "../constants/index";
-import {checkBinding} from "@angular/core/src/linker/view_utils";
-import {isNullOrUndefined} from "util";
+import { selectTimeReport, startTimer, stopTimer } from '../actions';
+import { XIS_JOBS11Collection } from "../../../jobCard/variables/XIS_JOBS11Collection";
+import { STARTED_POSITION } from "../constants/index";
+import { XIS_JOBS2Collection } from "../../../jobCard/variables/XIS_JOBS2Collection";
 
 @Component({
   selector: 'job-card-item-time-report',
@@ -37,7 +36,6 @@ export class JobCardItemTimeReport {
   offTimeEnd: any;
 
   constructor(private store: Store<any>) {
-    this.timeReport$ = new XIS_JOBS11Collection;
     store
       .select('JobCard')
       .subscribe(
@@ -45,6 +43,7 @@ export class JobCardItemTimeReport {
           this.jobs$ = state.item.collections[this.jobCollection$];
           this.items$ = state.item.collections[this.collection$];
           this.DocEntry$ = state.item.object.DocEntry;
+          if (this.isGeneralTimeNeed()) this.addGeneralTime();
         }
       );
   }
@@ -120,6 +119,17 @@ export class JobCardItemTimeReport {
 
     this.jobs$[this.jobs$.length] = this.timeReport$;
     this.store.dispatch(stopTimer(this.jobs$));
+  }
+
+  isGeneralTimeNeed() {
+    return this.items$[this.items$.length - 1].U_PartCode != "Job card general time entry" && this.items$[this.items$.length - 1].U_PartCode
+  }
+
+  addGeneralTime() {
+    const generalJob = new XIS_JOBS2Collection();
+    generalJob.U_PartCode = "Job card general time entry";
+    generalJob.DocEntry = this.DocEntry$
+    this.items$.push(generalJob);
   }
 
   getCurrentTotalHours() {
