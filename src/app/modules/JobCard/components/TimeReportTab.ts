@@ -3,19 +3,19 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
 @Component({
-  selector: 'job-card-item',
-  templateUrl: '../templates/JobCardItem.html',
+  selector: 'time-report-item',
+  templateUrl: '../templates/TimeReportItem.html',
   styleUrls: [
     '../styles/item.css',
     '../styles/navigation.css'
   ]
 })
 
-export class JobCardItem {
+export class TimeReportTab {
   item$: Observable<any>;
-  isCheckListOpen: boolean = false;
-  isTimeRepoerOpen: boolean = false;
-  isPartsIssueOpen: boolean = false;
+  isCheckListOpen$: boolean = false;
+  isTimeReportOpen$: boolean = false;
+  isPartsIssueOpen$: boolean = false;
 
   constructor(private store: Store<any>) {
     store

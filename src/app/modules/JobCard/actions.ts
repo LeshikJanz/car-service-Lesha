@@ -21,3 +21,7 @@ export const addPicture = createAction('ADD_PICTURE_TO_ORDER');
 export const selectTimeReport = createAction('SELECT_ITEM_TIME_REPORT');
 export const startTimer = createAction('START_TIMER');
 export const stopTimer = createAction('STOP_TIMER');
+
+export const openTimeReportTab = createAction('OPEN_TIME_REPORT_TAB');
+export const openCheckListTab = createAction('OPEN_CHECK_LIST_TAB');
+export const openPartsIssueTab = createAction('OPEN_PARTS_ISSUE_TAB');

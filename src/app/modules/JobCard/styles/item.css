@@ -13,6 +13,15 @@
   padding-bottom: 10px;
 }
 
+.tab-header {
+  background: #126EB9;
+  padding-bottom: 10px;
+}
+
+.tab-header-text{
+  color: white;
+}
+
 .pop.glyphicon:hover,
 .pop.glyphicon:focus {
   font-size: 28px;
