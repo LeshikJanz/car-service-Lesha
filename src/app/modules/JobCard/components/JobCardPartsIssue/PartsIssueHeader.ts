@@ -4,11 +4,7 @@ import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'parts-issue-header',
-  template: `
-    <div id="JCHeader">
-      
-    </div>
-  `
+  templateUrl: '../../templates/PartsIssueHeader.html'
 })
 
 export class PartsIssueHeader {
