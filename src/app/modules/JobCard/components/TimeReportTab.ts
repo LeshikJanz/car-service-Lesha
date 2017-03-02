@@ -30,4 +30,8 @@ export class TimeReportTab {
   handleOpenTab(){
     this.store.dispatch(openTimeReportTab());
   }
+
+  save(){
+    console.log("Save");
+  }
 }

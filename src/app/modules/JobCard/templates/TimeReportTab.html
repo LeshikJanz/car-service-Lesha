@@ -1,7 +1,7 @@
 <div>
   <div class="panel-heading tab-header">
     <div class="JobCardHeader">
-      <button (click)="slideIn()">
+      <button class="slideIn" (click)="slideIn()">
         <i class="pop glyphicon glyphicon-menu-left"></i>
       </button>
       <div>
@@ -9,6 +9,7 @@
           Time Report
         </label>
       </div>
+      <button class="save-button" (click)="save()">Save</button>
     </div>
   </div>
   <div class="drop-down-tab-button" (click)="handleOpenTab()">

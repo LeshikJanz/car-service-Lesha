@@ -7,8 +7,8 @@
   font-size: 25px;
 }
 
-.JobCardHeader button,
-.JobCardHeader button:focus {
+.JobCardHeader .slideIn,
+.JobCardHeader .slideIn:focus {
   position: absolute;
   left: 5px;
   background: inherit;
@@ -46,6 +46,17 @@
   align-self: stretch;
   position: relative;
   padding-bottom: 0;
+}
+
+.JobCardHeader .save-button {
+  position: absolute;
+  color: white;
+  background: inherit;
+  border: 0;
+  top: 0;
+  bottom: 0;
+  right: 40px;
+  outline-style: none;
 }
 
 @media (max-width: 767px) {
