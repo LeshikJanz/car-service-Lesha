@@ -5,7 +5,6 @@
         class="list-group-item li-checkList"
         *ngIf="item.U_PartCode"
         role="presentation"
-        [class.active]="selected$ == item"
         (click)="select(item)"
       >
         <label>
@@ -17,7 +16,7 @@
         <label>
           {{ item.U_Qntty }}
         </label>
-        <div class="time-report-div">
+        <div class="time-report-div" *ngIf="selected$ == item">
           <ul class="nav nav-tabs nav-justified">
             <li><a data-toggle="tab" href="{{'#real' + item.LineId}}">{{ 'REALTIMEUPDATE' | translate }}</a></li>
             <li><a data-toggle="tab" href="{{'#off' + item.LineId}}">{{ 'OFFTIMEUPDATE' | translate }}</a></li>
@@ -27,7 +26,7 @@
               <div>
                 <div class="container-fluid">
                   <div class="col-xs-6">
-                    <label class="timer-label">{{ (sec - 7200000 ) | date: 'HH:mm:ss' }}</label>
+                    <label class="timer-label">{{ (msec$) | date: 'HH:mm:ss' }}</label>
                     <label *ngIf="!HasActiveLine">{{ 'NOTSTARTED' | translate}} </label>
                   </div>
                   <div class="col-xs-5 to-the-right">
