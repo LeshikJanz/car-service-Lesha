@@ -15,6 +15,7 @@
     </div>
   </div>
   <div class="drop-down-tab-button" (click)="handleOpenTab()">
+    <div [ngClass]="{'arrow-down': isTimeReportOpen$, 'arrow-left': !isTimeReportOpen$}"></div>
     {{"Job Card " + item$.DocNum}}
   </div>
   <hr class="header-docnum-line">

@@ -4,8 +4,8 @@ import { Store } from '@ngrx/store';
 import { openTimeReportTab } from "../actions";
 
 @Component({
-  selector: 'time-report-item',
-  templateUrl: '../templates/TimeReportItem.html',
+  selector: 'time-report-tab',
+  templateUrl: '../templates/TimeReportTab.html',
   styleUrls: [
     '../styles/item.css',
     '../styles/navigation.css'
@@ -14,9 +14,7 @@ import { openTimeReportTab } from "../actions";
 
 export class TimeReportTab {
   item$: Observable<any>;
-  isCheckListOpen$: boolean = false;
   isTimeReportOpen$: boolean = false;
-  isPartsIssueOpen$: boolean = false;
 
   constructor(private store: Store<any>) {
     store

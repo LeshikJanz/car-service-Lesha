@@ -69,3 +69,33 @@
 .drop-down-tab-button {
   cursor: pointer;
 }
+
+.arrow-down {
+  background: transparent;
+  border-radius: 8px;
+  position: relative;
+  color: #fff;
+}
+
+.arrow-down::after {
+  content: '';
+  position: absolute;
+  right: 7px; bottom: -24px;
+  border: 6px solid transparent;
+  border-top: 10px solid #BABABB;
+}
+
+.arrow-left {
+  background: transparent;
+  border-radius: 8px;
+  position: relative;
+  color: #fff;
+}
+
+.arrow-left::after {
+  content: '';
+  position: absolute;
+  right: 10px; bottom: -20px;
+  border: 6px solid transparent;
+  border-right: 10px solid #BABABB;
+}

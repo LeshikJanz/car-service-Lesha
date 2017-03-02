@@ -13,9 +13,6 @@ import { Store } from '@ngrx/store';
 
 export class JobCardItem {
   item$: Observable<any>;
-  isCheckListOpen: boolean = false;
-  isTimeRepoerOpen: boolean = false;
-  isPartsIssueOpen: boolean = false;
 
   constructor(private store: Store<any>) {
     store

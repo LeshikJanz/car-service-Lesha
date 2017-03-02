@@ -1,0 +1,35 @@
+<div>
+  <div class="panel-heading tab-header">
+    <div class="JobCardHeader">
+      <button (click)="slideIn()">
+        <i class="pop glyphicon glyphicon-menu-left"></i>
+      </button>
+      <div>
+        <label class="tab-header-text">
+          Check List
+        </label>
+      </div>
+      <button (click)="save()">
+        <i class="pop glyphicon glyphicon-menu-left"></i>
+      </button>
+    </div>
+  </div>
+  <div class="drop-down-tab-button" (click)="handleOpenTab()">
+    <div [ngClass]="{'arrow-down': isCheckListOpen$, 'arrow-left': !isCheckListOpen$}"></div>
+    {{"Job Card " + item$.DocNum}}
+    </div>
+  <hr class="header-docnum-line">
+  <section *ngIf="isCheckListOpen$">
+    <div id="JCHeader">
+      <div class="table-responsive table-condensed borderless container-fluid">
+        <div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">
+          <job-card-item-header></job-card-item-header>
+        </div>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <div id="JCBody">
+      <job-card-item-body></job-card-item-body>
+    </div>
+  </section>
+</div>

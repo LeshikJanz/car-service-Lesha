@@ -22,6 +22,7 @@ import { JobCardItemTimeReport } from './components/JobCardItemTimeReport';
 import { JobCardResolve } from './services/JobCardResolve';
 import { picService } from './services/picService';
 import { TimeReportTab } from "./components/TimeReportTab";
+import { CheckListTab } from "./components/CheckListTab";
 
 @NgModule({
   imports: [
@@ -43,7 +44,8 @@ import { TimeReportTab } from "./components/TimeReportTab";
     JobCardItemChecklist,
     JobCardItemGlobal,
     JobCardItemTimeReport,
-    TimeReportTab
+    TimeReportTab,
+    CheckListTab
   ],
   providers: [
     JobCardResolve,
