@@ -1,0 +1,38 @@
+.container {
+    flex-direction: row;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.switchTabs {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+}
+
+.switchImg {
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.switchTabs .switchItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.sortTabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.sortTabs .tab {
+
+}

@@ -184,7 +184,7 @@ var JobCardService = (function () {
             var db = sessionStorage.getItem("SapDB");
             switch (db) {
                 case "SWEETWOKXX":
-                    this._jobCardUrl = 'https://52.31.210.169:50000/b1s/v1/XIS_Jbs_UO';
+                    this._jobCardUrl = 'https://52.213.80.73:50000/b1s/v1/XIS_Jbs_UO';
                     break;
                 case "PRODUCTIONTEST":
                     this._jobCardUrl = 'https://10.0.1.43:50004/b1s/v1/XIS_Jbs_UO';

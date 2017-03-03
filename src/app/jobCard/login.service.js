@@ -14,7 +14,7 @@ var Observable_1 = require("rxjs/Observable");
 var LoginService = (function () {
     function LoginService(_http) {
         this._http = _http;
-        this._baseUrlSWEETWOKXX = 'https://52.31.210.169:50000/';
+        this._baseUrlSWEETWOKXX = 'https://52.213.80.73:50000/';
         this._baseUrlPRODUCTIONTEST = 'https://10.0.1.43:50004/';
         this._loginUrl = "";
         this._logoutUrl = "";

@@ -17,7 +17,7 @@ export class JobCardStatusLoaderService {
         var db = sessionStorage.getItem("SapDB");
         switch (db) {
             case "SWEETWOKXX":
-                jobCardUrlBase = 'https://52.31.210.169:50000/b1s/v1/U_XIS_JOBSTTS';
+                jobCardUrlBase = 'https://52.213.80.73:50000/b1s/v1/U_XIS_JOBSTTS';
                 break;
             case "PRODUCTIONTEST":
                 jobCardUrlBase = 'https://10.0.1.43:50004/b1s/v1/U_XIS_JOBSTTS';

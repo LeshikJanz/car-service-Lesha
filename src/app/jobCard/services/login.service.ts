@@ -5,7 +5,7 @@ import { Icredentials } from '../interfaces/credentials';
 
 @Injectable()
 export class LoginService {
-    private _baseUrlSWEETWOKXX = 'https://52.31.210.169:50000/';
+    private _baseUrlSWEETWOKXX = 'https://52.213.80.73:50000/';
     private _baseUrlPRODUCTIONTEST = 'https://10.0.1.43:50004/';
     private _loginUrl = "";
     private _logoutUrl = "";
@@ -40,7 +40,8 @@ export class LoginService {
 
     login(): Promise<Response> {
         var loginCred = this.getCred();
-        
+
+        console.log(this._loginUrl);
         return new Promise((resolve, reject) => {
             this._http.post(this._loginUrl, JSON.stringify(loginCred),
                 { headers: this.headers, withCredentials: true })

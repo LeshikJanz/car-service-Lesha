@@ -7,6 +7,7 @@ import { Store } from '@ngrx/store';
   template: `
     <div class="container">
       <parts-issue-header></parts-issue-header>
+      
       <parts-issue-body></parts-issue-body> 
     </div>
   `

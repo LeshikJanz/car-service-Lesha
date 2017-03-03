@@ -27,9 +27,10 @@ export class AccountService {
     }
 
     setUrls() {
-        this.baseUrl = sessionStorage.getItem("UserServiceIp");
+        //this.baseUrl = sessionStorage.getItem("UserServiceIp");
         //this.baseUrl = 'http://localhost:57939/';
         //this.baseUrl = 'http://52.212.106.164:300/';
+        this.baseUrl = 'https://52.213.80.73:50000/';
         this._loginUrl = this.baseUrl + 'Token';
         this._userInfoUrl = this.baseUrl + 'api/Account/UserInfo';
         this._registerUrl = this.baseUrl + 'api/Account/Register';
