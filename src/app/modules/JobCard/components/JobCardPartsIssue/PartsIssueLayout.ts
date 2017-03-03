@@ -5,10 +5,11 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'parts-issue-layout',
   template: `
-    <div class="container">
+    <div>
       <parts-issue-header></parts-issue-header>
       
       <parts-issue-body></parts-issue-body> 
+      <!--<parts-issue-body></parts-issue-body> -->
     </div>
   `
 })

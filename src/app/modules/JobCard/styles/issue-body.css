@@ -1,38 +1,63 @@
 .container {
-    flex-direction: row;
+  flex-direction: row;
 }
 
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
-
-
 .switchTabs {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
 }
 
 .switchImg {
-    max-width: 80px;
-    max-height: 80px;
+  cursor: pointer;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 .switchTabs .switchItem {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .sortTabs {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 250px;
 }
 
 .sortTabs .tab {
 
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropDownTabMain {
+  background-color: #126EB9;
+  height: 30px;
+  color: white;
+  text-align: left;
+}
+
+.dropDownTab {
+  height: 30px;
+  color: white;
+  text-align: left;
+}
+
+.line {
+  height: 1px;
+  color: #DDDDDD;
 }

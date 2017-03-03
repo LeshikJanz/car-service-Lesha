@@ -6,7 +6,8 @@ import { Store } from '@ngrx/store';
   selector: 'parts-issue-body',
   templateUrl: '../../templates/PartsIssueBody_old.html',
   styleUrls: [
-    '../../styles/issue-body.css'
+    '../../styles/issue-body.css',
+    '../../styles/item.css'
   ]
 })
 
