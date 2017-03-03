@@ -22,7 +22,7 @@
 }
 
 .JobCardItem {
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 .JobCardItem > .panel{
