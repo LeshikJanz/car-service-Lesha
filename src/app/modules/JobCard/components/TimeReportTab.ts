@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { openTimeReportTab } from "../actions";
+import { JobCardService } from "../../../jobCard/services/jobCard.service";
 
 @Component({
   selector: 'time-report-tab',
@@ -14,14 +15,16 @@ import { openTimeReportTab } from "../actions";
 
 export class TimeReportTab {
   item$: Observable<any>;
+  collections$: any;
   isTimeReportOpen$: boolean = false;
 
-  constructor(private store: Store<any>) {
+  constructor(private store: Store<any>, private _jobCardService: JobCardService) {
     store
       .select('JobCard')
       .subscribe(
         (state: any) => {
-          this.item$ = state.item.object
+          this.item$ = state.item.object;
+          this.collections$ = state.item.collections;
           this.isTimeReportOpen$ = state.tabs.isTimeReportOpen;
         }
       );
@@ -32,6 +35,7 @@ export class TimeReportTab {
   }
 
   save(){
-    console.log("Save");
+    const data = Object.assign({}, this.item$, this.collections$);
+    this._jobCardService.postJob(data);
   }
 }

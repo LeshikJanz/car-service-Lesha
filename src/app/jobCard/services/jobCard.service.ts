@@ -179,6 +179,20 @@ export class JobCardService {
 
     }
 
+    postJob(item: any){
+        let opts: RequestOptionsArgs = {
+            headers: this.headers,
+            withCredentials: true
+        };
+        const body = item;
+
+        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+
+        return this.http.patch(innerUrl, body, opts)
+          .map((response: Response) => response)
+          .catch(this.handleError);
+    }
+
     filterOptionSelector(FilterOption: string) {
         this.UrlSetter();
         if (FilterOption == 'Open') {
