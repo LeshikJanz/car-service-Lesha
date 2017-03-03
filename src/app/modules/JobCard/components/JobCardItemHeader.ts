@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 @Component({
   selector: 'job-card-item-header',
   templateUrl: '../templates/JobCardHeader.html',
-  styleUrls: ['../styles/table.css']
+  styleUrls: ['../styles/table.css', '../styles/item.css']
 })
 
 export class JobCardItemHeader {
