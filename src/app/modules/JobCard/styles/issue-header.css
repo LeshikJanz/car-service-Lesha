@@ -1,0 +1,93 @@
+#JCHeader {
+  margin-top: -5px;
+}
+
+#JCHeader * {
+  text-align: left;
+  padding-left: 5px;
+  padding-top:2px;
+}
+
+#JCHeader padd-bottom {
+  padding-bottom: 10px;
+}
+
+#JCHeader .table td,
+#TabViewGlobal .table td {
+  white-space: nowrap;
+}
+
+#JCHeader .table > tbody > tr > td {
+  padding:0;
+}
+
+#JCHeader tr.treegrid-parent-0 span {
+  display: none;
+}
+
+h4.h4-big-font {
+  height: initial;
+}
+
+#JCHeader tr.treegrid-0 h4,
+#JCHeader tr.treegrid-10 h4 {
+  display: -webkit-inline-box;
+}
+
+#JCHeader td h5 {
+  display: -webkit-inline-box;
+}
+
+#JCHeader .header-issue {
+  float: left;
+  padding-top: 10px;
+}
+
+#JCHeader .header-save{
+  float: right;
+  padding-top: 10px
+}
+
+#JCHeader .header-status{
+  margin-bottom:15px;
+}
+
+#JCHeader span.treegrid-expander,
+span.treegrid-expander {
+  float: right;
+  padding-left: 0;
+  color: grey;
+}
+
+#JCHeader .center {
+  text-align: center;
+}
+
+tr.treeGridRoot > td > span.treegrid-expander {
+  color: white;
+}
+
+.treeGridRoot {
+  background-color:#0D78BE;
+  color:white;
+}
+
+input {
+  width: 80%;
+}
+
+.gridviewTable {
+  width: 100%;
+}
+
+.gridviewTable td {
+  text-align: center;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+tr.grey-border {
+  border-bottom: thin solid lightgray !important;
+}

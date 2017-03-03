@@ -61,7 +61,8 @@ module.exports = {
       utils: helpers.root('src/utils'),
       app: helpers.root('src/app'),
       components: helpers.root('src/app/components'),
-      modules: helpers.root('src/app/modules')
+      modules: helpers.root('src/app/modules'),
+      assets: helpers.root('src/assets')
     },
     extensions: ['', '.ts', '.js']
   }

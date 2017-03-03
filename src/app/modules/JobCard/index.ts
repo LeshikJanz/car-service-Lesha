@@ -19,6 +19,10 @@ import { JobCardItemChecklist } from './components/JobCardItemChecklist';
 import { JobCardItemGlobal } from './components/JobCardItemGlobal';
 import { JobCardItemTimeReport } from './components/JobCardItemTimeReport';
 
+import { PartsIssueLayout } from './components/JobCardPartsIssue/PartsIssueLayout';
+import { PartsIssueHeader } from './components/JobCardPartsIssue/PartsIssueHeader';
+import { PartsIssueBody } from './components/JobCardPartsIssue/PartsIssueBody';
+
 import { JobCardResolve } from './services/JobCardResolve';
 import { picService } from './services/picService';
 import { TimeReportTab } from "./components/TimeReportTab";
@@ -43,6 +47,10 @@ import { CheckListTab } from "./components/CheckListTab";
     JobCardItemHeader,
     JobCardItemChecklist,
     JobCardItemGlobal,
+    JobCardItemTimeReport,
+    PartsIssueLayout,
+    PartsIssueHeader,
+    PartsIssueBody
     JobCardItemTimeReport,
     TimeReportTab,
     CheckListTab
