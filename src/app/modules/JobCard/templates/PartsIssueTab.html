@@ -1,0 +1,48 @@
+<div>
+  <div class="panel-heading tab-header">
+    <div class="JobCardHeader">
+      <button class="slideIn" (click)="slideIn()">
+        <i class="pop glyphicon glyphicon-menu-left"></i>
+      </button>
+      <div>
+        <label class="tab-header-text">
+          Parts Issue
+        </label>
+      </div>
+      <button class="save-button" (click)="save()">Save</button>
+    </div>
+  </div>
+  <div class="drop-down-tab-button" (click)="handleOpenTab()">
+    <div [ngClass]="{'arrow-down': isPartsIssueOpen$, 'arrow-left': !isPartsIssueOpen$}"></div>
+    {{"Job Card " + item$.DocNum}}
+  </div>
+  <hr class="header-docnum-line">
+  <section *ngIf="isPartsIssueOpen$">
+    <!--<div id="JCHeader">-->
+      <!--<div class="table-responsive table-condensed borderless container-fluid">-->
+        <!--<div class="col-lg-5 col-md-8 col-sm-10 col-xs-12">-->
+          <!--<job-card-item-header></job-card-item-header>-->
+        <!--</div>-->
+
+      <!--</div>-->
+      <!--<div class="cart-number">-->
+        <!--<h5>-->
+          <!--Cart Number: <span style="color:green">555</span>-->
+          <!--<img src="../images/Cart.png"/>-->
+        <!--</h5>-->
+      <!--</div>-->
+      <!--<div style="clear: both;"></div>-->
+
+    <!--</div>-->
+    <div id="JCBody">
+      <!--<job-card-item-body></job-card-item-body>-->
+      <parts-issue-layout></parts-issue-layout>
+    </div>
+
+  </section>
+
+</div>
+
+
+
+
