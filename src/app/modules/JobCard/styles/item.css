@@ -19,6 +19,7 @@
 }
 
 .tab-header-text{
+  font-weight: 100;
   color: white;
 }
 
@@ -33,7 +34,7 @@
 
 #JCHeader * {
   text-align: left;
-  padding-left: 5px;
+  /*padding-left: 5px;*/
 }
 
 #JCHeader padd-bottom {
@@ -98,4 +99,9 @@
   right: 10px; bottom: -20px;
   border: 6px solid transparent;
   border-right: 10px solid #BABABB;
+}
+
+.cart-number {
+  padding-left: 10px;
+  padding-bottom: 10px;
 }

@@ -9,15 +9,21 @@ const initialState = {
 
 export default createReducer({
   [openCheckListTab]: (state: any) => ({
-  ...state,
-  isCheckListOpen: !state.isCheckListOpen
-}),
+    ...state,
+    isCheckListOpen: !state.isCheckListOpen,
+    isTimeReportOpen: false,
+    isPartsIssueOpen: false
+  }),
   [openTimeReportTab]: (state: any) => ({
     ...state,
-    isTimeReportOpen: !state.isTimeReportOpen
+    isTimeReportOpen: !state.isTimeReportOpen,
+    isCheckListOpen: false,
+    isPartsIssueOpen: false
   }),
   [openPartsIssueTab]: (state: any) => ({
     ...state,
-    isPartsIssueOpen: !state.isPartsIssueOpen
+    isPartsIssueOpen: !state.isPartsIssueOpen,
+    isTimeReportOpen: false,
+    isCheckListOpen: false
   }),
 }, initialState);
