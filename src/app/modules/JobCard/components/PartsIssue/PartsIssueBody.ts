@@ -13,6 +13,22 @@ import { DETAIL_TYPES } from "../../constants/index";
 })
 
 export class PartsIssueBody {
+  selectConcers() {
+    console.log('selectConcers');
+  }
+
+  selectPackages() {
+    console.log('selectPackages');
+  }
+
+  selectParts() {
+    console.log('selectParts');
+  }
+
+  selectOils() {
+    console.log('selectOils');
+  }
+
   mainTabs$ = [
     {
       label: "CC Code - Customer Concern Description 1",

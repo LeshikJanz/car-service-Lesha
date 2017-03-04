@@ -1,19 +1,19 @@
 <div>
     <div class="header">
         <div class="switch-tabs">
-            <div class="switch-item">
+            <div (click)="selectConcers()" class="switch-item">
                 <label class="switch-item-label">Concerns</label>
                 <img class="switch-img" src="../images/CC.png"/>
             </div>
-            <div class="switch-item">
+            <div (click)="selectPackages()" class="switch-item">
                 <label class="switch-item-label">Packages</label>
                 <img class="switch-img" src="../images/Packages.png"/>
             </div>
-            <div class="switch-item">
+            <div (click)="selectParts()" class="switch-item">
                 <label class="switch-item-label">Parts</label>
                 <img class="switch-img" src="../images/parts.png"/>
             </div>
-            <div class="switch-item">
+            <div (click)="selectOils()" class="switch-item">
                 <label class="switch-item-label">Oils</label>
                 <img class="switch-img" src="../images/Oils.png"/>
             </div>
@@ -28,6 +28,5 @@
         <div *ngFor="let mainTab of mainTabs$">
             <drop-down-tab-main [mainTab]="mainTab"></drop-down-tab-main>
         </div>
-        <!--<div class="dropDownTabMain">CC Code - Customer Concern Description 1</div>-->
     </div>
 </div>
