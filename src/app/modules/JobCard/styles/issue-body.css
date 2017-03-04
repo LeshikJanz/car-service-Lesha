@@ -93,6 +93,7 @@
 .detail-label {
   display: flex;
   align-self: center;
+  color:  #0067a1;
 }
 
 .arrow-down-white {
@@ -141,7 +142,7 @@
 
 .detail .quantity {
   display: flex;
-  width: 260px;
+  width: 265px;
   padding-right: 25px;
   flex-direction: row;
   justify-content: space-around;
@@ -155,10 +156,15 @@
 
 .quantity-to-issue-input {
   width: 70px;
+  font-size: 20px;
   color: #0067a1;
 }
 
 .quantity-value {
-  padding-right: 10px;
+  font-size: 20px;
   color: #0067a1;
+}
+
+.black-font {
+  color: black;
 }

@@ -27,6 +27,9 @@
   display: inherit;
   padding: 7px 0 0 0;
   z-index: 5;
+
+  background: inherit;
+  border: none;
 }
 
 .JobCardHeader.master .glyphicon {

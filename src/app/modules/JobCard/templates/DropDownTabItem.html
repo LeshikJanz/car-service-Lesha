@@ -1,7 +1,7 @@
 <div class="detail">
     <div>
         <img class="detail-img" [src]="detail.type">
-        <div class="detail-label">{{detail.label}}</div>
+        <div class="detail-label" [ngClass]="{'black-font': detail.quantity === detail.issued}">{{detail.label}}</div>
     </div>
     <div class="quantity">
         <div class="quantity-value">{{detail.quantity}}</div>

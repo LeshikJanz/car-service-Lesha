@@ -21,14 +21,14 @@ export class PartsIssueBody {
           label: "Package Description",
           details: [
           {
-            type: DETAIL_TYPES.PartActive,  //Parts, Labor, Sublets, Oils
+            type: DETAIL_TYPES.PartInactive,
             label: "PartCode - Part Description",
             quantity: "12",
-            issued: "3",
+            issued: "12",
             qtyToIssue: ""
           },
             {
-              type: DETAIL_TYPES.LaborActive,  //Parts, Labor, Sublets, Oils
+              type: DETAIL_TYPES.LaborActive,
               label: "LaborCode - Labor Description",
               quantity: "12",
               issued: "3",
@@ -40,7 +40,7 @@ export class PartsIssueBody {
           label: "Additional",
           details: [
             {
-              type: DETAIL_TYPES.LaborInactive,  //Parts, Labor, Sublets, Oils
+              type: DETAIL_TYPES.LaborInactive,
               label: "LaborCode - Labor Description",
               quantity: "2",
               issued: "3",
@@ -57,7 +57,7 @@ export class PartsIssueBody {
           label: "Package Description",
           details: [
             {
-              type: DETAIL_TYPES.OilActive,  //Parts, Labor, Sublets, Oils
+              type: DETAIL_TYPES.OilActive,
               label: "OilCode - Oil Description",
               quantity: "12",
               issued: "9",
@@ -69,7 +69,7 @@ export class PartsIssueBody {
           label: "Additional",
           details: [
             {
-              type: DETAIL_TYPES.OilInactive,  //Parts, Labor, Sublets, Oils
+              type: DETAIL_TYPES.OilInactive,
               label: "OilCode - Oil Description",
               quantity: "5",
               issued: "8",
