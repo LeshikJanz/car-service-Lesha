@@ -1,7 +1,12 @@
 <div class="detail">
     <div>
         <img class="detail-img" [src]="detail.type">
+        <div class="detail-label">{{detail.label}}</div>
     </div>
-    <div class="detail-label">{{detail.label}}</div>
+    <div class="quantity">
+        <div class="quantity-value">{{detail.quantity}}</div>
+        <div class="quantity-value">{{detail.issued}}</div>
+        <input class="quantity-to-issue-input" type="text">
+    </div>
 </div>
 <hr class="issue-line">

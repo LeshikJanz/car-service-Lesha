@@ -10,33 +10,41 @@
   margin-right: 20px;
 }
 
-.switchTabs {
+.switch-tabs {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
 }
 
-.switchImg {
+.switch-img {
   cursor: pointer;
   max-width: 50px;
   max-height: 50px;
 }
 
-.switchTabs .switchItem {
+.switch-tabs .switch-item {
   display: flex;
   flex-direction: column;
+  margin: 2px;
 }
 
-.sortTabs {
+.switch-item-label {
+  font-size: 12px;
+  color: #0077c2;
+  font-weight: 100;
+}
+
+.sort-tabs {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 250px;
+  padding-right: 20px;
 }
 
-.sortTabs .tab {
-
+.sort-tabs .tab {
+  color: #0067a1;
 }
 
 .main {
@@ -74,6 +82,7 @@
 .detail {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .detail-img {
@@ -128,4 +137,28 @@
   margin-bottom: 0;
   margin-top: 0;
   background: #808080;
+}
+
+.detail .quantity {
+  display: flex;
+  width: 260px;
+  padding-right: 25px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-self: flex-end;
+}
+
+.detail > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.quantity-to-issue-input {
+  width: 70px;
+  color: #0067a1;
+}
+
+.quantity-value {
+  padding-right: 10px;
+  color: #0067a1;
 }
