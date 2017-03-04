@@ -38,4 +38,6 @@ export class PartsIssueTab {
     const data = Object.assign({}, this.item$, this.collections$);
     this._jobCardService.postJob(data);
   }
+
+  showAllIssues(){}
 }

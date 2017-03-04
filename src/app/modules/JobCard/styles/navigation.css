@@ -10,7 +10,7 @@
 .JobCardHeader .slideIn,
 .JobCardHeader .slideIn:focus {
   position: absolute;
-  left: 5px;
+  left: 0px;
   background: inherit;
   border: 0;
   outline-style: none;
@@ -59,6 +59,17 @@
   top: 0;
   bottom: 0;
   right: 40px;
+  outline-style: none;
+}
+
+.JobCardHeader .issue-all {
+  position: absolute;
+  color: white;
+  background: inherit;
+  border: 0;
+  top: 0;
+  bottom: 0;
+  left: 30px;
   outline-style: none;
 }
 
