@@ -1,31 +1,33 @@
 <div>
-  <div class="header">
-    <div class="switchTabs">
-      <div class="switchItem">
-        <label>Concerns</label>
-        <img class="switchImg" src="../images/CC.png"/>
-      </div>
-      <div class="switchItem">
-        <label>Packages</label>
-        <img class="switchImg" src="../images/Packages.png"/>
-      </div>
-      <div class="switchItem">
-        <label>Parts</label>
-        <img class="switchImg" src="../images/parts.png"/>
-      </div>
-      <div class="switchItem">
-        <label>Oils</label>
-        <img class="switchImg" src="../images/Oils.png"/>
-      </div>
+    <div class="header">
+        <div class="switchTabs">
+            <div class="switchItem">
+                <label>Concerns</label>
+                <img class="switchImg" src="../images/CC.png"/>
+            </div>
+            <div class="switchItem">
+                <label>Packages</label>
+                <img class="switchImg" src="../images/Packages.png"/>
+            </div>
+            <div class="switchItem">
+                <label>Parts</label>
+                <img class="switchImg" src="../images/parts.png"/>
+            </div>
+            <div class="switchItem">
+                <label>Oils</label>
+                <img class="switchImg" src="../images/Oils.png"/>
+            </div>
+        </div>
+        <div class="sortTabs">
+            <label class="tab">Quantity</label>
+            <label class="tab">Issued</label>
+            <label class="tab">Qty to Issue</label>
+        </div>
     </div>
-    <div class="sortTabs">
-      <label class="tab">Quantity</label>
-      <label class="tab">Issued</label>
-      <label class="tab">Qty to Issue</label>
+    <div class="main">
+        <div *ngFor="let mainTab of mainTabs$">
+            <drop-down-tab-main [mainTab]="mainTab"></drop-down-tab-main>
+        </div>
+        <!--<div class="dropDownTabMain">CC Code - Customer Concern Description 1</div>-->
     </div>
-  </div>
-  <div class="main">
-    <drop-down-tab-main></drop-down-tab-main>
-    <!--<div class="dropDownTabMain">CC Code - Customer Concern Description 1</div>-->
-  </div>
 </div>

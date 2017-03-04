@@ -19,8 +19,8 @@
 
 .switchImg {
   cursor: pointer;
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 .switchTabs .switchItem {
@@ -45,6 +45,7 @@
 }
 
 .dropDownTabMain {
+  cursor: pointer;
   background-color: #126EB9;
   height: 30px;
   color: white;
@@ -52,12 +53,79 @@
 }
 
 .dropDownTab {
-  height: 30px;
+  height: 25px;
+  width: 25px;
   color: white;
+  text-align: left;
+}
+
+.dropDownTabInternal {
+  cursor: pointer;
+  height: 30px;
+  color: #0067a1;
   text-align: left;
 }
 
 .line {
   height: 1px;
   color: #DDDDDD;
+}
+
+.detail {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-img {
+  max-height: 30px;
+  padding: 0 10px 0 30px;
+}
+
+.detail-label {
+  display: flex;
+  align-self: center;
+}
+
+.arrow-down-white {
+  background: transparent;
+  border-radius: 8px;
+  position: relative;
+  color: #fff;
+}
+
+.arrow-down-white::after {
+  content: '';
+  position: absolute;
+  right: 7px; bottom: -20px;
+  border: 6px solid transparent;
+  border-top: 10px solid white;
+}
+
+.arrow-left-white {
+  background: transparent;
+  border-radius: 8px;
+  position: relative;
+  color: #fff;
+}
+
+.arrow-left-white::after {
+  content: '';
+  position: absolute;
+  right: 10px; bottom: -15px;
+  border: 6px solid transparent;
+  border-right: 10px solid white;
+}
+
+.issue-line {
+  height: 1px;
+  margin-bottom: 0;
+  margin-top: 1px;
+  background: #dddddd;
+}
+
+.internal-tab-line {
+  height: 1px;
+  margin-bottom: 0;
+  margin-top: 0;
+  background: #808080;
 }

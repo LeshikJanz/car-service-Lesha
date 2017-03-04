@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
+import {Component} from '@angular/core';
+import {Input} from "@angular/core/src/metadata/directives";
 
 @Component({
   selector: 'drop-down-tab-main',
   template: `
-    <div class="dropDownTabMain">
-    <div class="drop-down-tab-button">
-    <div [ngClass]="{'arrow-down': true, 'arrow-left': false}"></div>
-    CC Code - Customer Concern Description 1
-  </div>
-    </div>  
+<div>
+    <div class="dropDownTabMain" (click)="openTab()">
+    <div style="padding: 5px">
+    <div class="arrow-white" [ngClass]="{'arrow-down-white': isOpen$, 'arrow-left-white': !isOpen$}"></div>
+    {{mainTab.label}}
+    </div>
+    </div>
+      <div *ngIf="isOpen$">
+      <drop-down-tab-internal *ngFor="let internalTab of mainTab.internalTabs" [internalTab]="internalTab"></drop-down-tab-internal>
+      </div>
+    </div>
 `,
   styleUrls: [
     '../../styles/issue-body.css'
@@ -18,5 +22,13 @@ import { Store } from '@ngrx/store';
 })
 
 export class DropDownTabMain {
+  isOpen$: boolean = false;
+
+  @Input()
+  mainTab: Object;
+
+  openTab() {
+    this.isOpen$ = !this.isOpen$;
+  }
 
 }

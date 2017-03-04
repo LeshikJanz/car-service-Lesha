@@ -29,6 +29,8 @@ import { TimeReportTab } from "./components/TimeReport/TimeReportTab";
 import { CheckListTab } from "./components/CheckList/CheckListTab";
 import { PartsIssueTab } from "./components/PartsIssue/PartsIssueTab";
 import { DropDownTabMain } from "./components/PartsIssue/DropDownTabMain";
+import { DropDownTabInternal } from "./components/PartsIssue/DropDownTabInternal";
+import { DropDownTabItem } from "./components/PartsIssue/DropDownItem";
 
 @NgModule({
   imports: [
@@ -57,7 +59,9 @@ import { DropDownTabMain } from "./components/PartsIssue/DropDownTabMain";
     TimeReportTab,
     CheckListTab,
     PartsIssueTab,
-    DropDownTabMain
+    DropDownTabMain,
+    DropDownTabInternal,
+    DropDownTabItem
   ],
   providers: [
     JobCardResolve,
@@ -65,4 +69,5 @@ import { DropDownTabMain } from "./components/PartsIssue/DropDownTabMain";
   ]
 })
 
-export default class JobCardModule {}
+export default class JobCardModule {
+}
