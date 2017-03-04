@@ -8,7 +8,8 @@ import { JobCardService } from "../../../../jobCard/services/jobCard.service";
   selector: 'parts-issue-tab',
   templateUrl: '../../templates/PartsIssueTab.html',
   styleUrls: [
-    '../../styles/item.css'
+    '../../styles/item.css',
+    '../../styles/navigation.css'
   ]
 })
 

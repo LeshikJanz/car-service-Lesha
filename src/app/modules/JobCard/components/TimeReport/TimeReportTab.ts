@@ -8,7 +8,8 @@ import { JobCardService } from "../../../../jobCard/services/jobCard.service";
   selector: 'time-report-tab',
   templateUrl: '../../templates/TimeReportTab.html',
   styleUrls: [
-    '../../styles/item.css'
+    '../../styles/item.css',
+    '../../styles/navigation.css'
   ]
 })
 

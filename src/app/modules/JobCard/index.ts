@@ -6,29 +6,29 @@ import { FormsModule } from '@angular/forms';
 import SharedModule from 'app/modules/Share';
 
 import { JobCardRoutes } from './routes';
-import { JobCardLayout } from './components/JobCardLayout';
-import { JobCardNavigation } from './components/JobCardNavigation';
-import { JobCardSearch } from './components/JobCardSearch';
-import { JobCardFilter } from './components/JobCardFilter';
-import { JobCardList } from './components/JobCardList';
-import { JobCardListPager } from './components/JobCardListPager';
-import { JobCardItem } from './components/JobCardItem';
-import { JobCardItemBody } from './components/JobCardItemBody';
-import { JobCardItemHeader } from './components/JobCardItemHeader';
-import { JobCardItemChecklist } from './components/JobCardItemChecklist';
-import { JobCardItemGlobal } from './components/JobCardItemGlobal';
-import { JobCardItemTimeReport } from './components/JobCardItemTimeReport';
+import { JobCardLayout } from './components/Main/JobCardLayout';
+import { JobCardNavigation } from './components/Navigation/JobCardNavigation';
+import { JobCardSearch } from './components/Navigation/JobCardSearch';
+import { JobCardFilter } from './components/Navigation/JobCardFilter';
+import { JobCardList } from './components/Navigation/JobCardList';
+import { JobCardListPager } from './components/Navigation/JobCardListPager';
+import { JobCardItem } from './components/Main/JobCardItem';
+import { JobCardItemBody } from './components/Main/JobCardItemBody';
+import { JobCardItemHeader } from './components/Main/JobCardItemHeader';
+import { JobCardItemChecklist } from './components/CheckList/JobCardItemChecklist';
+import { JobCardItemGlobal } from './components/Main/JobCardItemGlobal';
+import { JobCardItemTimeReport } from './components/TimeReport/JobCardItemTimeReport';
 
-import { PartsIssueLayout } from './components/JobCardPartsIssue/PartsIssueLayout';
-import { PartsIssueHeader } from './components/JobCardPartsIssue/PartsIssueHeader';
-import { PartsIssueBody } from './components/JobCardPartsIssue/PartsIssueBody';
+import { PartsIssueLayout } from './components/PartsIssue/PartsIssueLayout';
+import { PartsIssueHeader } from './components/PartsIssue/PartsIssueHeader';
+import { PartsIssueBody } from './components/PartsIssue/PartsIssueBody';
 
 import { JobCardResolve } from './services/JobCardResolve';
 import { picService } from './services/picService';
-import { TimeReportTab } from "./components/TimeReportTab";
-import { CheckListTab } from "./components/CheckListTab";
-import { PartsIssueTab } from "./components/PartsIssueTab";
-import { DropDownTabMain } from "./components/JobCardPartsIssue/DropDownTabMain";
+import { TimeReportTab } from "./components/TimeReport/TimeReportTab";
+import { CheckListTab } from "./components/CheckList/CheckListTab";
+import { PartsIssueTab } from "./components/PartsIssue/PartsIssueTab";
+import { DropDownTabMain } from "./components/PartsIssue/DropDownTabMain";
 
 @NgModule({
   imports: [

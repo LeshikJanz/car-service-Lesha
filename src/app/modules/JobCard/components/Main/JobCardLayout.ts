@@ -17,7 +17,7 @@ import { Component } from '@angular/core';
       </div>
     </div>
   `,
-  styleUrls: ['../styles/layout.css']
+  styleUrls: ['../../styles/layout.css']
 })
 
 export class JobCardLayout {}

@@ -5,84 +5,100 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 h3 {
-  text-align: center; margin-bottom: 0;
-}
-h4 {
-  position: relative;
+    text-align: center;
+    margin-bottom: 0;
 }
 
-.btn-info.btn-xl.active:hover, .btn-info.btn-xl.active:focus{
-  background-color:#009de0 !important;
-  outline: none;
+h4 {
+    position: relative;
 }
-.glyphicon{
-  color: #009de0;
-  position: static;
+
+.btn-info.btn-xl.active:hover, .btn-info.btn-xl.active:focus {
+    background-color: #009de0 !important;
+    outline: none;
 }
-.active>.glyphicon {
+
+.glyphicon {
+    color: #009de0;
+    position: static;
+}
+
+.active > .glyphicon {
     color: white;
 }
+
 .btn.btn-circle {
     border-radius: 15px;
     padding: 6px 0;
 }
-.display-block-item{
-  display: block;
+
+.display-block-item {
+    display: block;
 }
+
 body {
-    margin-left:auto;
-    margin-right:auto;
-    text-align:center;
-    font-family:Arial,Helvetica,sans-serif;
-    font-size:16px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    overflow: hidden;
 }
-footer {   
-    color: #ffffff;  
+
+footer {
+    color: #ffffff;
 }
-@media (max-width: 570px){
-  footer h3{
-    font-size: 18px;
-  }
+
+@media (max-width: 570px) {
+    footer h3 {
+        font-size: 18px;
+    }
 }
+
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
     background-color: transparent;
 }
-.container > .navbar-header, .container-fluid > .navbar-header, 
-.container > .navbar-collapse{
-  margin: 0;
-  float: left;
+
+.container > .navbar-header, .container-fluid > .navbar-header,
+.container > .navbar-collapse {
+    margin: 0;
+    float: left;
 }
+
 ul.nav.navbar-nav.navbar-right {
     margin: 0;
 }
+
 .panel.panel-default {
     margin-bottom: 0;
 }
-.container-fluid{
-  padding-left: 0px;
-  padding-right: 0px;
+
+.container-fluid {
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
-.container-fluid-padding{
-  padding-left: 15px;
-  padding-right: 15px;
-  overflow: auto;
+.container-fluid-padding {
+    padding-left: 15px;
+    padding-right: 15px;
+    overflow: auto;
 }
 
-td h2, td h3, td h4, td h5{
-  height: 3;
-  margin-top: 8;
-  margin-bottom: 8;
+td h2, td h3, td h4, td h5 {
+    height: 3;
+    margin-top: 8;
+    margin-bottom: 8;
 }
 
-label.camera-label input{
-  display: none;
+label.camera-label input {
+    display: none;
 }
 
-label.camera-label:hover{
-  box-shadow: 0 0 0 2px #ffffff;
-  cursor: pointer;
+label.camera-label:hover {
+    box-shadow: 0 0 0 2px #ffffff;
+    cursor: pointer;
 }
 
 button.btn.btn-circle {
@@ -90,30 +106,30 @@ button.btn.btn-circle {
 }
 
 @media (min-height: 754px) {
-  .form-horizontal{
-    height: 100%;
-  }
+    .form-horizontal {
+        height: 100%;
+    }
 }
 
- .pop.glyphicon:hover, .pop.glyphicon:focus {
-  font-size: 28px;
+.pop.glyphicon:hover, .pop.glyphicon:focus {
+    font-size: 28px;
 }
 
-.glyphicon > a{
-  position: relative;
-  right: -55px;
+.glyphicon > a {
+    position: relative;
+    right: -55px;
 }
 
-.dropdown-filter-div{
-  position: absolute;
-  right:0;
+.dropdown-filter-div {
+    position: absolute;
+    right: 0;
 }
 
-.filter-header h3{
-  display: inline;
+.filter-header h3 {
+    display: inline;
 }
 
-.master .dropdown ul li{
+.master .dropdown ul li {
     border: none;
 }
 
@@ -131,8 +147,8 @@ button.btn.btn-circle.btn-xl:hover {
 /* Job Card Search-box style */
 
 .panel-default > .panel-heading {
-  background-color: white;
-  padding: 10 0;
+    background-color: white;
+    padding: 10 0;
 }
 
 span i.glyphicon {
@@ -141,39 +157,44 @@ span i.glyphicon {
     padding-right: 5;
 }
 
-span i.glyphicon{
-  padding: 10;
+span i.glyphicon {
+    padding: 10;
 }
 
-span i.glyphicon:hover{
-  background-color:   #efefef;
+span i.glyphicon:hover {
+    background-color: #efefef;
 }
 
 button.nobackground > i.glyphicon.glyphicon-stop,
-  button.nobackground > i.glyphicon.glyphicon-play {
-  font-size: 27;
+button.nobackground > i.glyphicon.glyphicon-play {
+    font-size: 27;
 }
-@media (max-width: 767px){
-  .list-group-item.li-checkList .timer-div .btn-circle{
+
+@media (max-width: 767px) {
+    .list-group-item.li-checkList .timer-div .btn-circle {
         width: 22px;
         height: 22px;
     }
-  .list-group-item.li-checkList .timer-div .glyphicon{
+
+    .list-group-item.li-checkList .timer-div .glyphicon {
         font-size: 18px;
         position: relative;
         top: -6;
     }
 }
+
 .borderless td, .borderless th, .borderless tr {
     border: none !important;
 }
-@media (max-width:603px){
-    .header-company{
+
+@media (max-width: 603px) {
+    .header-company {
         display: none;
     }
 }
-@media (max-width:222px){
-    .navbar-header{
+
+@media (max-width: 222px) {
+    .navbar-header {
         display: none;
     }
 }

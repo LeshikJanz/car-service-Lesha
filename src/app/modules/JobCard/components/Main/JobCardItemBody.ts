@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { selectTab } from '../actions';
+import { selectTab } from '../../actions';
 
 @Component({
   selector: 'job-card-item-body',
@@ -42,7 +42,7 @@ import { selectTab } from '../actions';
       <job-card-item-time-report *ngIf="tabs$['TR']"></job-card-item-time-report>
     </div>
   `,
-  styleUrls: ['../styles/tabs.css']
+  styleUrls: ['../../styles/tabs.css']
 })
 
 export class JobCardItemBody {

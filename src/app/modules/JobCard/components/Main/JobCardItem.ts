@@ -4,10 +4,9 @@ import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'job-card-item',
-  templateUrl: '../templates/JobCardItem.html',
+  templateUrl: '../../templates/JobCardItem.html',
   styleUrls: [
-    '../styles/item.css',
-    '../styles/navigation.css'
+    '../../styles/item.css'
   ]
 })
 
