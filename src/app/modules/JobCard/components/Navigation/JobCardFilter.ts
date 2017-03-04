@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { Store } from '@ngrx/store';
-import { JobCardResolve } from '../services/JobCardResolve';
+import { JobCardResolve } from '../../services/JobCardResolve';
 
-import { selectFilter } from '../actions';
+import { selectFilter } from '../../actions';
 
 @Component({
   selector: 'job-card-filter',
@@ -23,7 +23,7 @@ import { selectFilter } from '../actions';
       </button>      
     </div>	
   `,
-  styleUrls: ['../styles/filter.css']
+  styleUrls: ['../../styles/filter.css']
 })
 
 export class JobCardFilter {

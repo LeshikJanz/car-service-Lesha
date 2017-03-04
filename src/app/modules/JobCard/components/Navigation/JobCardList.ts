@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 
-import { viewItem } from '../actions';
+import { viewItem } from '../../actions';
 
 @Component({
   selector: 'job-card-list',
@@ -27,7 +27,7 @@ import { viewItem } from '../actions';
       <job-card-list-pager></job-card-list-pager>
     </ul>
   `,
-  styleUrls: ['../styles/list.css']
+  styleUrls: ['../../styles/list.css']
 })
 
 export class JobCardList {

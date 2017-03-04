@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable'
 import { Store } from '@ngrx/store';
-import { JobCardResolve } from '../services/JobCardResolve';
+import { JobCardResolve } from '../../services/JobCardResolve';
 
-import { refreshList } from '../actions';
+import { refreshList } from '../../actions';
 
 @Component({
   selector: 'job-card-navigation',
@@ -25,7 +25,7 @@ import { refreshList } from '../actions';
       <job-card-filter></job-card-filter>	
     </div>  
   `,
-  styleUrls: ['../styles/navigation.css']
+  styleUrls: ['../../styles/navigation.css']
 })
 
 export class JobCardNavigation {

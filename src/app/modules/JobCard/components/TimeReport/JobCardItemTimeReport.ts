@@ -3,17 +3,17 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 const moment = require('moment');
 
-import { selectTimeReport, startTimer, stopTimer } from '../actions';
-import { XIS_JOBS11Collection } from "../../../jobCard/variables/XIS_JOBS11Collection";
-import { STARTED_POSITION } from "../constants/index";
-import { XIS_JOBS2Collection } from "../../../jobCard/variables/XIS_JOBS2Collection";
+import { selectTimeReport, startTimer, stopTimer } from '../../actions';
+import { XIS_JOBS11Collection } from "../../../../jobCard/variables/XIS_JOBS11Collection";
+import { STARTED_POSITION } from "../../constants/index";
+import { XIS_JOBS2Collection } from "../../../../jobCard/variables/XIS_JOBS2Collection";
 
 @Component({
   selector: 'job-card-item-time-report',
-  templateUrl: '../templates/JobCardItemTimeReport.html',
+  templateUrl: '../../templates/JobCardItemTimeReport.html',
   styleUrls: [
-    '../styles/report.css',
-    '../styles/checklist.css'
+    '../../styles/report.css',
+    '../../styles/checklist.css'
   ]
 })
 

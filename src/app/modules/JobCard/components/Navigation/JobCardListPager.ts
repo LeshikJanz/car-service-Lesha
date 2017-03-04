@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { Observable } from "rxjs";
 import { Store } from '@ngrx/store';
-import { JobCardResolve } from '../services/JobCardResolve';
+import { JobCardResolve } from '../../services/JobCardResolve';
 
 import {
   prevPage,
   nextPage
-} from '../actions';
+} from '../../actions';
 
 @Component({
   selector: 'job-card-list-pager',
@@ -36,7 +36,7 @@ import {
       </button>
 		</li>
   `,
-  styleUrls: ['../styles/pager.css']
+  styleUrls: ['../../styles/pager.css']
 })
 
 export class JobCardListPager {

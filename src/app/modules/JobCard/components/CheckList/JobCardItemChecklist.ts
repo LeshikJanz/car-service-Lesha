@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { picService } from '../services/picService';
+import { picService } from '../../services/picService';
 
 import {
   orderStatus,
   addPicture
-} from '../actions';
+} from '../../actions';
 
 @Component({
   selector: 'job-card-item-checklist',
-  templateUrl: '../templates/JobCardItemChecklist.html',
-  styleUrls: ['../styles/checklist.css']
+  templateUrl: '../../templates/JobCardItemChecklist.html',
+  styleUrls: ['../../styles/checklist.css']
 })
 
 export class JobCardItemChecklist {

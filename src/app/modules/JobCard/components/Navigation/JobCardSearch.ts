@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { searchItem } from '../actions';
+import { searchItem } from '../../actions';
 
 @Component({
   selector: 'job-card-search',
@@ -32,7 +32,7 @@ import { searchItem } from '../actions';
 			</div>
 		</div>
   `,
-  styleUrls: ['../styles/search.css']
+  styleUrls: ['../../styles/search.css']
 })
 
 export class JobCardSearch {

@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { openTimeReportTab } from "../actions";
-import { JobCardService } from "../../../jobCard/services/jobCard.service";
+import { openTimeReportTab } from "../../actions";
+import { JobCardService } from "../../../../jobCard/services/jobCard.service";
 
 @Component({
   selector: 'time-report-tab',
-  templateUrl: '../templates/TimeReportTab.html',
+  templateUrl: '../../templates/TimeReportTab.html',
   styleUrls: [
-    '../styles/item.css',
-    '../styles/navigation.css'
+    '../../styles/item.css'
   ]
 })
 
