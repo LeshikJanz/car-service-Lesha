@@ -5,6 +5,7 @@ import { Icredentials } from '../interfaces/credentials';
 
 @Injectable()
 export class LoginService {
+    private _baseUrlDMS_DE_DEV1 = 'https://52.213.80.73:50000/';
     private _baseUrlSWEETWOKXX = 'https://52.213.80.73:50000/';
     private _baseUrlPRODUCTIONTEST = 'https://10.0.1.43:50004/';
     private _loginUrl = "";
@@ -12,6 +13,12 @@ export class LoginService {
     private _companyInfoUrl = "";
 
     loginCredSWEETWOKXX: Icredentials = {
+        "CompanyDB": "DMS_DE_DEV1",
+        "UserName": "manager",
+        "Password": "123456"
+    };
+
+    loginCredDMS_DE_DEV1: Icredentials = {
         "CompanyDB": "DMS_DE_DEV1",
         "UserName": "manager",
         "Password": "123456"
@@ -79,22 +86,22 @@ export class LoginService {
         });
     }
 
-     getCred() :Icredentials {
+    getCred(): Icredentials {
         let loginCred = this.loginCredSWEETWOKXX;
-        var db = sessionStorage.getItem("DMS_DE_DEV1");
+        var db = sessionStorage.getItem("SapDB");
         switch (db) {
 
             case "SWEETWOKXX":
-                loginCred = this.loginCredSWEETWOKXX;
-                if(this._loginUrl == ""){
-                    this._loginUrl = this._baseUrlSWEETWOKXX + 'b1s/v1/Login';
-                    this._logoutUrl = this._baseUrlSWEETWOKXX + 'b1s/v1/Logout';
-                    this._companyInfoUrl = this._baseUrlSWEETWOKXX + 'b1s/v1/CompanyService_GetCompanyInfo';
+                loginCred = this.loginCredDMS_DE_DEV1;
+                if (this._loginUrl == "") {
+                    this._loginUrl = this._baseUrlDMS_DE_DEV1 + 'b1s/v1/Login';
+                    this._logoutUrl = this._baseUrlDMS_DE_DEV1 + 'b1s/v1/Logout';
+                    this._companyInfoUrl = this._baseUrlDMS_DE_DEV1 + 'b1s/v1/CompanyService_GetCompanyInfo';
                 }
                 break;
             case "PRODUCTIONTEST":
                 loginCred = this.loginCredPRODUCTIONTEST;
-                if(this._loginUrl == ""){
+                if (this._loginUrl == "") {
                     this._loginUrl = this._baseUrlPRODUCTIONTEST + 'b1s/v1/Login';
                     this._logoutUrl = this._baseUrlPRODUCTIONTEST + 'b1s/v1/Logout';
                     this._companyInfoUrl = this._baseUrlPRODUCTIONTEST + 'b1s/v1/CompanyService_GetCompanyInfo';

@@ -10,7 +10,7 @@
         </label>
       </div>
       <div>
-        <button class="save-button">Save</button>
+        <button class="save-button" (click)="save()">Save</button>
       </div>
     </div>
   </div>
@@ -33,5 +33,6 @@
       <job-card-item-body></job-card-item-body>
     </div>
 
+    <button (click)="sendRequestFor9job()">Send request</button>
   </section>
 </div>

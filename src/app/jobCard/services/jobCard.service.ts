@@ -50,8 +50,8 @@ export class JobCardService {
             headers: this.headers,
             withCredentials: true
         })
-            .map((response: Response) => <any[]>response.json())
-            .catch(this.handleError);
+          .map((response: Response) => <any[]>response.json())
+          .catch(this.handleError);
 
     }
 
@@ -73,8 +73,8 @@ export class JobCardService {
             headers: this.headers,
             withCredentials: true
         })
-            .map((response: Response) => <any[]>response.json())
-            .catch(this.handleError);
+          .map((response: Response) => <any[]>response.json())
+          .catch(this.handleError);
 
     }
 
@@ -91,9 +91,9 @@ export class JobCardService {
                 headers: this.headers,
                 withCredentials: true
             })
-                .map(response => response)
-                .catch(this.handleError)
-                .subscribe(data => {
+              .map(response => response)
+              .catch(this.handleError)
+              .subscribe(data => {
                     resolve(data);
                 },
                 error => reject(error));
@@ -113,9 +113,9 @@ export class JobCardService {
                 headers: this.headers,
                 withCredentials: true
             })
-                .map(response => response)
-                .catch(this.handleError)
-                .subscribe(data => {
+              .map(response => response)
+              .catch(this.handleError)
+              .subscribe(data => {
                     resolve(data);
                 },
                 error => reject(error));
@@ -148,9 +148,46 @@ export class JobCardService {
         var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
 
         return this.http.patch(innerUrl, body, opts)
-            .map((response: Response) => response)
-            .catch(this.handleError);
+          .map((response: Response) => response)
+          .catch(this.handleError);
 
+    }
+
+    postJob(item: any){
+        let opts: RequestOptionsArgs = {
+            headers: this.headers,
+            withCredentials: true
+        };
+        const body = item;
+
+        console.log("innerUrl");
+        console.log(innerUrl);
+        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+        console.log("innerUrl");
+        console.log(innerUrl);
+
+        return this.http.patch(innerUrl, body, opts)
+          .map((response: Response) => response)
+          .catch(this.handleError);
+    }
+
+    testPostJob9(item: any) {
+        let opts: RequestOptionsArgs = {
+            headers: this.headers,
+            withCredentials: true
+        };
+
+        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+
+        let body = {
+            "XIS_JOBS9Collection": [{
+              ...item
+            }]
+        }
+
+        return this.http.patch(innerUrl, body, opts)
+          .map((response: Response) => response)
+          .catch(this.handleError);
     }
 
     postjob11(item: XIS_JOBS11Collection) {
@@ -163,34 +200,43 @@ export class JobCardService {
             "XIS_JOBS11Collection": [{
                 "LineId": item.LineId,
                 "U_JobLine": item.U_JobLine,
-                "U_EMPID": item.U_EMPID,
+                "U_EMPID": "2",
                 "U_RprtType": item.U_RprtType,
                 "U_FromDt": item.U_FromDt,
-                "U_FromHr": item.U_FromHr,
-                "U_ToHr": item.U_ToHr,
+                //05.03
+                //"U_FromHr": item.U_FromHr,
+                "U_FromHr": "816",
+                "U_ToHr": "820",
+                //"U_ToHr": item.U_ToHr,
                 "U_TotalHrs": item.U_TotalHrs,
             }]
-        };
+         };
+
+         //let body = {
+        //     "XIS_JOBS11Collection": [{
+        //         "LineId": item.LineId,
+        //         "U_JobLine": item.U_JobLine,
+        //         //"U_EMPID": item.U_EMPID,
+        //         "U_EMPID": null,
+        //         "U_RprtType": item.U_RprtType,
+        //         "U_FromDt": item.U_FromDt,
+        //         //05.03
+        //         //"U_FromHr": item.U_FromHr,
+        //         "U_FromHr": "816",
+        //         "U_ToHr": "820",
+        //         //"U_ToHr": item.U_ToHr,
+        //         "U_TotalHrs": item.U_TotalHrs,
+        //     }]
+        // };
         var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
 
-        return this.http.patch(innerUrl, body, opts)
-            .map((response: Response) => response)
-            .catch(this.handleError);
-
-    }
-
-    postJob(item: any){
-        let opts: RequestOptionsArgs = {
-            headers: this.headers,
-            withCredentials: true
-        };
-        const body = item;
-
-        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+        console.log("innerUrl");
+        console.log(innerUrl);
 
         return this.http.patch(innerUrl, body, opts)
           .map((response: Response) => response)
           .catch(this.handleError);
+
     }
 
     filterOptionSelector(FilterOption: string) {
@@ -221,12 +267,16 @@ export class JobCardService {
         }
     }
 
+
+
     UrlSetter() {
         if (this._jobCardUrl == "") {
             var db = sessionStorage.getItem("SapDB");
             switch (db) {
                 case "SWEETWOKXX":
                     this._jobCardUrl = 'https://52.213.80.73:50000/b1s/v1/XIS_Jbs_UO';
+                    //05.03
+                    //this._jobCardUrl = 'https://52.31.210.169:50000/b1s/v1/XIS_Jbs_UO';
                     break;
                 case "PRODUCTIONTEST":
                     this._jobCardUrl = 'https://10.0.1.43:50004/b1s/v1/XIS_Jbs_UO';

@@ -123,19 +123,19 @@ export class LoginComponent implements OnInit {
     //     });
     // }
 
-    skip(): void {
-        // Start global application loader.
-        this._loaderService.start();
+  skip(): void {
+    // Start global application loader.
+    this._loaderService.start();
 
-        sessionStorage.setItem('User', 'guestSkip');
-        this._loginService.login().then(res => {
-            // Complete global application loader.
-            this._loaderService.complete();
-            this._router.navigate(['dashboard']);
-        }).catch(error => {
-            // Complete global application loader.
-            this._loaderService.complete();
-            console.error('Could not skip authentication => ', error);
-        });
-    }
+    sessionStorage.setItem('User', 'guestSkip');
+    this._loginService.login().then(res => {
+      // Complete global application loader.
+      this._loaderService.complete();
+      this._router.navigate(['dashboard']);
+    }).catch(error => {
+      // Complete global application loader.
+      this._loaderService.complete();
+      console.error('Could not skip authentication => ', error);
+    });
+  }
 }

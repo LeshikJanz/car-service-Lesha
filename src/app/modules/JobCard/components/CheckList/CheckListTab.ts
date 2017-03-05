@@ -34,8 +34,25 @@ export class CheckListTab {
     this.store.dispatch(openCheckListTab());
   }
 
+  sendRequestFor9job(){
+    const item  = {
+      DocEntry: 4,
+      LineId: 1,
+      U_Attach: "",
+      U_Notes: "asnbdmna,bsfnmsabd",
+      U_RsrcCode: "",
+      U_StrtDate: "2017-03-01",
+      U_StrtHour: "06:46:00",
+      U_TaskStts: "0"
+    }
+
+    this._jobCardService.testPostJob9(item);
+  }
+
   save(){
+    console.log("save");
     const data = Object.assign({}, this.item$, this.collections$);
-    this._jobCardService.postJob(data);
+    //this._jobCardService.postJob(data);
+    this._jobCardService.postjob11(this.collections$.XIS_JOBS11Collection);
   }
 }

@@ -5,7 +5,7 @@ import { U_XIS_JOBSTTS } from '../classes/U_XIS_JOBSTTS';
 
 @Injectable()
 export class JobCardStatusLoaderService {
-    
+
     private headers = new Headers({ 'Content-Type': 'application/json' });
     private sttsCollection: U_XIS_JOBSTTS[];
     constructor(private http: Http) {
@@ -33,39 +33,39 @@ export class JobCardStatusLoaderService {
             do{
                 jobCardUrl = jobCardUrlBase + `?$skip=${skip}`;
                 this.request(jobCardUrl).subscribe(res => {
-                    (res['value'] as U_XIS_JOBSTTS[]).forEach(element => {            
-                        this.sttsCollection.push(element);
-                        });
-                },
-                error => 
-                {
-                    console.error(<any>error);
-                });
+                      (res['value'] as U_XIS_JOBSTTS[]).forEach(element => {
+                          this.sttsCollection.push(element);
+                      });
+                  },
+                  error =>
+                  {
+                      console.error(<any>error);
+                  });
                 skip += 20;
             }
             while(skip < count);
         });
 
         return this.sttsCollection;
-        
+
     }
 
     private request(jobCardUrl: string):  Observable<any[]>{
-            return this.http.get(jobCardUrl, {
-                headers: this.headers,
-                withCredentials: true
-                }).map((response: Response) => <any[]>response.json())
-                .catch(this.handleError); 
+        return this.http.get(jobCardUrl, {
+            headers: this.headers,
+            withCredentials: true
+        }).map((response: Response) => <any[]>response.json())
+          .catch(this.handleError);
     }
 
     private sttsCount(url: string): Promise<number>{
         return new Promise((resolve, reject) => {
             this.http.get(url, {
-            headers: this.headers,
-            withCredentials: true
+                headers: this.headers,
+                withCredentials: true
             }).map((response: Response) => <any[]>response.json())
-                .catch(this.handleError)
-                .subscribe(data => {
+              .catch(this.handleError)
+              .subscribe(data => {
                     resolve(data);
                 },
                 error => reject(error));
