@@ -18,13 +18,5 @@ interface IDetail {
 })
 
 export class DropDownTabItem {
-  isOpen$: boolean = false;
-
-  @Input()
-  detail: IDetail;
-
-  openTab() {
-    this.isOpen$ = !this.isOpen$;
-  }
-
+  @Input() detail: IDetail;
 }

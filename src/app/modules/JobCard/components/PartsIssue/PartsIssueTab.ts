@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { openPartsIssueTab } from "../../actions";
@@ -39,5 +39,9 @@ export class PartsIssueTab {
     this._jobCardService.postJob(data);
   }
 
-  showAllIssues(){}
+  @Output() showAllIssues = new EventEmitter();
+
+  onShowAllIssues() {
+    this.showAllIssues.emit();
+  }
 }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,Input} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Store} from '@ngrx/store';
 import { DETAIL_TYPES } from "../../constants/index";
@@ -29,6 +29,9 @@ export class PartsIssueBody {
     console.log('selectOils');
   }
 
+  @Input() showAllIssues() {
+    console.log("show all issues");
+  }
   mainTabs$ = [
     {
       label: "CC Code - Customer Concern Description 1",

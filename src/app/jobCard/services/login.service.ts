@@ -12,7 +12,7 @@ export class LoginService {
     private _companyInfoUrl = "";
 
     loginCredSWEETWOKXX: Icredentials = {
-        "CompanyDB": "SWEETWOKXX",
+        "CompanyDB": "DMS_DE_DEV1",
         "UserName": "manager",
         "Password": "123456"
     };
@@ -81,7 +81,7 @@ export class LoginService {
 
      getCred() :Icredentials {
         let loginCred = this.loginCredSWEETWOKXX;
-        var db = sessionStorage.getItem("SapDB");
+        var db = sessionStorage.getItem("DMS_DE_DEV1");
         switch (db) {
 
             case "SWEETWOKXX":
