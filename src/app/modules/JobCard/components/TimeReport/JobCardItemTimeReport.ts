@@ -43,7 +43,7 @@ export class JobCardItemTimeReport {
           this.jobs$ = state.item.collections[this.jobCollection$];
           this.items$ = state.item.collections[this.collection$];
           this.DocEntry$ = state.item.object.DocEntry;
-          if (this.isGeneralTimeNeed()) this.addGeneralTime();
+          //if (this.isGeneralTimeNeed()) this.addGeneralTime();
         }
       );
   }
@@ -59,10 +59,10 @@ export class JobCardItemTimeReport {
     if (this.curJob$) {
       if (this.curJob$.U_ToHr == null) {
         this.HasActiveLine = true;
-        const delta = moment().valueOf() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds();
+        const delta = moment().valueOf() - (this.curJob$.U_FromHr*60+Math.floor(this.curJob$.U_TotalHrs))*1000;
         let timer = Observable.timer(0, 1000);
         this.subscription = timer.subscribe(t => (this.msec$ = t * 1000 + delta));
-      } else this.msec$ = moment.duration(this.curJob$.U_ToHr, "HH:mm:ss").asMilliseconds() - moment.duration(this.curJob$.U_FromHr, "HH:mm:ss").asMilliseconds() - STARTED_POSITION;
+      } else this.msec$ = (this.curJob$.U_ToHr*60+this.curJob$.U_TotalHrs*100%100)*1000 - (this.curJob$.U_FromHr*60+Math.floor(this.curJob$.U_TotalHrs))*1000 - STARTED_POSITION;
     } else {
       this.msec$ = -STARTED_POSITION
     }
@@ -87,10 +87,9 @@ export class JobCardItemTimeReport {
     this.timeReport$.DocEntry = this.DocEntry$;
     this.timeReport$.LineId = this.jobs$.length;
     this.timeReport$.U_JobLine = this.selected$.LineId;
-    this.timeReport$.U_FromDt = moment().format('YYYY-DD-M');
-    this.timeReport$.U_FromHr = moment().format('HH:mm:ss');
-    this.timeReport$.U_ToHr = null;
-    this.timeReport$.U_RprtType = "RealTime";
+    this.timeReport$.U_FromDt = moment().format('YYYY-DD-MM');
+    this.timeReport$.U_FromHr = moment.duration(moment().format('HH:mm'), 'HH:mm').asMinutes();
+    this.timeReport$.U_TotalHrs = moment().format('ss');
 
     let timer = Observable.timer(0, 1000);
     this.subscription = timer.subscribe(t => (this.msec$ = t * 1000));
@@ -100,7 +99,8 @@ export class JobCardItemTimeReport {
 
   stop() {
     this.timeReport$ = this.getActiveJob(this.selected$.LineId);
-    this.timeReport$.U_ToHr = moment().format('HH:mm:ss');
+    this.timeReport$.U_ToHr =  moment.duration(moment().format('HH:mm'), 'HH:mm').asMinutes();
+    this.timeReport$.U_TotalHrs = Number(`${this.timeReport$.U_TotalHrs}.${moment().format('ss')}`);
     this.jobs$[this.timeReport$.LineId - 1] = this.timeReport$;
 
     this.HasActiveLine = false;
@@ -126,9 +126,11 @@ export class JobCardItemTimeReport {
   }
 
   addGeneralTime() {
-    const generalJob = new XIS_JOBS2Collection();
-    generalJob.U_PartCode = "Job card general time entry";
-    generalJob.DocEntry = this.DocEntry$
+    const generalJob = {
+      U_PartCode: "Job card general time entry",
+      DocEntry: this.DocEntry$
+    }
+
     this.items$.push(generalJob);
   }
 

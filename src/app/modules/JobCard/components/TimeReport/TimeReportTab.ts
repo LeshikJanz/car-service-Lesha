@@ -17,6 +17,7 @@ export class TimeReportTab {
   item$: Observable<any>;
   collections$: any;
   isTimeReportOpen$: boolean = false;
+  respo: any;
 
   constructor(private store: Store<any>, private _jobCardService: JobCardService) {
     store
@@ -34,8 +35,12 @@ export class TimeReportTab {
     this.store.dispatch(openTimeReportTab());
   }
 
-  save(){
-    const data = Object.assign({}, this.item$, this.collections$);
-    this._jobCardService.postJob(data);
+  save() {
+    const item = {
+      ...this.item$,
+      ...this.collections$,
+    }
+
+    this._jobCardService.postJob(item).subscribe(res => this.respo = res);
   }
 }

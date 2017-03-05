@@ -16,6 +16,7 @@ import { JobCardService } from "../../../../jobCard/services/jobCard.service";
 export class PartsIssueTab {
   item$: Observable<any>;
   collections$: any;
+  respo: any;
   isPartsIssueOpen$: boolean = false;
 
   constructor(private store: Store<any>, private _jobCardService: JobCardService) {
@@ -34,9 +35,13 @@ export class PartsIssueTab {
     this.store.dispatch(openPartsIssueTab());
   }
 
-  save(){
-    const data = Object.assign({}, this.item$, this.collections$);
-    this._jobCardService.postJob(data);
+  save() {
+    const item = {
+      ...this.item$,
+      ...this.collections$,
+    }
+
+    this._jobCardService.postJob(item).subscribe(res => this.respo = res);
   }
 
   @Output() showAllIssues = new EventEmitter();
