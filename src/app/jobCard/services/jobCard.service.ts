@@ -127,7 +127,7 @@ export class JobCardService {
         return Observable.throw(error.json().error || 'Server error');
     }
 
-    postjob9(item: XIS_JOBS9Collection) {
+    postjob9(item: any) {
         let opts: RequestOptionsArgs = {
             headers: this.headers,
             withCredentials: true
@@ -145,7 +145,7 @@ export class JobCardService {
                 "U_Attach": item.U_Attach
             }]
         };
-        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+        var innerUrl = this._jobCardUrl.concat(`${item.DocEntry}`);
 
         return this.http.patch(innerUrl, body, opts)
           .map((response: Response) => response)
@@ -177,13 +177,9 @@ export class JobCardService {
             withCredentials: true
         };
 
-        var innerUrl = this._jobCardUrl.concat(`(${item.DocEntry})`);
+        let body = item;
 
-        let body = {
-            "XIS_JOBS9Collection": [{
-              ...item
-            }]
-        }
+        var innerUrl = this._jobCardUrl.concat(`(4)`);
 
         return this.http.patch(innerUrl, body, opts)
           .map((response: Response) => response)

@@ -17,6 +17,7 @@ export class CheckListTab {
   item$: Observable<any>;
   collections$: any;
   isCheckListOpen$: boolean = false;
+  respo: any;
 
   constructor(private store: Store<any>, private _jobCardService: JobCardService) {
     store
@@ -30,29 +31,37 @@ export class CheckListTab {
       );
   }
 
-  handleOpenTab(){
+  handleOpenTab() {
     this.store.dispatch(openCheckListTab());
   }
 
-  sendRequestFor9job(){
-    const item  = {
-      DocEntry: 4,
-      LineId: 1,
-      U_Attach: "",
-      U_Notes: "asnbdmna,bsfnmsabd",
-      U_RsrcCode: "",
-      U_StrtDate: "2017-03-01",
-      U_StrtHour: "06:46:00",
-      U_TaskStts: "0"
+  sendRequestFor9job() {
+    const item = {
+      "XIS_JOBS9Collection": [{
+        LineId: "1",
+        U_Notes: "Lesha11",
+        U_StrtDate: "2017-03-01",
+        U_StrtHour: "06:46:00",
+        U_TaskStts: "0"
+      },
+        {
+          LineId: "2",
+          U_Notes: "Lesha99",
+          U_StrtDate: "2017-03-01",
+          U_StrtHour: "06:46:00",
+          U_TaskStts: "0"
+        }]
     }
 
-    this._jobCardService.testPostJob9(item);
+        this._jobCardService.testPostJob9(item).subscribe(res => this.respo = res);
+    //this._jobCardService.postjob9(item).subscribe(res => this.respo = res);
   }
 
-  save(){
-    console.log("save");
-    const data = Object.assign({}, this.item$, this.collections$);
-    //this._jobCardService.postJob(data);
-    this._jobCardService.postjob11(this.collections$.XIS_JOBS11Collection);
+    save()
+    {
+      console.log("save");
+      const data = Object.assign({}, this.item$, this.collections$);
+      //this._jobCardService.postJob(data);
+      this._jobCardService.postjob11(this.collections$.XIS_JOBS11Collection);
+    }
   }
-}
